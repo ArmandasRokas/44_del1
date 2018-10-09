@@ -19,9 +19,15 @@ public class UI {
             input = scan.nextInt();
             switch (input){
                 case 1:
+
                     game.roll();
                     System.out.println("Du har slået: " + game.getCurrentRollScore());
-                    game.switchPlayer();
+
+                    if (!game.isDiesHasValue()){
+                        game.switchPlayer();
+                    } else {
+                        System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
+                    }
             }
 
             if (game.getCurrentplayer().getTotalScore() >= 40){

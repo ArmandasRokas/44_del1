@@ -68,4 +68,12 @@ public class Game {
             currPlayer = p1;
         }
     }
+
+    public boolean isDiesHasValue(){
+        if (d1.getEyes() == d2.getEyes()){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
