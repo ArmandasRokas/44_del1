@@ -7,13 +7,24 @@ import java.util.Scanner;
 public class UI {
 
     public static void main(String[] args) {
+        int input;
 
         Game game = new Game();
+        boolean isOn = true;
+        System.out.println("Velkommen til vores terningespil");
+        Scanner scan = new Scanner(System.in);
+        while (isOn){
+            System.out.println("Nu er det " + game.getCurrentplayer().getName()+
+                    "'s tur, Tast 1 for at slå med terningerne");
+            input = scan.nextInt();
+            switch (input){
+                case 1:
+                    game.roll();
+                    System.out.println("du har slået" + game.getCurrentRollScore());
 
-        System.out.println("Test");
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter 1 for Roll die");
+            }
 
+        }
 
     }
 }
