@@ -3,6 +3,8 @@ package controller;
 import model.Die;
 import model.Player;
 
+import java.util.Random;
+
 public class Game {
     private Player p1, p2;
     private Die d1, d2;
@@ -19,13 +21,23 @@ public class Game {
         this.currPlayer = p1;
     }
 
-    public void play() {
-        roll();
-        switchPlayer();
+    public Player getP1() {
+        return p1;
+    }
+
+    public Player getP2() {
+        return p2;
     }
 
     public int randomValue() {
-        return (int) Math.random()*(6 - 1 + 1) + 1;
+
+
+        Random r = new Random();
+
+        int randomNum = r.nextInt(6); // 0-5
+        int finalNum = randomNum + 1;        // 1-6
+
+        return finalNum;
     }
 
     public void addScoreToPlayer() {
@@ -34,10 +46,8 @@ public class Game {
     }
 
     public void roll() {
-        int randomValue = randomValue();
-        d1.setEyes(randomValue);
-        randomValue = randomValue();
-        d2.setEyes(randomValue);
+        d1.setEyes(randomValue());
+        d2.setEyes(randomValue());
 
         addScoreToPlayer();
 
