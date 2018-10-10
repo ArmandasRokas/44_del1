@@ -69,7 +69,7 @@ public class Game {
         }
     }
 
-    public boolean isDiesHasValue(){
+    public boolean isDiesHasSameValue(){
         if (d1.getEyes() == d2.getEyes()){
             return true;
         } else {
