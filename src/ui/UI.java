@@ -6,10 +6,13 @@ import java.util.Scanner;
 
 public class UI {
 
-    public static void main(String[] args) {
+    Game game = new Game();
+
+
+    public void play(){
+
         int input;
 
-        Game game = new Game();
         boolean isOn = true;
         System.out.println("Velkommen til vores terningespil");
         Scanner scan = new Scanner(System.in);
@@ -38,8 +41,9 @@ public class UI {
         }
 
         System.out.println("Tak for spillet");
-
-
     }
+
+
+
 
 }
