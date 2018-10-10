@@ -2,11 +2,11 @@ package model;
 
 public class Player {
     private int totalScore;
-    private String name;
+    private String number;
     //Constructor
-    public Player(String name){
+    public Player(String number){
         this.totalScore = 0;
-        this.name = name;
+        this.number = number;
     }
     //Methods
 
@@ -20,8 +20,8 @@ public class Player {
         this.totalScore = totalScore + roll;
         return totalScore;
     }
-    public String getName(){
-        return name;
+    public String getNumber(){
+        return number;
     }
 
 }

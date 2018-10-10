@@ -17,7 +17,7 @@ public class UI {
         System.out.println("Velkommen til vores terningespil!");
         Scanner scan = new Scanner(System.in);
         while (activeGame){
-            System.out.println("Nu er det " + game.getCurrentplayer().getName() +"'s tur.");
+            System.out.println("Nu er det " + game.getCurrentplayer().getNumber() +"'s tur.");
             System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
             String input = scan.nextLine();
             switch (input.toLowerCase()){
@@ -40,7 +40,7 @@ public class UI {
             }
             if (game.getCurrentplayer().getTotalScore() >= 40){
                 activeGame = false;
-                System.out.println("Tillykke, " + game.getCurrentplayer().getName() + "! Du er vinderen");
+                System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
             }
         }
         System.out.println("Tak for spillet");
