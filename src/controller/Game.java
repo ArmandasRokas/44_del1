@@ -11,7 +11,7 @@ public class Game {
     private Player currPlayer;
 
     //Constructor
-    public Game(){
+    public Game() {
         this.p1 = new Player("Player 1");
         this.p2 = new Player("Player 2");
 
@@ -21,19 +21,21 @@ public class Game {
         this.currPlayer = p1;
     }
 
+    public void play() {
+        roll();
+        if (!isDiesHasSameValue()) {
+            switchPlayer();
+        }
+    }
 
     public void roll() {
         d1.setEyes(randomValue());
         d2.setEyes(randomValue());
 
         this.currPlayer.addToScore(getCurrentRollScore());
-
     }
 
-
     public int randomValue() {
-
-
         Random r = new Random();
 
         int randomNum = r.nextInt(6); // 0-5
@@ -42,24 +44,22 @@ public class Game {
         return finalNum;
     }
 
-    public int getCurrentRollScore(){
-        return d1.getEyes()+d2.getEyes();
-
+    public int getCurrentRollScore() {
+        return d1.getEyes() + d2.getEyes();
     }
 
-    public boolean isDiesHasSameValue(){
-        if (d1.getEyes() == d2.getEyes()){
+    public boolean isDiesHasSameValue() {
+        if (d1.getEyes() == d2.getEyes()) {
             return true;
         } else {
             return false;
         }
     }
 
-    public void switchPlayer(){
-        if(currPlayer.equals(p1)){
+    public void switchPlayer() {
+        if (currPlayer.equals(p1)) {
             currPlayer = p2;
-        }
-        else if(currPlayer.equals(p2)){
+        } else if (currPlayer.equals(p2)) {
             currPlayer = p1;
         }
     }
@@ -72,8 +72,7 @@ public class Game {
         return p2;
     }
 
-    public Player getCurrentplayer(){
+    public Player getCurrentplayer() {
         return currPlayer;
     }
-
 }
