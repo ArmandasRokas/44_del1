@@ -21,13 +21,15 @@ public class Game {
         this.currPlayer = p1;
     }
 
-    public Player getP1() {
-        return p1;
+
+    public void roll() {
+        d1.setEyes(randomValue());
+        d2.setEyes(randomValue());
+
+        this.currPlayer.addToScore(getCurrentRollScore());
+
     }
 
-    public Player getP2() {
-        return p2;
-    }
 
     public int randomValue() {
 
@@ -40,24 +42,17 @@ public class Game {
         return finalNum;
     }
 
-    public void addScoreToPlayer() {
-        this.currPlayer.addToScore(getCurrentRollScore());
-
-    }
-
-    public void roll() {
-        d1.setEyes(randomValue());
-        d2.setEyes(randomValue());
-
-        addScoreToPlayer();
-
-    }
     public int getCurrentRollScore(){
         return d1.getEyes()+d2.getEyes();
 
     }
-    public Player getCurrentplayer(){
-        return currPlayer;
+
+    public boolean isDiesHasSameValue(){
+        if (d1.getEyes() == d2.getEyes()){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void switchPlayer(){
@@ -69,11 +64,16 @@ public class Game {
         }
     }
 
-    public boolean isDiesHasSameValue(){
-        if (d1.getEyes() == d2.getEyes()){
-            return true;
-        } else {
-            return false;
-        }
+    public Player getP1() {
+        return p1;
     }
+
+    public Player getP2() {
+        return p2;
+    }
+
+    public Player getCurrentplayer(){
+        return currPlayer;
+    }
+
 }
