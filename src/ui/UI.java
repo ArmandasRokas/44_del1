@@ -25,7 +25,7 @@ public class UI {
                     game.roll();
                     System.out.println("Du har slået: " + game.getCurrentRollScore());
                     printCurrScores();
-                    if (!game.isDiesHasValue()){
+                    if (!game.isDiesHasSameValue()){
                         game.switchPlayer();
                     } else {
                         System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
@@ -40,7 +40,7 @@ public class UI {
             }
             if (game.getCurrentplayer().getTotalScore() >= 40){
                 activeGame = false;
-                System.out.println("Til lykke, " + game.getCurrentplayer().getName() + "! Du er vinderen");
+                System.out.println("Tillykke, " + game.getCurrentplayer().getName() + "! Du er vinderen");
             }
         }
         System.out.println("Tak for spillet");
