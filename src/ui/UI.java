@@ -6,40 +6,46 @@ import java.util.Scanner;
 
 public class UI {
 
-    public static void main(String[] args) {
-        int input;
+    Game game = new Game();
 
-        Game game = new Game();
-        boolean isOn = true;
-        System.out.println("Velkommen til vores terningespil");
+    public void startDicegame(){
+        boolean activeGame = true;
+        System.out.println("Velkommen til vores terningespil!");
         Scanner scan = new Scanner(System.in);
-        while (isOn){
-            System.out.println("Nu er det " + game.getCurrentplayer().getName() +"'s tur");
-            System.out.println("Tast 1 for at slå med terningerne");
-            input = scan.nextInt();
-            switch (input){
-                case 1:
 
-                    game.roll();
+        while (activeGame){
+            System.out.println("Nu er det " + game.getCurrentplayer().getNumber() +"'s tur.");
+            System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
+            String input = scan.nextLine();
+
+            switch (input.toLowerCase()){
+                case "1":
+                    game.play();
                     System.out.println("Du har slået: " + game.getCurrentRollScore());
-
-                    if (!game.isDiesHasValue()){
-                        game.switchPlayer();
-                    } else {
+                    printCurrScores();
+                    if(game.isDiesHasSameValue()) {
                         System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
                     }
+                    break;
+                case "stop":
+                    activeGame = false;
+                    break;
+                default:
+                    System.out.println("Forkert input, prøv igen.");
+                    break;
             }
-
             if (game.getCurrentplayer().getTotalScore() >= 40){
-                isOn = false;
-                System.out.println("Til lykke, " + game.getCurrentplayer().getName() + "! Du er vinderen");
+                activeGame = false;
+                System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
             }
-
         }
-
         System.out.println("Tak for spillet");
-
-
+        System.out.println("Spillets resultat blev:");
+        printCurrScores();
     }
 
+    public void printCurrScores() {
+        System.out.println("Spiller 1 har: " + game.getP1().getTotalScore() + " points.");
+        System.out.println("Spiller 2 har: " + game.getP2().getTotalScore() + " points.");
+    }
 }

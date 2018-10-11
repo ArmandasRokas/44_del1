@@ -2,14 +2,15 @@ package model;
 
 public class Player {
     private int totalScore;
-    private String name;
-    //Constructor
-    public Player(String name){
-        this.totalScore = 0;
-        this.name = name;
-    }
-    //Methods
+    private String number;
 
+    //Constructor
+    public Player(String number){
+        this.totalScore = 0;
+        this.number = number;
+    }
+
+    //Methods
     public int getTotalScore() {
         return totalScore;
     }
@@ -20,8 +21,8 @@ public class Player {
         this.totalScore = totalScore + roll;
         return totalScore;
     }
-    public String getName(){
-        return name;
-    }
 
+    public String getNumber(){
+        return number;
+    }
 }
