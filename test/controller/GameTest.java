@@ -121,4 +121,48 @@ class GameTest {
         assertEquals(expect2and12, count12, dExpect2and12);
 
     }
+
+
+    /**
+     * Test case: TC2
+     *
+     * Tests if the time from rolling the dices to printing out the result is faster than 50ms.
+     * First diceroll will take longer, so is tested for 100ms
+     *
+     */
+
+
+    @Test
+    void timePerformanceTest(){
+
+        // Arrange
+        Game game = new Game();
+        long startTime;
+        long endTime;
+        long timeResultForFirstRoll;
+        long timeResultForAnotherRolls;
+
+        //Act
+        startTime = System.currentTimeMillis();
+        game.roll();
+        System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+        endTime = System.currentTimeMillis();
+        timeResultForFirstRoll = endTime - startTime;
+
+        //Assert
+        for (int i = 0; i<1000; i++){
+            startTime = System.currentTimeMillis();
+
+            game.roll();
+            System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+            endTime = System.currentTimeMillis();
+
+            timeResultForAnotherRolls =  endTime - startTime;
+
+            assertTrue(timeResultForAnotherRolls<50, "Time took: " + timeResultForAnotherRolls);
+
+        }
+        assertTrue(timeResultForFirstRoll<100, "Time took: " + timeResultForFirstRoll);
+    }
+
 }
