@@ -5,26 +5,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
+
     /**Test af 'getCurrentRollScore()'
-     * Beskrivelse: Tester om metoden 'getCurrentRollScore()', som skal simulere et slag med 2 terninger,
-     *              har resultater, der ligner de teoretiske sandsynligheder for terningekast
-     *              med 2 terninger.
-     *              Det der i virkeligheden testes er her en meget simpel funktion,
-     *              som benytter en pseudorandom funktion, der er gjort offentlig i udviklingsprogrammet.
-     *              I dette tilfælde 'Math.random()' -> 'IntelliJ'.
-     * Udførselsbeskrivelse: Her lades metoden køre igennem 100.000 gange, hvilket giver et estimat,
-     *                       som bør være rimelig tæt på de teoretiske sandsynligheder
-     *                       for kast med 2 terninger.
-     *                       Her er har vi valgt at tillade 5 % afvigelse fra de teoretiske sandsynligheder,
-     *                       hvilket, med en så kvantitativ analyse (100.000 gennemkørsler),
-     *                       bør lade sig gøre næsten hver test.
-     * Forventet: Hvert udfald vil forekomme indenfor en afvigelse af 5 % af de teoretiske sandsynligheder
-     *            for kast med 2 terninger.
-     * Beregninger: 100.000 * teoretisk sandsynlighed = forventet resultat.
-     *              100.000 * teoretisk sandsynlighed * 5% = tilladt afvigelse.
+     * Tests if Random() class gives random numbers within an approximated failure rate of 5% of what is estimated.
+     * Tests this by trying it 100.000 times
      */
+
     @Test
-    void getCurrentRollScore() {
+    void testRandomNumberGenerated() {
         /*
         De teoretiske sandsynligheder for hvert udfald af kast med 2 terninger er som følger:
         2: 1/36
