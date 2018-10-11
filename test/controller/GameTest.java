@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GameTest {
 
     @Test
-    void getCurrentRollScore() {        //skal ændres til en test for 'getCurrentRollScore()'.
+    void getCurrentRollScore() {
 
         /*
         De teoretiske sandsynligheder for hvert udfald af kast med 2 terninger er som følger:
@@ -51,7 +51,8 @@ class GameTest {
 
 
         // Act
-        for(int i = 0; i <= 100000; i++) {
+        for(int i = 0; i < 100000; i++) {
+            roll.roll();
             int num = roll.getCurrentRollScore();
 
             assertTrue(num > 1 && num < 13);
@@ -98,7 +99,7 @@ class GameTest {
 
 
         // Assert
-      //  assertEquals(expect2and12, count2, dExpect2and12);
+        assertEquals(expect2and12, count2, dExpect2and12);
         assertEquals(expect3and11, count3, dExpect3and11);
         assertEquals(expect4and10, count4, dExpect4and10);
         assertEquals(expect5and9, count5, dExpect5and9);
