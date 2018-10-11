@@ -76,3 +76,22 @@ public class Game {
         return currPlayer;
     }
 }
+
+
+//public class Time {
+//    public static void main(String[] args)
+//    {
+//        // starting time
+//        long start = System.currentTimeMillis();
+//
+//        // start of function
+//
+//        count_function(10000000);
+//
+//        // end of function
+//
+//        // ending time
+//        long end = System.currentTimeMillis();
+//        System.out.println("Counting to 10000000 takes " +
+//                (end - start) + "ms");
+//    }
