@@ -6,7 +6,11 @@ import java.util.Scanner;
 
 public class UI {
 
-    Game game = new Game();
+    Game game;
+
+    public UI() {
+        game = new Game();
+    }
 
     public void startDicegame(){
         boolean activeGame = true;
@@ -20,16 +24,19 @@ public class UI {
 
             switch (input.toLowerCase()){
                 case "1":
-                    game.play();
-                    System.out.println("Du har slået: " + game.getCurrentRollScore());
+                    game.roll();
+                    System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
                     printCurrScores();
-                    if(game.isDiesHasSameValue()) {
+
+                    if(game.diceHasSameValue()) {
                         System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
                     }
                     break;
+
                 case "stop":
                     activeGame = false;
                     break;
+
                 default:
                     System.out.println("Forkert input, prøv igen.");
                     break;
@@ -38,10 +45,12 @@ public class UI {
                 activeGame = false;
                 System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
             }
+            game.switchPlayer();
         }
-        System.out.println("Tak for spillet");
+        System.out.println();
         System.out.println("Spillets resultat blev:");
         printCurrScores();
+        System.out.println("Tak for spillet");
     }
 
     public void printCurrScores() {

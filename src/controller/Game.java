@@ -12,8 +12,8 @@ public class Game {
 
     //Constructor
     public Game() {
-        this.p1 = new Player("Player 1");
-        this.p2 = new Player("Player 2");
+        this.p1 = new Player("Spiller 1");
+        this.p2 = new Player("Spiller 2");
 
         this.d1 = new Die();
         this.d2 = new Die();
@@ -21,12 +21,6 @@ public class Game {
         this.currPlayer = p1;
     }
 
-    public void play() {
-        roll();
-        if (!isDiesHasSameValue()) {
-            switchPlayer();
-        }
-    }
 
     public void roll() {
         d1.setEyes(randomValue());
@@ -48,7 +42,7 @@ public class Game {
         return d1.getEyes() + d2.getEyes();
     }
 
-    public boolean isDiesHasSameValue() {
+    public boolean diceHasSameValue() {
         if (d1.getEyes() == d2.getEyes()) {
             return true;
         } else {
@@ -57,10 +51,13 @@ public class Game {
     }
 
     public void switchPlayer() {
-        if (currPlayer.equals(p1)) {
-            currPlayer = p2;
-        } else if (currPlayer.equals(p2)) {
-            currPlayer = p1;
+
+        if(!diceHasSameValue()){
+            if (currPlayer.equals(p1)) {
+                currPlayer = p2;
+            } else if (currPlayer.equals(p2)) {
+                currPlayer = p1;
+            }
         }
     }
 
