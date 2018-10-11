@@ -5,45 +5,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
-
     /**Test af 'getCurrentRollScore()'
      * Tests if Random() class gives random numbers within an approximated failure rate of 5% of what is estimated.
      * Tests this by trying it 100.000 times
      */
-
     @Test
     void testRandomNumberGenerated() {
-        /*
-        De teoretiske sandsynligheder for hvert udfald af kast med 2 terninger er som følger:
-        2: 1/36
-        3: 2/36
-        4: 3/36
-        5: 4/36
-        6: 5/36
-        7: 6/36
-        8: 5/36
-        9: 4/36
-       10: 3/36
-       11: 2/36
-       12: 1/36
-
-       Er Beregnet ud fra de mulige kombinationer (tælleren) i forhold til alle kombinationer (nævneren) for terningerne.
-         */
-
         // Arrange
         Game roll = new Game();
         int count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0,
                 count8 = 0, count9 = 0, count10 = 0, count11 =0, count12 = 0;
-
-        //Forventet forekomst for hvert udfald ved 100.000 kast udregnes, ud fra de teoretiske sandsynligheder
-        int expect2and12 = 100000*1/36;
-        int expect3and11 = 100000*2/36;
-        int expect4and10 = 100000*3/36;
-        int expect5and9 = 100000*4/36;
-        int expect6and8 = 100000*5/36;
-        int expect7 = 100000*6/36;
-
-        //Tilladt afvigelse på 5 % af forventet resultat
+        //Expected result of dice rolls, calculated by number of dice rolls times theoretical odds of hitting the numbers
+        int expect2and12 = 100000*(1/36);
+        int expect3and11 = 100000*(2/36);
+        int expect4and10 = 100000*(3/36);
+        int expect5and9 = 100000*(4/36);
+        int expect6and8 = 100000*(5/36);
+        int expect7 = 100000*(6/36);
+        //Expected deviation on 5% of expected result
         int dExpect2and12 = (100000*1/36)*5/100;
         int dExpect3and11 = (100000*2/36)*5/100;
         int dExpect4and10 = (100000*3/36)*5/100;
@@ -57,7 +36,6 @@ class GameTest {
             int num = roll.getCurrentRollScore();
 
             assertTrue(num > 1 && num < 13);
-
             switch (num) {
                 case 2:
                     count2++;
@@ -94,7 +72,6 @@ class GameTest {
                     break;
             }
         }
-
         // Assert
         assertEquals(expect2and12, count2, dExpect2and12);
         assertEquals(expect3and11, count3, dExpect3and11);
@@ -107,22 +84,16 @@ class GameTest {
         assertEquals(expect4and10, count10, dExpect4and10);
         assertEquals(expect3and11, count11, dExpect3and11);
         assertEquals(expect2and12, count12, dExpect2and12);
-
     }
-
 
     /**
      * Test case: TC2
      *
      * Tests if the time from rolling the dices to printing out the result is faster than 50ms.
      * First diceroll will take longer, so is tested for 100ms
-     *
      */
-
-
     @Test
     void timePerformanceTest(){
-
         // Arrange
         Game game = new Game();
         long startTime;
@@ -144,13 +115,10 @@ class GameTest {
             game.roll();
             System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
             endTime = System.currentTimeMillis();
-
             timeResultForAnotherRolls =  endTime - startTime;
 
             assertTrue(timeResultForAnotherRolls<50, "Time took: " + timeResultForAnotherRolls);
-
         }
         assertTrue(timeResultForFirstRoll<100, "Time took: " + timeResultForFirstRoll);
     }
-
 }
