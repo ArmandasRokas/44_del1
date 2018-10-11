@@ -4,14 +4,25 @@ import controller.Game;
 
 import java.util.Scanner;
 
+/**@author Hold 44
+ * @version 11/10-2018
+ *
+ * Defines the UI class
+ */
 public class UI {
 
     Game game;
 
+    /**
+     * Constructor of UI and initializes Game
+     */
     public UI() {
         game = new Game();
     }
 
+    /**Starts the dice game
+     *
+     */
     public void startDicegame(){
         boolean activeGame = true;
         System.out.println("Velkommen til vores terningespil!");
