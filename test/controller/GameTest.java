@@ -5,28 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
-
-    /* Test 1 - af 'roll()'
-     * @author ?? Gruppe 44
-     * Beskrivelse: Tester om forekomsten af terningens mulige udfald,
-     *              ud fra metoden 'roll()' er fordelt forholsvist ligeligt,
-     *              som det er meningen den skal være.
-     * Udførselsbeskrivelse: Ved at lade metoden gennemkøre så meget som 60000 gange,
-     *                      fås et rimeligt estimat, som ved almindelig sandsynlighedslogik,
-     *                      bør være forholdsvist ligeligt fordelt.
-     *                      En hvis afvigelse kan ikke undgås, men denne medtages i vurdering
-     *                      som en naturlig tilfældig afvigelse på 400 / (~(60000/6)),
-     *                      hvilket svarer til en afvigelse på cirka 4 %, hvilket bør være rigeligt
-     *                      for en test med så mange gennemkørsler.
-     * Forventet: Hvert udfald vil forekomme '10.000 plus-minus 400' gange.
-     */
-
     /**Test af 'getCurrentRollScore()'
      * Beskrivelse: Tester om metoden 'getCurrentRollScore()', som skal simulere et slag med 2 terninger,
      *              har resultater, der ligner de teoretiske sandsynligheder for terningekast
      *              med 2 terninger.
      *              Det der i virkeligheden testes er her en meget simpel funktion,
-     *              som benytter en pseudorandom funkntion, der er gjort offentlig i udviklingsprogrammet.
+     *              som benytter en pseudorandom funktion, der er gjort offentlig i udviklingsprogrammet.
      *              I dette tilfælde 'Math.random()' -> 'IntelliJ'.
      * Udførselsbeskrivelse: Her lades metoden køre igennem 100.000 gange, hvilket giver et estimat,
      *                       som bør være rimelig tæt på de teoretiske sandsynligheder
