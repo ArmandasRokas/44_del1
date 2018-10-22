@@ -8,7 +8,6 @@ public class Main {
         UI ui = new UI();
         ui.startDicegame();
 
-
-        System.out.println("testing");
+        // hey hey
     }
 }
