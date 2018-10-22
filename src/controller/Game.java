@@ -3,7 +3,7 @@ package controller;
 import model.Die;
 import model.Player;
 
-import java.util.Random;
+import static util.GameTool.randomIntValue;
 
 /**@author Hold 44
  * Defines Game and all its global variables
@@ -27,25 +27,12 @@ public class Game {
      * This method rolls two dices and adds score to player
      */
     public void roll() {
-        d1.setEyes(randomValue());
-        d2.setEyes(randomValue());
+        d1.setEyes(randomIntValue(1,6));
+        d2.setEyes(randomIntValue(1,6));
 
         this.currPlayer.addToScore(getCurrentRollScore());
     }
 
-    /**
-     * Calculates a random value between 1 and 6
-     *
-     * @return  Random integer between 1 and 6
-     */
-    public int randomValue() {
-        Random r = new Random();
-
-        int randomNum = r.nextInt(6); // 0-5
-        int finalNum = randomNum + 1;        // 1-6
-
-        return finalNum;
-    }
 
     /**
      * Add the eyes of the two dices
