@@ -9,9 +9,5 @@ public class Main {
         ui.startDicegame();
 
 
-        System.out.println("testing");
-
-        // hey
-        // hey hey
     }
 }
