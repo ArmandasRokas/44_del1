@@ -29,19 +29,8 @@ public class Die {
         return eyes;
     }
 
-    /**
-     * Checks if the Eyes have the Value between 1 and 6
-     *
-     * @param eyes If they aren't within range of 1 and 6, it will print out and error
-     */
-    public void setEyes(int eyes) {
-        if(1 <= eyes && eyes <= 6) {
-            this.eyes = eyes;
-        }
-        else {
-            System.out.println("Error");
-        }
-    }
+
+
     public void rollDie() {
         this.eyes = GameTool.randomIntValue(minEyes,maxEyes);
 

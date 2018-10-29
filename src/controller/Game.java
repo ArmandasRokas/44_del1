@@ -27,8 +27,8 @@ public class Game {
      * This method rolls two dices and adds score to player
      */
     public void roll() {
-        d1.setEyes(randomIntValue(1,6));
-        d2.setEyes(randomIntValue(1,6));
+        d1.rollDie();
+        d2.rollDie();
 
         this.currPlayer.addToScore(getCurrentRollScore());
     }
