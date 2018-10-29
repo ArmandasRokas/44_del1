@@ -1,5 +1,7 @@
 package model;
 
+import util.GameTool;
+
 /**@author  Hold 44
  * @version 11/10-2018
  *
@@ -7,12 +9,15 @@ package model;
  */
 public class Die {
     private int eyes;   //Eyes of the dice
+    private int minEyes, maxEyes;   //Range of eyes on the die
 
     /**
      * Constructor of the Die
      */
-    public Die(){
-       this.eyes = 1;
+    public Die(int minEyes, int maxEyes) {
+       this.eyes = minEyes;
+       this.minEyes = minEyes;
+       this.maxEyes = maxEyes;
     }
 
     /**
@@ -37,4 +42,15 @@ public class Die {
             System.out.println("Error");
         }
     }
+    public void rollDie() {
+        this.eyes = GameTool.randomIntValue(minEyes,maxEyes);
+
+
+
+    }
+
+
+
+
+
 }

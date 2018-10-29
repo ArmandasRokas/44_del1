@@ -18,8 +18,8 @@ public class Game {
     public Game() {
         this.p1 = new Player("Spiller 1");
         this.p2 = new Player("Spiller 2");
-        this.d1 = new Die();
-        this.d2 = new Die();
+        this.d1 = new Die(1,6);
+        this.d2 = new Die(1,6);
         this.currPlayer = p1;
     }
 
@@ -49,11 +49,12 @@ public class Game {
      * @return True if they are the same, else false
      */
     public boolean diceHasSameValue() {
+        boolean res = false;
+
         if (d1.getEyes() == d2.getEyes()) {
-            return true;
-        } else {
-            return false;
+            res = true;
         }
+        return res;
     }
 
     /**
