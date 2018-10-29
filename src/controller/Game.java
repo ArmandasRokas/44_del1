@@ -43,32 +43,7 @@ public class Game {
         return d1.getEyes() + d2.getEyes();
     }
 
-    /**
-     * Checks of the dices have the same value
-     *
-     * @return True if they are the same, else false
-     */
-    public boolean diceHasSameValue() {
-        boolean res = false;
 
-        if (d1.getEyes() == d2.getEyes()) {
-            res = true;
-        }
-        return res;
-    }
-
-    /**
-     * Checks dices for the same value, if false Switch player
-     */
-    public void switchPlayer() {
-        if(!diceHasSameValue()){
-            if (currPlayer.equals(p1)) {
-                currPlayer = p2;
-            } else if (currPlayer.equals(p2)) {
-                currPlayer = p1;
-            }
-        }
-    }
 
     /**
      * Get methods to get instance of Player
