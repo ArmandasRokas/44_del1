@@ -12,11 +12,10 @@ public class Main {
        // UI ui = new UI();
        // ui.startDicegame();
 
-        Game game = new Game();
 
-        game.playRound();
 
-        System.out.println(game.getCurrScenario() + " " + game.getCurrMoneyInfluence());
+
+        testBoard();
 
 
     }
@@ -36,4 +35,15 @@ public class Main {
         }
 
     }
+
+    public static void testBoard(){
+
+        Game game = new Game();
+
+        game.playRound();
+
+        System.out.println(game.getCurrScenario() + " " + game.getCurrMoneyInfluence());
+
+        }
+
 }
