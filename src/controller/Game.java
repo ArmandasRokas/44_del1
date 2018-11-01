@@ -4,8 +4,6 @@ import model.Board;
 import model.Die;
 import model.Player;
 
-import static util.GameTool.randomIntValue;
-
 /**@author Hold 44
  * Defines Game and all its global variables
  */
@@ -48,7 +46,7 @@ public class Game {
         board.updateCurrSquare(totalEye);
 
         this.currScenario = board.getCurrScenerio();
-        this.currMoneyInfluence = board.getMoneyInfluence();
+        this.currMoneyInfluence = board.getCurrMoneyInfluence();
 
 
         this.currPlayer.addToScore(getCurrentRollScore()); // skal opdateres
