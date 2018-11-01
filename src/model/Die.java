@@ -33,9 +33,6 @@ public class Die {
 
     public void rollDie() {
         this.eyes = GameTool.randomIntValue(minEyes,maxEyes);
-
-
-
     }
 
 

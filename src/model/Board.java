@@ -3,6 +3,8 @@ package model;
 public class Board {
     private Square squareList[];
 
+    private Square currSquare;
+
     public Board(int squareAmount) {
         squareList = new Square[squareAmount];
 
@@ -27,6 +29,59 @@ public class Board {
 
     }
 
+    public String getCurrScenerio(){
 
+        return currSquare.getScenario();
+
+
+    }
+
+    public int getMoneyInfluence(){
+        return currSquare.getCashInfluence();
+
+    }
+
+
+    public void updateCurrSquare(int totalEye){
+
+        switch (totalEye){
+            case 2:
+                currSquare = squareList[0];
+                break;
+            case 3:
+                currSquare = squareList[1];
+                break;
+            case 4:
+                currSquare = squareList[2];
+                break;
+            case 5:
+                currSquare = squareList[3];
+                break;
+            case 6:
+                currSquare = squareList[4];
+                break;
+            case 7:
+                currSquare = squareList[5];
+                break;
+            case 8:
+                currSquare = squareList[6];
+                break;
+            case 9:
+                currSquare = squareList[7];
+                break;
+            case 10:
+                currSquare = squareList[8];
+                break;
+            case 11:
+                currSquare = squareList[9];
+                break;
+            case 12:
+                currSquare = squareList[10];
+                break;
+            default:
+                currSquare = null;
+
+        }
+    }
 }
 

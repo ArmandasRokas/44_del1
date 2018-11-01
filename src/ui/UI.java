@@ -35,11 +35,11 @@ public class UI {
 
             switch (input.toLowerCase()){
                 case "1":
-                    game.roll();
+                    game.playRound();
                     System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
                     printCurrScores();
 
-                    if(game.diceHasSameValue()) {
+                    if(false) {
                         System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
                     }
                     break;
@@ -56,7 +56,7 @@ public class UI {
                 activeGame = false;
                 System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
             }
-            game.switchPlayer();
+     //       game.switchPlayer();
         }
         System.out.println();
         System.out.println("Spillets resultat blev:");

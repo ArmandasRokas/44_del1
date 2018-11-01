@@ -1,5 +1,6 @@
 package controller;
 
+import model.Board;
 import model.Die;
 import model.Player;
 
@@ -11,6 +12,17 @@ import static util.GameTool.randomIntValue;
 public class Game {
     private Player p1, p2, currPlayer;      //Instances of Player
     private Die d1, d2;                     //Instances of Die
+    private Board board;
+    private String currScenario;
+    private int currMoneyInfluence;
+
+    public String getCurrScenario() {
+        return currScenario;
+    }
+
+    public int getCurrMoneyInfluence() {
+        return currMoneyInfluence;
+    }
 
     /**
      * Constructor of Game class
@@ -21,16 +33,25 @@ public class Game {
         this.d1 = new Die(1,6);
         this.d2 = new Die(1,6);
         this.currPlayer = p1;
+        this.board = new Board(11);
     }
 
     /**
      * This method rolls two dices and adds score to player
      */
-    public void roll() {
+    public void playRound() {  // Måske ændre navn til newRound() ?
         d1.rollDie();
         d2.rollDie();
 
-        this.currPlayer.addToScore(getCurrentRollScore());
+        int totalEye = getCurrentRollScore();
+
+        board.updateCurrSquare(totalEye);
+
+        this.currScenario = board.getCurrScenerio();
+        this.currMoneyInfluence = board.getMoneyInfluence();
+
+
+        this.currPlayer.addToScore(getCurrentRollScore()); // skal opdateres
     }
 
 

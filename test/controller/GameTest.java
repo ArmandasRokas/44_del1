@@ -32,7 +32,7 @@ class GameTest {
 
         // Act
         for(int i = 0; i < 100000; i++) {
-            roll.roll();
+            roll.playRound();
             int num = roll.getCurrentRollScore();
 
             assertTrue(num > 1 && num < 13);
@@ -103,7 +103,7 @@ class GameTest {
 
         //Act
         startTime = System.currentTimeMillis();
-        game.roll();
+        game.playRound();
         System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
         endTime = System.currentTimeMillis();
         timeResultForFirstRoll = endTime - startTime;
@@ -112,7 +112,7 @@ class GameTest {
         for (int i = 0; i<1000; i++){
             startTime = System.currentTimeMillis();
 
-            game.roll();
+            game.playRound();
             System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
             endTime = System.currentTimeMillis();
             timeResultForAnotherRolls =  endTime - startTime;
