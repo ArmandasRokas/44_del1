@@ -11,15 +11,13 @@ public class Game {
     private Player p1, p2, currPlayer;      //Instances of Player
     private Die d1, d2;                     //Instances of Die
     private Board board;
-    private String currScenario;
-    private int currMoneyInfluence;
 
     public String getCurrScenario() {
-        return currScenario;
+        return board.getCurrScenerio();
     }
 
     public int getCurrMoneyInfluence() {
-        return currMoneyInfluence;
+        return board.getCurrMoneyInfluence();
     }
 
     /**
@@ -44,9 +42,6 @@ public class Game {
         int totalEye = getCurrentRollScore();
 
         board.updateCurrSquare(totalEye);
-
-        this.currScenario = board.getCurrScenerio();
-        this.currMoneyInfluence = board.getCurrMoneyInfluence();
 
 
         this.currPlayer.addToScore(getCurrentRollScore()); // skal opdateres
