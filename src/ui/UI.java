@@ -20,6 +20,7 @@ public class UI {
         game = new Game();
     }
 
+
     /**Starts the dice game
      *
      */
@@ -29,7 +30,7 @@ public class UI {
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println("Nu er det " + game.getCurrentplayer().getNumber() +"'s tur.");
+            System.out.println("Nu er det " + game.getCurrentplayer().getNumber() +"'s tur."); //TODO skal laves om at den kalder kun game classe.
             System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
             String input = scan.nextLine();
 
@@ -52,7 +53,7 @@ public class UI {
                     System.out.println("Forkert input, prøv igen.");
                     break;
             }
-            if (game.getCurrentplayer().getTotalScore() >= 40){
+            if (game.getCurrentplayer().getTotalScore() >= 40){ //TODO skal laves en metod isCurPlayerWinner
                 activeGame = false;
                 System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
             }
