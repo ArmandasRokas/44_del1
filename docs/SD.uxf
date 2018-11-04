@@ -246,11 +246,11 @@ layer=3</panel_attributes>
     <coordinates>
       <x>344</x>
       <y>208</y>
-      <w>184</w>
+      <w>240</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-getCurrentRollScore()</panel_attributes>
+totalEye = getCurrentRollScore()</panel_attributes>
     <additional_attributes>30.0;40.0;80.0;40.0;80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -358,5 +358,29 @@ layer=2</panel_attributes>
     <panel_attributes>lt=&lt;.
 moneyInfluence</panel_attributes>
     <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>872</x>
+      <y>448</y>
+      <w>16</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>344</y>
+      <w>376</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+updateCurrSquare(totalEye)
+layer=2</panel_attributes>
+    <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
