@@ -185,31 +185,6 @@ rollDie()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>344</x>
-      <y>344</y>
-      <w>376</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-updateCurrSquare(totalEye)
-layer=2</panel_attributes>
-    <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>344</x>
-      <y>472</y>
-      <w>376</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-scenario</panel_attributes>
-    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>344</x>
       <y>568</y>
       <w>376</w>
       <h>32</h>
@@ -228,19 +203,6 @@ moneyInfluence</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-
 getCurrMoneyInfluence()
-layer=2</panel_attributes>
-    <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>344</x>
-      <y>416</y>
-      <w>376</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-currScenario = getCurrScenerio()
 layer=2</panel_attributes>
     <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -266,42 +228,6 @@ playRound()</panel_attributes>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>872</x>
-      <y>448</y>
-      <w>16</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>712</x>
-      <y>432</y>
-      <w>176</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-getScenerio()
-layer=2</panel_attributes>
-    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>712</x>
-      <y>456</y>
-      <w>176</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-scenario</panel_attributes>
-    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
