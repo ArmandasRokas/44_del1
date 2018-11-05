@@ -44,7 +44,9 @@ public class Game {
         board.updateCurrSquare(totalEye);
 
 
-        this.currPlayer.addToScore(getCurrentRollScore()); // skal opdateres så den bruger getCurrMoneyInfluence
+        int currMoneyInfluence = this.getCurrMoneyInfluence();
+
+        this.currPlayer.addToScore(currMoneyInfluence); // skal opdateres så den bruger getCurrMoneyInfluence
     }
 
 
