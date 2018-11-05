@@ -1,7 +1,6 @@
 package ui;
 
 import controller.Game;
-import ui.UI;
 import util.GameTool;
 
 public class Main {
@@ -42,7 +41,7 @@ public class Main {
 
         game.playRound();
 
-        System.out.println(game.getCurrScenario() + " " + game.getCurrMoneyInfluence());
+        System.out.println(game.getCurrScenario() + " " + game.getCurrCashInfluence());
 
         }
 
