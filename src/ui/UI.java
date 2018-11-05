@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class UI {
 
     private Game game;
-    private ArrayList<String> printValues;
+    private ArrayList<String> menuValues;
 
     /**
      * Constructor of UI and initializes Game
@@ -30,18 +30,14 @@ public class UI {
      */
     public void startDicegame(){
 
-        try {
-            printValues = GameTool.readFromFile("DK");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadMenuValues();
 
         boolean activeGame = true;
-        System.out.println("Velkommen til vores terningespil!");
+        System.out.println(menuValues.get(0));
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println("Nu er det " + game.getCurrentplayer().getNumber() +"'s tur."); //TODO skal laves om at den kalder kun game classe.
+            System.out.println(menuValues.get(1) + game.getCurrentplayer().getNumber() + menuValues.get(2)); //TODO skal laves om at den kalder kun game classe.
             System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
             String input = scan.nextLine();
 
@@ -79,5 +75,15 @@ public class UI {
     public void printCurrScores() {
         System.out.println("Spiller 1 har: " + game.getP1().getTotalScore() + " points.");
         System.out.println("Spiller 2 har: " + game.getP2().getTotalScore() + " points.");
+    }
+
+    public void loadMenuValues(){
+
+        try {
+            menuValues = GameTool.readFromFile("DK_UI");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
