@@ -1,7 +1,10 @@
 package ui;
 
 import controller.Game;
+import util.GameTool;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**@author Hold 44
@@ -11,7 +14,8 @@ import java.util.Scanner;
  */
 public class UI {
 
-    Game game;
+    private Game game;
+    private ArrayList<String> printValues;
 
     /**
      * Constructor of UI and initializes Game
@@ -25,6 +29,13 @@ public class UI {
      *
      */
     public void startDicegame(){
+
+        try {
+            printValues = GameTool.readFromFile("DK");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         boolean activeGame = true;
         System.out.println("Velkommen til vores terningespil!");
         Scanner scan = new Scanner(System.in);

@@ -23,11 +23,11 @@ public class GameTool {
     }
 
 
-    public static ArrayList<String> readFromFile()  throws IOException{
+    public static ArrayList<String> readFromFile(String filename)  throws IOException{
 
         ArrayList<String> list = new ArrayList<String>();
 
-            String file ="languages\\DK.txt";
+            String file ="languages\\"+filename+".txt";
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String currentLine = reader.readLine();
             while (currentLine != null){
