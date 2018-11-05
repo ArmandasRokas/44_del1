@@ -9,13 +9,18 @@ public class Account {
 
 
     public void addToCash(int cashInfluence) {
-
-        if(totalCash < cashInfluence) {
+        this.totalCash = this.totalCash + cashInfluence;
+        if(this.totalCash < 0) {
             this.totalCash = 0;
         }
-        else {
-            this.totalCash = this.totalCash+cashInfluence;
-        }
+
+
+//        if(totalCash < cashInfluence && cashInfluence < 0) {
+//            this.totalCash = 0;
+//        }
+//        else {
+//            this.totalCash = this.totalCash+cashInfluence;
+//        }
     }
 
     public int getTotalCash() {
