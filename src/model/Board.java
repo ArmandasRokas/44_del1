@@ -42,7 +42,7 @@ public class Board {
         squareList[5] = new Square(content.get(6),0);
         squareList[6] = new Square(content.get(7),-70);
         squareList[7] = new Square(content.get(8),60);
-        squareList[8] = new Square(content.get(9),-80);
+        squareList[8] = new Square(content.get(9),-80, true);
         squareList[9] = new Square(content.get(10),-50);
         squareList[10] = new Square(content.get(11),650);
 
