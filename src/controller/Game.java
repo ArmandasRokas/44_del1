@@ -49,6 +49,39 @@ public class Game {
         this.currPlayer.addToCash(currCashInfluence); // skal opdateres så den bruger getCurrCashInfluence
     }
 
+    /**
+     * Method to control if a winner has been found.
+     *
+     * @return  boolean of if winner has been found.
+     */
+    public boolean winnerFound() {
+        boolean res = false;
+        if(currPlayer.getTotalCash() >= 3000) {
+            res = true;
+        }
+        return res;
+    }
+
+    /**
+     * Set up round for next player
+     */
+    public void endRound() {
+        if(!board.checkExtraTurn()) {
+            this.changePlayer();
+        }
+    }
+
+    /**
+     * Changes current player
+     */
+    private void changePlayer() {
+        if(currPlayer.equals(p1)) {
+            this.currPlayer = p2;
+        } else if(currPlayer.equals(p2)) {
+            this.currPlayer = p1;
+        }
+    }
+
 
     /**
      * Add the eyes of the two dices

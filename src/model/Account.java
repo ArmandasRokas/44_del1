@@ -15,7 +15,7 @@ public class Account {
         }
 
 
-//        if(totalCash < cashInfluence && cashInfluence < 0) {
+//        if(totalCash < (0 - cashInfluence) && cashInfluence < 0) {
 //            this.totalCash = 0;
 //        }
 //        else {
