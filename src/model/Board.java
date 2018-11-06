@@ -23,7 +23,7 @@ public class Board {
 
 
         try {
-            content = GameTool.readFromFile("DK_scenarios");
+            content = GameTool.readFromFile("EN_scenarios");
         } catch (IOException e) {
             e.printStackTrace();
         }
