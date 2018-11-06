@@ -15,13 +15,14 @@ import java.util.Scanner;
 public class UI {
 
     private Game game;
-    private ArrayList<String> menuValues;
+    private ArrayList<String> content;
 
     /**
      * Constructor of UI and initializes Game
      */
     public UI() {
         game = new Game();
+        loadContent();
     }
 
 
@@ -30,14 +31,12 @@ public class UI {
      */
     public void startDicegame(){
 
-        loadMenuValues();
-
         boolean activeGame = true;
-        System.out.println(menuValues.get(0));
+        System.out.println(content.get(1));
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println(menuValues.get(1) + game.getCurrentplayer().getNumber() + menuValues.get(2)); //TODO skal laves om at den kalder kun game classe.
+            System.out.println(content.get(2) + game.getCurrentplayer().getNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
             System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
             String input = scan.nextLine();
 
@@ -77,10 +76,10 @@ public class UI {
         System.out.println("Spiller 2 har: " + game.getP2().getTotalScore() + " points.");
     }
 
-    public void loadMenuValues(){
+    public void loadContent(){
 
         try {
-            menuValues = GameTool.readFromFile("DK_UI");
+            content = GameTool.readFromFile("DK_UI");
         } catch (IOException e) {
             e.printStackTrace();
         }
