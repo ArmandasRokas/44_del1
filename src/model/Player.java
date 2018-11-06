@@ -6,8 +6,8 @@ package model;
  * Defines Player class and all if its attributes
  */
 public class Player {
-    private int totalCash; //Totalscore of player
     private String number;  //Number of player
+    private Account account;
 
     /**
      * Constructor for player
@@ -15,7 +15,7 @@ public class Player {
      * @param number    Player number
      */
     public Player(String number){
-        this.totalCash = 0;
+        this.account = new Account();
         this.number = number;
     }
 
@@ -25,14 +25,11 @@ public class Player {
      * @return  total score of Player
      */
     public int getTotalCash() {
-        return totalCash;
+        return account.getTotalCash();
     }
-    public void setTotalCash(int totalCash){
-        this.totalCash = totalCash;
-    }
-    public int addToCash(int roll){
-        this.totalCash = totalCash + roll;
-        return totalCash;
+
+    public void addToCash(int cashInfluence){
+        this.account.addToCash(cashInfluence);
     }
 
     /**

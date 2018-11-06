@@ -16,20 +16,15 @@ public class Board {
         squareList = new Square[squareAmount];
         loadContent();
         this.setBoard();
-
     }
 
     public void loadContent(){
-
-
         try {
             content = GameTool.readFromFile("EN_scenarios");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 
     private void setBoard() {
         squareList[0] = new Square(content.get(1),250);
@@ -40,26 +35,21 @@ public class Board {
         squareList[5] = new Square(content.get(6),0);
         squareList[6] = new Square(content.get(7),-70);
         squareList[7] = new Square(content.get(8),60);
-        squareList[8] = new Square( content.get(9),-80, true);
-        squareList[9] = new Square( content.get(10),-50);
+        squareList[8] = new Square(content.get(9),-80, true);
+        squareList[9] = new Square(content.get(10),-50);
         squareList[10] = new Square(content.get(11),650);
     }
 
     public String getCurrScenerio(){
-
         return currSquare.getScenario();
-
-
     }
 
     public int getCurrCashInfluence(){
         return currSquare.getCashInfluence();
-
     }
 
 
     public void updateCurrSquare(int totalEye){
-
         switch (totalEye){
             case 2:
                 currSquare = squareList[0];
@@ -96,7 +86,6 @@ public class Board {
                 break;
             default:
                 currSquare = null;
-
         }
     }
 

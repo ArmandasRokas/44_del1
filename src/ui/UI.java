@@ -46,6 +46,7 @@ public class UI {
                     System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
                     printCurrScores();
 
+                    //TODO Hvorfor er dette altid false?
                     if(false) {
                         System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
                     }
