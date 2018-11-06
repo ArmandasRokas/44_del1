@@ -1,9 +1,14 @@
 package model;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Board {
     private Square squareList[];
-
     private Square currSquare;
+    private ArrayList<String> content;
+
+
 
     public Board(int squareAmount) {
         squareList = new Square[squareAmount];
@@ -12,6 +17,8 @@ public class Board {
 
 
     }
+
+
 
 
     private void setBoard() {
