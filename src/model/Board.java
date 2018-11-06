@@ -1,5 +1,8 @@
 package model;
 
+import util.GameTool;
+
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -14,7 +17,18 @@ public class Board {
         squareList = new Square[squareAmount];
 
         this.setBoard();
+        loadContent();
 
+    }
+
+    public void loadContent(){
+
+
+        try {
+            content = GameTool.readFromFile("DK_scenarios");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -22,17 +36,17 @@ public class Board {
 
 
     private void setBoard() {
-        squareList[0] = new Square("Tower",250);
-        squareList[1] = new Square("Crater",-100);
-        squareList[2] = new Square("Palace gates",100);
-        squareList[3] = new Square("Cold Desert",-20);
-        squareList[4] = new Square("Walled city",180);
-        squareList[5] = new Square("Monastery",0);
-        squareList[6] = new Square("Black cave",-70);
-        squareList[7] = new Square("Huts in the mountain",60);
-        squareList[8] = new Square("The Werewall (extra turn)",-80);
-        squareList[9] = new Square("The pit",-50);
-        squareList[10] = new Square("Goldmine",650);
+        squareList[0] = new Square(content.get(1),250);
+        squareList[1] = new Square(content.get(2),-100);
+        squareList[2] = new Square(content.get(3),100);
+        squareList[3] = new Square(content.get(4),-20);
+        squareList[4] = new Square(content.get(5),180);
+        squareList[5] = new Square(content.get(6),0);
+        squareList[6] = new Square(content.get(7),-70);
+        squareList[7] = new Square(content.get(8),60);
+        squareList[8] = new Square(content.get(9),-80);
+        squareList[9] = new Square(content.get(10),-50);
+        squareList[10] = new Square(content.get(11),650);
 
     }
 
