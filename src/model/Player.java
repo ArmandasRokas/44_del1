@@ -6,7 +6,7 @@ package model;
  * Defines Player class and all if its attributes
  */
 public class Player {
-    private int totalScore; //Totalscore of player
+    private int totalCash; //Totalscore of player
     private String number;  //Number of player
 
     /**
@@ -15,7 +15,7 @@ public class Player {
      * @param number    Player number
      */
     public Player(String number){
-        this.totalScore = 0;
+        this.totalCash = 0;
         this.number = number;
     }
 
@@ -24,15 +24,15 @@ public class Player {
      *
      * @return  total score of Player
      */
-    public int getTotalScore() {
-        return totalScore;
+    public int getTotalCash() {
+        return totalCash;
     }
-    public void setTotalScore(int totalScore){
-        this.totalScore = totalScore;
+    public void setTotalCash(int totalCash){
+        this.totalCash = totalCash;
     }
-    public int addToScore(int roll){
-        this.totalScore = totalScore + roll;
-        return totalScore;
+    public int addToCash(int roll){
+        this.totalCash = totalCash + roll;
+        return totalCash;
     }
 
     /**

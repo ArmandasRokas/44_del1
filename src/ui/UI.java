@@ -59,7 +59,7 @@ public class UI {
                     System.out.println("Forkert input, prøv igen.");
                     break;
             }
-            if (game.getCurrentplayer().getTotalScore() >= 40){ //TODO skal laves en metod isCurPlayerWinner
+            if (game.getCurrentplayer().getTotalCash() >= 40){ //TODO skal laves en metod isCurPlayerWinner
                 activeGame = false;
                 System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
             }
@@ -72,18 +72,8 @@ public class UI {
     }
 
     public void printCurrScores() {
-        System.out.println("Spiller 1 har: " + game.getP1().getTotalScore() + " points.");
-        System.out.println("Spiller 2 har: " + game.getP2().getTotalScore() + " points.");
-    }
-
-    public void loadContent(){
-
-        try {
-            content = GameTool.readFromFile("DK_UI");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        System.out.println("Spiller 1 har: " + game.getP1().getTotalCash() + " points.");
+        System.out.println("Spiller 2 har: " + game.getP2().getTotalCash() + " points.");
     }
 
     public void loadContent(){
