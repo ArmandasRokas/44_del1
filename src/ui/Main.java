@@ -9,12 +9,12 @@ public class Main {
     public static void main(String[] args) {
       //  testRoll();
 
-        UI ui = new UI();
-        ui.startDicegame();
+    //    UI ui = new UI();
+    //    ui.startDicegame();
 
 
 
-        //    testBoard();
+            testBoard();
 
 
     }
