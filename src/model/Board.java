@@ -55,7 +55,7 @@ public class Board {
 
     }
 
-    public int getCurrCashInfluence(){
+    public int getCurrMoneyInfluence(){
         return currSquare.getCashInfluence();
 
     }
