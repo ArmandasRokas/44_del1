@@ -1,9 +1,8 @@
 package controller;
 
+import model.Board;
 import model.Die;
 import model.Player;
-
-import java.util.Random;
 
 /**@author Hold 44
  * Defines Game and all its global variables
@@ -11,6 +10,15 @@ import java.util.Random;
 public class Game {
     private Player p1, p2, currPlayer;      //Instances of Player
     private Die d1, d2;                     //Instances of Die
+    private Board board;
+
+    public String getCurrScenario() {
+        return board.getCurrScenerio();
+    }
+
+    public int getCurrCashInfluence() {
+        return board.getCurrCashInfluence();
+    }
 
     /**
      * Constructor of Game class
@@ -18,34 +26,29 @@ public class Game {
     public Game() {
         this.p1 = new Player("Spiller 1");
         this.p2 = new Player("Spiller 2");
-        this.d1 = new Die();
-        this.d2 = new Die();
+        this.d1 = new Die(1,6);
+        this.d2 = new Die(1,6);
         this.currPlayer = p1;
+        this.board = new Board(11);
     }
 
     /**
      * This method rolls two dices and adds score to player
      */
-    public void roll() {
-        d1.setEyes(randomValue());
-        d2.setEyes(randomValue());
+    public void playRound() {  // Måske ændre navn til newRound() ?
+        d1.rollDie();
+        d2.rollDie();
 
-        this.currPlayer.addToScore(getCurrentRollScore());
+        int totalEye = getCurrentRollScore();
+
+        board.updateCurrSquare(totalEye);
+
+
+        int currCashInfluence = this.getCurrCashInfluence();
+
+        this.currPlayer.addToCash(currCashInfluence); // skal opdateres så den bruger getCurrCashInfluence
     }
 
-    /**
-     * Calculates a random value between 1 and 6
-     *
-     * @return  Random integer between 1 and 6
-     */
-    public int randomValue() {
-        Random r = new Random();
-
-        int randomNum = r.nextInt(6); // 0-5
-        int finalNum = randomNum + 1;        // 1-6
-
-        return finalNum;
-    }
 
     /**
      * Add the eyes of the two dices
@@ -56,31 +59,7 @@ public class Game {
         return d1.getEyes() + d2.getEyes();
     }
 
-    /**
-     * Checks of the dices have the same value
-     *
-     * @return True if they are the same, else false
-     */
-    public boolean diceHasSameValue() {
-        if (d1.getEyes() == d2.getEyes()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
-    /**
-     * Checks dices for the same value, if false Switch player
-     */
-    public void switchPlayer() {
-        if(!diceHasSameValue()){
-            if (currPlayer.equals(p1)) {
-                currPlayer = p2;
-            } else if (currPlayer.equals(p2)) {
-                currPlayer = p1;
-            }
-        }
-    }
 
     /**
      * Get methods to get instance of Player
