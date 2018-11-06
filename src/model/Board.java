@@ -102,5 +102,9 @@ public class Board {
 
         }
     }
+
+    public boolean checkExtraTurn() {
+        return currSquare.checkExtraTurn();
+    }
 }
 
