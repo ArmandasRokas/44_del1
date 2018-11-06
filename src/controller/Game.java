@@ -16,8 +16,8 @@ public class Game {
         return board.getCurrScenerio();
     }
 
-    public int getCurrMoneyInfluence() {
-        return board.getCurrMoneyInfluence();
+    public int getCurrCashInfluence() {
+        return board.getCurrCashInfluence();
     }
 
     /**
@@ -44,7 +44,9 @@ public class Game {
         board.updateCurrSquare(totalEye);
 
 
-        this.currPlayer.addToScore(getCurrentRollScore()); // skal opdateres så den bruger getCurrMoneyInfluence
+        int currCashInfluence = this.getCurrCashInfluence();
+
+        this.currPlayer.addToCash(currCashInfluence); // skal opdateres så den bruger getCurrCashInfluence
     }
 
 
