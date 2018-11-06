@@ -1,20 +1,21 @@
 package ui;
 
 import controller.Game;
+import ui.UI;
 import util.GameTool;
+
 
 public class Main {
 
     public static void main(String[] args) {
       //  testRoll();
 
-       // UI ui = new UI();
-       // ui.startDicegame();
+    //    UI ui = new UI();
+    //    ui.startDicegame();
 
 
 
-
-        testBoard();
+            testBoard();
 
 
     }
@@ -41,7 +42,7 @@ public class Main {
 
         game.playRound();
 
-        System.out.println(game.getCurrScenario() + " " + game.getCurrCashInfluence());
+        System.out.println(game.getCurrScenario() + " " + game.getCurrMoneyInfluence());
 
         }
 

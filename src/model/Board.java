@@ -1,40 +1,48 @@
 package model;
 
+import util.GameTool;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Board {
     private Square squareList[];
-
     private Square currSquare;
+    private ArrayList<String> content;
+
+
 
     public Board(int squareAmount) {
         squareList = new Square[squareAmount];
-
+        loadContent();
         this.setBoard();
+
+    }
+
+    public void loadContent(){
+
+
+        try {
+            content = GameTool.readFromFile("EN_scenarios");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
     private void setBoard() {
-        squareList[0] = new Square("Tower",250);
-        squareList[1] = new Square("Crater",-100);
-        squareList[2] = new Square("Palace gates",100);
-        squareList[3] = new Square("Cold Desert",-20);
-        squareList[4] = new Square("Walled city",180);
-        squareList[5] = new Square("Monastery",0);
-        squareList[6] = new Square("Black cave",-70);
-        squareList[7] = new Square("Huts in the mountain",60);
-        squareList[8] = new Square( "The Werewall (extra turn)",-80, true);
-        squareList[9] = new Square( "The pit",-50);
-        squareList[10] = new Square("Goldmine",650);
-//        squareList[0] = new Square(2,"Tower",250);
-//        squareList[1] = new Square(3, "Crater",-100);
-//        squareList[2] = new Square(4, "Palace gates",100);
-//        squareList[3] = new Square(5, "Cold Desert",-20);
-//        squareList[4] = new Square(6, "Walled city",180);
-//        squareList[5] = new Square(7, "Monastery",0);
-//        squareList[6] = new Square(8, "Black cave",-70);
-//        squareList[7] = new Square(9, "Huts in the mountain",60);
-//        squareList[8] = new Square(10, "The Werewall (extra turn)",-80);
-//        squareList[9] = new Square(11, "The pit",-50);
-//        squareList[10] = new Square(12, "Goldmine",650);
+        squareList[0] = new Square(content.get(1),250);
+        squareList[1] = new Square(content.get(2),-100);
+        squareList[2] = new Square(content.get(3),100);
+        squareList[3] = new Square(content.get(4),-20);
+        squareList[4] = new Square(content.get(5),180);
+        squareList[5] = new Square(content.get(6),0);
+        squareList[6] = new Square(content.get(7),-70);
+        squareList[7] = new Square(content.get(8),60);
+        squareList[8] = new Square( content.get(9),-80, true);
+        squareList[9] = new Square( content.get(10),-50);
+        squareList[10] = new Square(content.get(11),650);
     }
 
     public String getCurrScenerio(){
