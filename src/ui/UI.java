@@ -77,6 +77,8 @@ public class UI {
         System.out.println("Spiller 2 har: " + game.getP2().getTotalCash() + " points.");
     }
 
+    //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service layer
+
     public void loadContent(){
 
         try {
