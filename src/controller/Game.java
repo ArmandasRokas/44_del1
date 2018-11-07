@@ -54,6 +54,7 @@ public class Game {
      *
      * @return  boolean of if winner has been found.
      */
+    //TODO skal overvejes til at flytte metodens loggiken til Player class
     public boolean winnerFound() {
         boolean res = false;
         if(currPlayer.getTotalCash() >= 3000) {

@@ -27,7 +27,7 @@ public class GameTool {
     public static ArrayList<String> readFromFile(String filename) throws IOException{
 
         ArrayList<String> list = new ArrayList<String>();
-        list.add("spacing....."); // add element to 0 index
+        list.add("spacing....."); // add an element to 0 index
 
         String file ="languages\\"+filename+".txt";
 
