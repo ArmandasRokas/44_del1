@@ -38,7 +38,7 @@ public class GameTool {
 
         String file ="languages\\"+filename+".txt"; // inserting filename parameter to the whole file name declaration
 
-        BufferedReader reader = new BufferedReader(new FileReader(file));
+        BufferedReader reader = new BufferedReader(new FileReader(file));  // creates reader object with file, that is declarated a line before
         String currentLine = reader.readLine();  // reads a line
         while (currentLine != null){ // runs loop until the current line is not empty.
             values.add(currentLine);   // add line as an element to the array list
