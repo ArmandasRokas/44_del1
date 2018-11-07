@@ -25,9 +25,18 @@ class AccountTest {
         testPlayer.addToCash(-10);
         int cashAfterNegativeValue = testPlayer.getTotalCash();
 
+
+        //Checks if the Player's Account's getTotalCash starts with 1000, as it is requested
         assertEquals(1000, startingCash);
+
+        //Checks if addToCash works when a negative cashInfluence is added and the Player's Account's totalCash does not go into the negative
         assertEquals(1, cashAfterNegativeInput);
+
+        //Checks if addToCash works when adding a cashInfluence with the negative value of the Player's Account's totalCash
         assertEquals(0, cashAtZero);
+
+        //Checks if addToCash stops at 0, as is requested, when adding a negative cashInfluence, which should supposedly
+        // make the Player's Account's totalCash go into the negative had no precautions for this been made.
         assertEquals(0, cashAfterNegativeValue);
     }
 }
