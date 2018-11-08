@@ -52,12 +52,22 @@ public class UI {
                     game.playRound();
                     System.out.println(game.getCurrPlayerNumber() + content.get(5)  + game.getCurrentRollScore());
                     System.out.println(content.get(6) + " " + game.getCurrScenario() + content.get(7) + " " + game.getCurrCashInfluence());
-                    printCurrScores();
 
-                    //TODO Hvorfor er dette altid false?
-                    if(false) {
-                        System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
+                    if(game.checkExtraTurn()) {
+                        System.out.println(content.get(8));
+                        System.out.println();
+                    } else {
+                        System.out.println();
+                        printCurrScores();
+                        System.out.println();
                     }
+
+                    if (game.winnerFound()){
+                        activeGame = false;
+                        System.out.println(content.get(9) + " " + game.getCurrPlayerNumber() + content.get(10));
+                    }
+                    game.endRound();
+
                     break;
 
                 case "stop":
@@ -65,24 +75,20 @@ public class UI {
                     break;
 
                 default:
-                    System.out.println("Forkert input, prøv igen.");
+                    System.out.println(content.get(11));
                     break;
             }
-            if (game.winnerFound()){
-                activeGame = false;
-                System.out.println("Tillykke, " + game.getCurrPlayerNumber() + "! Du er vinderen");
-            }
-            game.endRound();
+
         }
         System.out.println();
-        System.out.println("Spillets resultat blev:");
+        System.out.println(content.get(12));
         printCurrScores();
-        System.out.println("Tak for spillet");
+        System.out.println(content.get(13));
     }
 
     public void printCurrScores() {
-        System.out.println("Spiller 1 har: " + game.getPlayerTotalCash(1) + " points.");
-        System.out.println("Spiller 2 har: " + game.getPlayerTotalCash(2) + " points.");
+        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + " points.");
+        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + " points.");
     }
 
     //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service layer

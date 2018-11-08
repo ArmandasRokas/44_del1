@@ -109,5 +109,8 @@ public class Game {
             return p2.getTotalCash();
         }
     }
+    public boolean checkExtraTurn(){
+        return board.checkExtraTurn();
+    }
 }
 
