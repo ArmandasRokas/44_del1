@@ -34,12 +34,10 @@ public class Game {
 
     /**
      * This constructor is just for testing purposes!
-     * @param p1
-     * @param p2
      */
-    public Game(Player p1, Player p2){
+    public Game(Player p1){
         this.p1 = p1;
-        this.p2 = p2;
+        this.p2 = new Player("Spiller 2");
         this.d1 = new Die(1,6);
         this.d2 = new Die(1,6);
         this.currPlayer = p1;

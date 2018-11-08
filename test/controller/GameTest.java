@@ -124,17 +124,22 @@ class GameTest {
         assertTrue(timeResultForFirstRoll<100, "Time took: " + timeResultForFirstRoll);
     }
 
+    /**
+     * Test case:
+     * Test if winnerFound() method in Game class returns true,
+     * when a current player reaches 3000 or above
+     */
+
     @Test
     void winnerFoundTest() {
 
         // Arrange
 
         Player p1 = new Player("1");
-        Player p2 = new Player("2");
         p1.addToCash(1999);
 
 
-        Game testGame = new Game(p1, p2);  // current player: 1
+        Game testGame = new Game(p1);  // current player: 1
 
         // Act
 
