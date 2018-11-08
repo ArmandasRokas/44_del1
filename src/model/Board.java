@@ -41,7 +41,7 @@ public class Board {
     }
 
     public String getCurrScenerio(){
-        return currSquare.toString();
+        return currSquare.getScenario();
     }
 
     public int getCurrCashInfluence(){

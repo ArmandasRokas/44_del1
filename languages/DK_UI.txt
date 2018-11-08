@@ -4,3 +4,4 @@ Nu er det
 Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.
  har slået:
 Du står på felt
+. Din konto blev opdateret med:

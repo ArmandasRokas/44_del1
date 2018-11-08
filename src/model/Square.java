@@ -30,7 +30,4 @@ public class Square {
         return extraTurn;
     }
 
-    public String toString(){
-        return scenario + " " + cashInfluence;
-    }
 }
