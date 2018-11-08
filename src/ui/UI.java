@@ -33,7 +33,6 @@ public class UI {
         loadContent();
     }
 
-
     /**
      *  Starts the dice game
      */
