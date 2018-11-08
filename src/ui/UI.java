@@ -43,7 +43,7 @@ public class UI {
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
+            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3));
             System.out.println(content.get(4));
             String input = scan.nextLine();
 
@@ -79,6 +79,7 @@ public class UI {
                     break;
             }
 
+
         }
         System.out.println();
         System.out.println(content.get(12));
@@ -87,8 +88,8 @@ public class UI {
     }
 
     public void printCurrScores() {
-        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + " points.");
-        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + " points.");
+        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + "$");
+        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + "$");
     }
 
     //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service layer
