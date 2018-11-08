@@ -91,7 +91,6 @@ public class UI {
     }
 
     //#TODO Consideration for next time: Create new class "UI_Content" in domain model, because now it has directly association with technical service
-
     /**
      * Loads the UI outputs from hardcoded filename
      */

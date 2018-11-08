@@ -129,19 +129,15 @@ class GameTest {
      * Tests if winnerFound() method in Game class returns true,
      * when a current player reaches 3000 or above
      */
-
     @Test
     void winnerFoundTest() {
 
         // Arrange
-
         Player p1 = new Player("test player");
         p1.addToCash(1999);
         Game testGame = new Game(p1);  // current player: 1
 
         // Act
-
-
         boolean isPlayer1WinnerWith2999 = testGame.winnerFound();
         p1.addToCash(1); // sets player cash to 3000
         boolean isPlayer1WinnerWith3000 = testGame.winnerFound();
@@ -149,10 +145,8 @@ class GameTest {
         boolean isPlayer1WinnerWith3001 = testGame.winnerFound();
 
         // Assert
-
         assertFalse(isPlayer1WinnerWith2999);
         assertTrue(isPlayer1WinnerWith3000);
         assertTrue(isPlayer1WinnerWith3001);
-
     }
 }
