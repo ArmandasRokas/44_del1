@@ -126,8 +126,8 @@ class GameTest {
 
     /**
      * Test case:
-     * Test if winnerFound() method in Game class returns true,
-     * if a current player reaches 3000 or above
+     * Tests if winnerFound() method in Game class returns true,
+     * when a current player reaches 3000 or above
      */
 
     @Test
@@ -137,8 +137,6 @@ class GameTest {
 
         Player p1 = new Player("1");
         p1.addToCash(1999);
-
-
         Game testGame = new Game(p1);  // current player: 1
 
         // Act

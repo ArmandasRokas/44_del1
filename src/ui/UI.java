@@ -20,7 +20,7 @@ public class UI {
     /**
      * Constructor of UI and initializes Game
      */
-    public UI() {
+    private UI() {
         game = new Game();
         loadContent();
     }
@@ -36,14 +36,14 @@ public class UI {
     /**Starts the dice game
      *
      */
-    public void startDicegame(){
+    private void startDicegame(){
 
         boolean activeGame = true;
         System.out.println(content.get(1));
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
+            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3));
             System.out.println(content.get(4));
             String input = scan.nextLine();
 
@@ -79,6 +79,7 @@ public class UI {
                     break;
             }
 
+
         }
         System.out.println();
         System.out.println(content.get(12));
@@ -86,14 +87,14 @@ public class UI {
         System.out.println(content.get(13));
     }
 
-    public void printCurrScores() {
-        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + " points.");
-        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + " points.");
+    private void printCurrScores() {
+        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + "$");
+        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + "$");
     }
 
-    //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service layer
+    //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service
 
-    public void loadContent(){
+    private void loadContent(){
 
         try {
             content = GameTool.readFromFile("DK_UI");
