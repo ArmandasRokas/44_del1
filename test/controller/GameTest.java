@@ -1,5 +1,7 @@
 package controller;
 
+import model.Die;
+import model.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -120,5 +122,34 @@ class GameTest {
             assertTrue(timeResultForAnotherRolls<50, "Time took: " + timeResultForAnotherRolls);
         }
         assertTrue(timeResultForFirstRoll<100, "Time took: " + timeResultForFirstRoll);
+    }
+
+    @Test
+    void winnerFoundTest() {
+
+        // Arrange
+
+        Player p1 = new Player("1");
+        Player p2 = new Player("2");
+        p1.addToCash(1999);
+
+
+        Game testGame = new Game(p1, p2);  // current player: 1
+
+        // Act
+
+
+        boolean isPlayer1WinnerWith2999 = testGame.winnerFound();
+        p1.addToCash(1); // sets player cash to 3000
+        boolean isPlayer1WinnerWith3000 = testGame.winnerFound();
+        p1.addToCash(1); // sets player cash to 3001
+        boolean isPlayer1WinnerWith3001 = testGame.winnerFound();
+
+        // Assert
+
+        assertFalse(isPlayer1WinnerWith2999);
+        assertTrue(isPlayer1WinnerWith3000);
+        assertTrue(isPlayer1WinnerWith3001);
+
     }
 }

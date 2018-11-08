@@ -33,6 +33,19 @@ public class Game {
     }
 
     /**
+     * This constructor is just for testing purposes!
+     * @param p1
+     * @param p2
+     */
+    public Game(Player p1, Player p2){
+        this.p1 = p1;
+        this.p2 = p2;
+        this.d1 = new Die(1,6);
+        this.d2 = new Die(1,6);
+        this.currPlayer = p1;
+    }
+
+    /**
      * This method rolls two dices and adds score to player
      */
     public void playRound() {  // Måske ændre navn til newRound() ?
