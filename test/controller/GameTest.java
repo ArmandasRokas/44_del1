@@ -18,12 +18,12 @@ class GameTest {
         int count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0,
                 count8 = 0, count9 = 0, count10 = 0, count11 =0, count12 = 0;
         //Expected result of dice rolls, calculated by number of dice rolls times theoretical odds of hitting the numbers
-        int expect2and12 = 100000*(1/36);
-        int expect3and11 = 100000*(2/36);
-        int expect4and10 = 100000*(3/36);
-        int expect5and9 = 100000*(4/36);
-        int expect6and8 = 100000*(5/36);
-        int expect7 = 100000*(6/36);
+        int expect2and12 = (int) (100000*(1.0/36));
+        int expect3and11 = (int) (100000*(2.0/36));
+        int expect4and10 = (int) (100000*(3.0/36));
+        int expect5and9 = (int)  (100000*(4.0/36));
+        int expect6and8 = (int)  (100000*(5.0/36));
+        int expect7 = (int)  (100000*(6.0/36));
         //Expected deviation on 5% of expected result
         int dExpect2and12 = (100000*1/36)*5/100;
         int dExpect3and11 = (100000*2/36)*5/100;
@@ -135,7 +135,7 @@ class GameTest {
 
         // Arrange
 
-        Player p1 = new Player("1");
+        Player p1 = new Player("test player");
         p1.addToCash(1999);
         Game testGame = new Game(p1);  // current player: 1
 
