@@ -25,7 +25,6 @@ public final class GameTool {
         return finalNum;
     }
 
-
     /**
      *  This method reads a text file.
      *
