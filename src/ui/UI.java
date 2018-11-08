@@ -80,8 +80,8 @@ public class UI {
     }
 
     public void printCurrScores() {
-        System.out.println("Spiller 1 har: " + game.getP1().getTotalCash() + " points.");
-        System.out.println("Spiller 2 har: " + game.getP2().getTotalCash() + " points.");
+        System.out.println("Spiller 1 har: " + game.getPlayerTotalCash(1) + " points.");
+        System.out.println("Spiller 2 har: " + game.getPlayerTotalCash(2) + " points.");
     }
 
     //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service layer

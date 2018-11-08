@@ -107,5 +107,12 @@ public class Game {
         return p2;
     }
     public String getCurrPlayerNumber(){ return currPlayer.getNumber(); }
+    public int getPlayerTotalCash(int playerNumber){
+        if (playerNumber == 1){
+            return p1.getTotalCash();
+        } else{
+            return p2.getTotalCash();
+        }
+    }
 }
 
