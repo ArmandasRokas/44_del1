@@ -50,7 +50,8 @@ public class UI {
             switch (input.toLowerCase()){
                 case "1":
                     game.playRound();
-                    System.out.println(game.getCurrPlayerNumber() + " har slået: " + game.getCurrentRollScore());
+                    System.out.println(game.getCurrPlayerNumber() + content.get(5) + game.getCurrentRollScore());
+                    System.out.println(content.get(6) + game.getCurrScenario() + );
                     printCurrScores();
 
                     //TODO Hvorfor er dette altid false?

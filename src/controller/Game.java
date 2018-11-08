@@ -46,7 +46,7 @@ public class Game {
 
         int currCashInfluence = this.getCurrCashInfluence();
 
-        this.currPlayer.addToCash(currCashInfluence); // skal opdateres så den bruger getCurrCashInfluence
+        this.currPlayer.addToCash(currCashInfluence);
     }
 
     /**
@@ -100,12 +100,7 @@ public class Game {
      *
      * @return  Instance of Player
      */
-    public Player getP1() {
-        return p1;
-    }
-    public Player getP2() {
-        return p2;
-    }
+
     public String getCurrPlayerNumber(){ return currPlayer.getNumber(); }
     public int getPlayerTotalCash(int playerNumber){
         if (playerNumber == 1){

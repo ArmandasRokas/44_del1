@@ -2,3 +2,5 @@
 Nu er det 
 `s tur.
 Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.
+ har slået:
+Du står på felt
