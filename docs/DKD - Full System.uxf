@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>54</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>UI
+--
+...
+--
++ startDicegame(): void
++ printCurrScores(): void
++loadContent(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>207</x>
+      <y>0</y>
+      <w>171</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>216</y>
+      <w>54</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=1
+m2=game</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>243</x>
+      <y>54</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Name
+--
+...
+--
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>315</y>
+      <w>189</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+- currPlayer: Player
+--
++ getCurrScenario(): String
++ getCurrCashInfluence(): int
++ playRound(): void
++ winnerFound(): boolean
++ endRound(): void
+- changePlayer(): void
++ getCurrentRollScore(): int
++ getP1(): Player
++ getP2(): Player
++ getCurrentplayer(): Player</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>612</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Board
+--
+- currSquare: Square
+- content: ArrayList&lt;String&gt;
+--
++ loadContent(): void
+- setBoard(): void
++ getCurrScenario(): String
++ updateCurrSquare(int): void
++ checkExtraTurn(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>135</x>
+      <y>612</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+- number: String
+--
++ getTotalCash(): int
++ addToCash(int): void
++ getNumber(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>135</x>
+      <y>864</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+- totalCash: int
+--
++ addToCash(int): void
++ getTotalCash(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>612</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Die
+--
+- eyes: int
+- minEyes: int
+- maxEyes: int
+--
++ getEyes(): int
++ rollDie(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>873</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Square
+--
+- scenario: String
+- cashInfluence: int
+- extraTurn: boolean
+--
++ getScenario(): String
++ getCashInfluence(): int
++ checkExtraTurn(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>504</y>
+      <w>54</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=1
+m2=board</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>549</y>
+      <w>360</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=2
+m2=p1, p2</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>549</y>
+      <w>351</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=2
+m2=d1, d2</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0;330.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>774</y>
+      <w>72</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=1
+m2=account</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>774</y>
+      <w>81</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=1
+m2=squareList</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>594</x>
+      <y>747</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>content -&gt; scenarios?</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
