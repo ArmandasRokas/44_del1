@@ -127,7 +127,7 @@ class GameTest {
     /**
      * Test case:
      * Test if winnerFound() method in Game class returns true,
-     * when a current player reaches 3000 or above
+     * if a current player reaches 3000 or above
      */
 
     @Test
