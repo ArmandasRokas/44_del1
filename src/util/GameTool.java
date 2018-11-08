@@ -6,7 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class GameTool {
+public final class GameTool {
+
+    private GameTool(){ // makes it impossible to initiate
+    }
 
     /**
      * Calculates a random value between min and max
@@ -28,11 +31,11 @@ public class GameTool {
      *
      * @param filename pure name without location or .txt
      * @return an array list with elements which are representing each line in the text file.
-     * @throws IOException
+     * @throws IOException file is missing.
      */
     public static ArrayList<String> readFromFile(String filename) throws IOException{
 
-        ArrayList<String> values = new ArrayList<String>();  // declaring arraylist with name "values"
+        ArrayList<String> values = new ArrayList<>();  // declaring arraylist with name "values"
         values.add("spacing.....");   // add an element to 0 index, so element in index 1 is the same element
                                       // in the list in line number 1. It makes just easier to manage txt file.
 

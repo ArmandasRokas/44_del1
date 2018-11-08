@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Board {
     private Square squareList[];
     private Square currSquare;
-    private ArrayList<String> content;
+    private ArrayList<String> scenerioStrings;
 
 
 
@@ -18,26 +18,26 @@ public class Board {
         this.setBoard();
     }
 
-    public void loadContent(){
+    private void loadContent(){
         try {
-            content = GameTool.readFromFile("EN_scenarios");
+            scenerioStrings = GameTool.readFromFile("EN_scenarios");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void setBoard() {
-        squareList[0] = new Square(content.get(1),250);
-        squareList[1] = new Square(content.get(2),-100);
-        squareList[2] = new Square(content.get(3),100);
-        squareList[3] = new Square(content.get(4),-20);
-        squareList[4] = new Square(content.get(5),180);
-        squareList[5] = new Square(content.get(6),0);
-        squareList[6] = new Square(content.get(7),-70);
-        squareList[7] = new Square(content.get(8),60);
-        squareList[8] = new Square(content.get(9),-80, true);
-        squareList[9] = new Square(content.get(10),-50);
-        squareList[10] = new Square(content.get(11),650);
+        squareList[0] = new Square(scenerioStrings.get(1),250);
+        squareList[1] = new Square(scenerioStrings.get(2),-100);
+        squareList[2] = new Square(scenerioStrings.get(3),100);
+        squareList[3] = new Square(scenerioStrings.get(4),-20);
+        squareList[4] = new Square(scenerioStrings.get(5),180);
+        squareList[5] = new Square(scenerioStrings.get(6),0);
+        squareList[6] = new Square(scenerioStrings.get(7),-70);
+        squareList[7] = new Square(scenerioStrings.get(8),60);
+        squareList[8] = new Square(scenerioStrings.get(9),-80, true);
+        squareList[9] = new Square(scenerioStrings.get(10),-50);
+        squareList[10] = new Square(scenerioStrings.get(11),650);
     }
 
     public String getCurrScenerio(){
@@ -49,8 +49,8 @@ public class Board {
     }
 
 
-    public void updateCurrSquare(int totalEye){
-        switch (totalEye){
+    public void updateCurrSquare(int totalEyes){
+        switch (totalEyes){
             case 2:
                 currSquare = squareList[0];
                 break;
