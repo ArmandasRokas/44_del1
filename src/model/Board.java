@@ -5,19 +5,31 @@ import util.GameTool;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**@author Hold 44
+ * @version 08/11-2018
+ *
+ * Defines the Board class and all of its fields and methods
+ * Class to represent the playing board and to contain and arrange the squares players can land on
+ */
 public class Board {
     private Square squareList[];
     private Square currSquare;
     private ArrayList<String> scenerioStrings;
 
-
-
+    /**
+     * Constructor for Board
+     *
+     * @param squareAmount  Amounts of square needed to fill the board for a specific game
+     */
     public Board(int squareAmount) {
         squareList = new Square[squareAmount];
         loadContent();
         this.setBoard();
     }
 
+    /**
+     * Loads the scenario descriptions of the squares through a hardcoded filename
+     */
     private void loadContent(){
         try {
             scenerioStrings = GameTool.readFromFile("EN_scenarios");
@@ -26,6 +38,9 @@ public class Board {
         }
     }
 
+    /**
+     * Creates instances of Square to fill the game board and puts them into a list for containment
+     */
     private void setBoard() {
         squareList[0] = new Square(scenerioStrings.get(1),250);
         squareList[1] = new Square(scenerioStrings.get(2),-100);
@@ -40,15 +55,11 @@ public class Board {
         squareList[10] = new Square(scenerioStrings.get(11),650);
     }
 
-    public String getCurrScenerio(){
-        return currSquare.getScenario();
-    }
-
-    public int getCurrCashInfluence(){
-        return currSquare.getCashInfluence();
-    }
-
-
+    /**
+     * Updates the position of the current player after he have rolled the dices
+     *
+     * @param totalEyes Number of eyes on the dices the player have rolled
+     */
     public void updateCurrSquare(int totalEyes){
         switch (totalEyes){
             case 2:
@@ -89,8 +100,22 @@ public class Board {
         }
     }
 
+    /**
+     * Controls if the Square is meant to give the player an extra turn
+     *
+     * @return  Boolean which is true if the player is to get an extra turn, else it is false
+     */
     public boolean checkExtraTurn() {
         return currSquare.checkExtraTurn();
     }
-}
 
+    /**
+     * Get methods of Board class
+     */
+    public String getCurrScenerio(){
+        return currSquare.getScenario();
+    }
+    public int getCurrCashInfluence(){
+        return currSquare.getCashInfluence();
+    }
+}

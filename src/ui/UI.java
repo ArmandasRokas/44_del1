@@ -8,29 +8,29 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**@author Hold 44
- * @version 8/11-2018
+ * @version 08/11-2018
  *
- * Defines the UI class
+ * Defines the UI class and its fields and methods
  * Takes inputs from user and directs it through the system
  */
 public class UI {
-
     private Game game;
     private ArrayList<String> content;
 
     /**
-     * Constructor of UI and initializes Game
+     * main method to start the program
+     */
+    public static void main(String[] args) {
+        UI ui = new UI();
+        ui.startDicegame();
+    }
+
+    /**
+     * Constructor of UI and initializes a game and loads the ui and scenarios for it
      */
     private UI() {
         game = new Game();
         loadContent();
-    }
-
-    public static void main(String[] args) {
-
-        UI ui = new UI();
-        ui.startDicegame();
-
     }
 
 
@@ -38,7 +38,6 @@ public class UI {
      *  Starts the dice game
      */
     private void startDicegame(){
-
         boolean activeGame = true;
         System.out.println(content.get(1));
         Scanner scan = new Scanner(System.in);

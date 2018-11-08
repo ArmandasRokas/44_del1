@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**@author Hold 44
+ * @version 08/11-2018
+ *
+ * Defines the GameTool class and its methods
+ * Package of specific methods chosen to be gathered to simplify the reusability in future projects
+ */
 public final class GameTool {
 
     private GameTool(){ // makes it impossible to initiate
@@ -29,7 +35,7 @@ public final class GameTool {
      *  This method reads a text file.
      *
      * @param filename pure name without location or .txt
-     * @return an array list with elements which are representing each line in the text file.
+     * @return An array list with elements which are representing each line in the text file.
      * @throws IOException file is missing.
      */
     public static ArrayList<String> readFromFile(String filename) throws IOException{

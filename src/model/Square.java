@@ -1,6 +1,9 @@
 package model;
 
-/**
+/**@author Hold 44
+ * @version 08/11-2018
+ *
+ * Defines the Square class and all of its fields and methods
  * Class to represent the squares on which the players land on when they roll the dices
  */
 public class Square {

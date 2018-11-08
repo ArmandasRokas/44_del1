@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
+<diagram program="umlet" version="14.2">
   <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -27,24 +27,25 @@ style=autoresize</panel_attributes>
       <x>455</x>
       <y>70</y>
       <w>30</w>
-      <h>65</h>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 r2=1
 m2=game</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>410</x>
-      <y>125</y>
+      <y>115</y>
       <w>145</w>
-      <h>130</h>
+      <h>135</h>
     </coordinates>
     <panel_attributes>Game
 --
 - currPlayer: Player
+- winCondition: int
 --
 + Game()
 + Game(Player p1)
@@ -166,14 +167,14 @@ style=autoresize</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>455</x>
-      <y>250</y>
+      <y>245</y>
       <w>30</w>
-      <h>50</h>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 r2=1
 m2=board</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
