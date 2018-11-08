@@ -25,6 +25,13 @@ public class UI {
         loadContent();
     }
 
+    public static void main(String[] args) {
+
+        UI ui = new UI();
+        ui.startDicegame();
+
+    }
+
 
     /**Starts the dice game
      *
