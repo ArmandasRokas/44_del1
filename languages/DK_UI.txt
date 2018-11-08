@@ -1,3 +1,4 @@
 ﻿Velkommen til vores terningespil! testing
 Nu er det 
 `s tur.
+Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.

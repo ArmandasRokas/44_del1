@@ -104,7 +104,7 @@ class GameTest {
         //Act
         startTime = System.currentTimeMillis();
         game.playRound();
-        System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+        System.out.println(game.getCurrPlayerNumber()+ " har slået: " + game.getCurrentRollScore());
         endTime = System.currentTimeMillis();
         timeResultForFirstRoll = endTime - startTime;
 
@@ -113,7 +113,7 @@ class GameTest {
             startTime = System.currentTimeMillis();
 
             game.playRound();
-            System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+            System.out.println(game.getCurrPlayerNumber()+ " har slået: " + game.getCurrentRollScore());
             endTime = System.currentTimeMillis();
             timeResultForAnotherRolls =  endTime - startTime;
 

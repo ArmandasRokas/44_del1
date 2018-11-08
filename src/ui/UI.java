@@ -43,14 +43,14 @@ public class UI {
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println(content.get(2) + game.getCurrentplayer().getNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
-            System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
+            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
+            System.out.println(content.get(4));
             String input = scan.nextLine();
 
             switch (input.toLowerCase()){
                 case "1":
                     game.playRound();
-                    System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+                    System.out.println(game.getCurrPlayerNumber() + " har slået: " + game.getCurrentRollScore());
                     printCurrScores();
 
                     //TODO Hvorfor er dette altid false?
@@ -67,11 +67,11 @@ public class UI {
                     System.out.println("Forkert input, prøv igen.");
                     break;
             }
-            if (game.getCurrentplayer().getTotalCash() >= 40){ //TODO skal laves en metod isCurPlayerWinner
+            if (game.winnerFound()){
                 activeGame = false;
-                System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
+                System.out.println("Tillykke, " + game.getCurrPlayerNumber() + "! Du er vinderen");
             }
-     //       game.switchPlayer();
+            game.endRound();
         }
         System.out.println();
         System.out.println("Spillets resultat blev:");

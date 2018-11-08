@@ -106,8 +106,6 @@ public class Game {
     public Player getP2() {
         return p2;
     }
-    public Player getCurrentplayer() {
-        return currPlayer;
-    }
+    public String getCurrPlayerNumber(){ return currPlayer.getNumber(); }
 }
 
