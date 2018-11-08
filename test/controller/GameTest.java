@@ -18,7 +18,7 @@ class GameTest {
         int count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0,
                 count8 = 0, count9 = 0, count10 = 0, count11 =0, count12 = 0;
         //Expected result of dice rolls, calculated by number of dice rolls times theoretical odds of hitting the numbers
-        int expect2and12 = (int) (100000*(1.0/36));
+        int expect2and12 = (double) (100000*(1.0/36));
         int expect3and11 = (int) (100000*(2.0/36));
         int expect4and10 = (int) (100000*(3.0/36));
         int expect5and9 = (int)  (100000*(4.0/36));
