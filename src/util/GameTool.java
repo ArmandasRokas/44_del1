@@ -34,11 +34,9 @@ public final class GameTool {
      * @throws IOException file is missing.
      */
     public static ArrayList<String> readFromFile(String filename) throws IOException{
-
         ArrayList<String> values = new ArrayList<>();  // declaring arraylist with name "values"
         values.add("spacing.....");   // add an element to 0 index, so element in index 1 is the same element
                                       // in the list in line number 1. It makes just easier to manage txt file.
-
         String file ="languages\\"+filename+".txt"; // inserting filename parameter to the whole file name declaration
 
         BufferedReader reader = new BufferedReader(new FileReader(file));  // creates reader object with file, that is declarated a line before
@@ -48,7 +46,6 @@ public final class GameTool {
             currentLine = reader.readLine();  // reads next line
         }
         reader.close();
-
 
         return values;
     }
