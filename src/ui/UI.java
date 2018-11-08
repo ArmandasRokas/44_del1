@@ -25,6 +25,13 @@ public class UI {
         loadContent();
     }
 
+    public static void main(String[] args) {
+
+        UI ui = new UI();
+        ui.startDicegame();
+
+    }
+
 
     /**Starts the dice game
      *
@@ -36,20 +43,31 @@ public class UI {
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println(content.get(2) + game.getCurrentplayer().getNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
-            System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
+            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
+            System.out.println(content.get(4));
             String input = scan.nextLine();
 
             switch (input.toLowerCase()){
                 case "1":
                     game.playRound();
-                    System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
-                    printCurrScores();
+                    System.out.println(game.getCurrPlayerNumber() + content.get(5)  + game.getCurrentRollScore());
+                    System.out.println(content.get(6) + " " + game.getCurrScenario() + content.get(7) + " " + game.getCurrCashInfluence());
 
-                    //TODO Hvorfor er dette altid false?
-                    if(false) {
-                        System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
+                    if(game.checkExtraTurn()) {
+                        System.out.println(content.get(8));
+                        System.out.println();
+                    } else {
+                        System.out.println();
+                        printCurrScores();
+                        System.out.println();
                     }
+
+                    if (game.winnerFound()){
+                        activeGame = false;
+                        System.out.println(content.get(9) + " " + game.getCurrPlayerNumber() + content.get(10));
+                    }
+                    game.endRound();
+
                     break;
 
                 case "stop":
@@ -57,24 +75,20 @@ public class UI {
                     break;
 
                 default:
-                    System.out.println("Forkert input, prøv igen.");
+                    System.out.println(content.get(11));
                     break;
             }
-            if (game.getCurrentplayer().getTotalCash() >= 40){ //TODO skal laves en metod isCurPlayerWinner
-                activeGame = false;
-                System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
-            }
-     //       game.switchPlayer();
+
         }
         System.out.println();
-        System.out.println("Spillets resultat blev:");
+        System.out.println(content.get(12));
         printCurrScores();
-        System.out.println("Tak for spillet");
+        System.out.println(content.get(13));
     }
 
     public void printCurrScores() {
-        System.out.println("Spiller 1 har: " + game.getP1().getTotalCash() + " points.");
-        System.out.println("Spiller 2 har: " + game.getP2().getTotalCash() + " points.");
+        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + " points.");
+        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + " points.");
     }
 
     //TODO should be created new class "UI_Content" in domain model, because now it has directly association with technical service layer

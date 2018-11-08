@@ -1,5 +1,7 @@
 package controller;
 
+import model.Die;
+import model.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -104,7 +106,7 @@ class GameTest {
         //Act
         startTime = System.currentTimeMillis();
         game.playRound();
-        System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+        System.out.println(game.getCurrPlayerNumber()+ " har slået: " + game.getCurrentRollScore());
         endTime = System.currentTimeMillis();
         timeResultForFirstRoll = endTime - startTime;
 
@@ -113,12 +115,46 @@ class GameTest {
             startTime = System.currentTimeMillis();
 
             game.playRound();
-            System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
+            System.out.println(game.getCurrPlayerNumber()+ " har slået: " + game.getCurrentRollScore());
             endTime = System.currentTimeMillis();
             timeResultForAnotherRolls =  endTime - startTime;
 
             assertTrue(timeResultForAnotherRolls<50, "Time took: " + timeResultForAnotherRolls);
         }
         assertTrue(timeResultForFirstRoll<100, "Time took: " + timeResultForFirstRoll);
+    }
+
+    /**
+     * Test case:
+     * Test if winnerFound() method in Game class returns true,
+     * when a current player reaches 3000 or above
+     */
+
+    @Test
+    void winnerFoundTest() {
+
+        // Arrange
+
+        Player p1 = new Player("1");
+        p1.addToCash(1999);
+
+
+        Game testGame = new Game(p1);  // current player: 1
+
+        // Act
+
+
+        boolean isPlayer1WinnerWith2999 = testGame.winnerFound();
+        p1.addToCash(1); // sets player cash to 3000
+        boolean isPlayer1WinnerWith3000 = testGame.winnerFound();
+        p1.addToCash(1); // sets player cash to 3001
+        boolean isPlayer1WinnerWith3001 = testGame.winnerFound();
+
+        // Assert
+
+        assertFalse(isPlayer1WinnerWith2999);
+        assertTrue(isPlayer1WinnerWith3000);
+        assertTrue(isPlayer1WinnerWith3001);
+
     }
 }

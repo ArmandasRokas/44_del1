@@ -1,3 +1,15 @@
 ﻿Velkommen til vores terningespil! testing
 Nu er det 
 `s tur.
+Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.
+ har slået:
+Du står på felt
+. Din konto blev opdateret med:
+Men du får en ekstra tur!
+Tillykke
+! Du er vinderen
+Forkert input, prøv igen.
+Spillets resultat blev:
+Tak for spillet
+Spiller 1 har:
+Spiller 2 har:

@@ -33,6 +33,17 @@ public class Game {
     }
 
     /**
+     * This constructor is just for testing purposes!
+     */
+    public Game(Player p1){
+        this.p1 = p1;
+        this.p2 = new Player("Spiller 2");
+        this.d1 = new Die(1,6);
+        this.d2 = new Die(1,6);
+        this.currPlayer = p1;
+    }
+
+    /**
      * This method rolls two dices and adds score to player
      */
     public void playRound() {  // Måske ændre navn til newRound() ?
@@ -46,7 +57,7 @@ public class Game {
 
         int currCashInfluence = this.getCurrCashInfluence();
 
-        this.currPlayer.addToCash(currCashInfluence); // skal opdateres så den bruger getCurrCashInfluence
+        this.currPlayer.addToCash(currCashInfluence);
     }
 
     /**
@@ -100,14 +111,17 @@ public class Game {
      *
      * @return  Instance of Player
      */
-    public Player getP1() {
-        return p1;
+
+    public String getCurrPlayerNumber(){ return currPlayer.getNumber(); }
+    public int getPlayerTotalCash(int playerNumber){
+        if (playerNumber == 1){
+            return p1.getTotalCash();
+        } else{
+            return p2.getTotalCash();
+        }
     }
-    public Player getP2() {
-        return p2;
-    }
-    public Player getCurrentplayer() {
-        return currPlayer;
+    public boolean checkExtraTurn(){
+        return board.checkExtraTurn();
     }
 }
 

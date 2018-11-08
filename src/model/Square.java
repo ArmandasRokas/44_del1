@@ -29,4 +29,5 @@ public class Square {
     public boolean checkExtraTurn() {
         return extraTurn;
     }
+
 }
