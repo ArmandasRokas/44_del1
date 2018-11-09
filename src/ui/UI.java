@@ -8,47 +8,63 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**@author Hold 44
- * @version 11/10-2018
+ * @version 08/11-2018
  *
- * Defines the UI class
+ * Defines the UI class and its fields and methods
+ * Takes inputs from user and directs it through the system
  */
 public class UI {
-
     private Game game;
     private ArrayList<String> content;
 
     /**
-     * Constructor of UI and initializes Game
+     * main method to start the program
      */
-    public UI() {
+    public static void main(String[] args) {
+        UI ui = new UI();
+        ui.startDicegame();
+    }
+
+    /**
+     * Constructor of UI and initializes a game and loads the ui and scenarios for it
+     */
+    private UI() {
         game = new Game();
         loadContent();
     }
 
-
-    /**Starts the dice game
-     *
+    /**
+     *  Starts the dice game
      */
-    public void startDicegame(){
-
+    private void startDicegame(){
         boolean activeGame = true;
         System.out.println(content.get(1));
         Scanner scan = new Scanner(System.in);
 
         while (activeGame){
-            System.out.println(content.get(2) + game.getCurrentplayer().getNumber() + content.get(3)); //TODO skal laves om at den kalder kun game classe.
-            System.out.println("Tast 1 for at slå med terningerne eller skriv 'Stop' for at afslutte spillet.");
+            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3));
+            System.out.println(content.get(4));
             String input = scan.nextLine();
 
             switch (input.toLowerCase()){
                 case "1":
                     game.playRound();
-                    System.out.println(game.getCurrentplayer().getNumber() + " har slået: " + game.getCurrentRollScore());
-                    printCurrScores();
+                    System.out.println(game.getCurrPlayerNumber() + content.get(5)  + game.getCurrentRollScore());
+                    System.out.println(content.get(6) + " " + game.getCurrScenario() + content.get(7) + " " + game.getCurrCashInfluence());
 
-                    if(false) {
-                        System.out.println("Tillykke, du har slået to ens! Du får en ekstra tur!");
+                    if(game.checkExtraTurn()) {
+                        System.out.println(content.get(8));
+                        System.out.println();
+                    } else {
+                        System.out.println();
+                        printCurrScores();
+                        System.out.println();
                     }
+                    if (game.winnerFound()){
+                        activeGame = false;
+                        System.out.println(content.get(9) + " " + game.getCurrPlayerNumber() + content.get(10));
+                    }
+                    game.endRound();
                     break;
 
                 case "stop":
@@ -56,43 +72,32 @@ public class UI {
                     break;
 
                 default:
-                    System.out.println("Forkert input, prøv igen.");
+                    System.out.println(content.get(11));
                     break;
             }
-            if (game.getCurrentplayer().getTotalScore() >= 40){ //TODO skal laves en metod isCurPlayerWinner
-                activeGame = false;
-                System.out.println("Tillykke, " + game.getCurrentplayer().getNumber() + "! Du er vinderen");
-            }
-     //       game.switchPlayer();
         }
         System.out.println();
-        System.out.println("Spillets resultat blev:");
+        System.out.println(content.get(12));
         printCurrScores();
-        System.out.println("Tak for spillet");
+        System.out.println(content.get(13));
     }
 
-    public void printCurrScores() {
-        System.out.println("Spiller 1 har: " + game.getP1().getTotalScore() + " points.");
-        System.out.println("Spiller 2 har: " + game.getP2().getTotalScore() + " points.");
+    /**
+     * Prints the current scores of the players
+     */
+    private void printCurrScores() {
+        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + "$");
+        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + "$");
     }
 
-    public void loadContent(){
-
+    /**
+     * Loads the UI outputs from hardcoded filename
+     */
+    private void loadContent(){
         try {
             content = GameTool.readFromFile("DK_UI");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public void loadContent(){
-
-        try {
-            content = GameTool.readFromFile("DK_UI");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 }

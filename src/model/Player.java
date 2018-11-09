@@ -1,45 +1,40 @@
 package model;
 
 /**@author Hold 44
- * @version 11/10-2018
+ * @version 08/11-2018
  *
- * Defines Player class and all if its attributes
+ * Defines Player class and all if its fields and methods
+ * Class to represent a single player throughout the game
  */
 public class Player {
-    private int totalScore; //Totalscore of player
     private String number;  //Number of player
+    private Account account;
 
     /**
-     * Constructor for player
+     * Constructor for Player
      *
      * @param number    Player number
      */
     public Player(String number){
-        this.totalScore = 0;
+        this.account = new Account();
         this.number = number;
     }
 
     /**
-     * Get and set methods of total score and method for adding to score.
+     * Method to add cash unto the account of instance of Player
      *
-     * @return  total score of Player
+     * @param cashInfluence
      */
-    public int getTotalScore() {
-        return totalScore;
-    }
-    public void setTotalScore(int totalScore){
-        this.totalScore = totalScore;
-    }
-    public int addToScore(int roll){
-        this.totalScore = totalScore + roll;
-        return totalScore;
+    public void addToCash(int cashInfluence){
+        this.account.addToCash(cashInfluence);
     }
 
     /**
-     * Get method of player number
-     *
-     * @return  player number
+     * Get methods of Player class.
      */
+    public int getTotalCash() {
+        return account.getTotalCash();
+    }
     public String getNumber(){
         return number;
     }

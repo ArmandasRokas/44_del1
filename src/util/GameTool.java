@@ -1,12 +1,22 @@
 package util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class GameTool {
+/**@author Hold 44
+ * @version 08/11-2018
+ *
+ * Defines the GameTool class and its methods
+ * Package of specific methods chosen to be gathered to simplify the reusability in future projects
+ */
+public final class GameTool {
+
+    private GameTool(){ // makes it impossible to initiate
+    }
 
     /**
      * Calculates a random value between min and max
@@ -22,24 +32,27 @@ public class GameTool {
         return finalNum;
     }
 
-
-
+    /**
+     *  This method reads a text file.
+     *
+     * @param filename pure name without location or .txt
+     * @return An array list with elements which are representing each line in the text file.
+     * @throws IOException file is missing.
+     */
     public static ArrayList<String> readFromFile(String filename) throws IOException{
+        ArrayList<String> values = new ArrayList<>();  // declaring arraylist with name "values"
+        values.add("spacing.....");   // add an element to 0 index, so element in index 1 is the same element
+                                      // in the list in line number 1. It makes just easier to manage txt file.
+        String file ="languages"+ File.separator +filename+".txt"; // inserting filename parameter to the whole file name declaration
 
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("spacing....."); // add element to 0 index
-
-        String file ="languages\\"+filename+".txt";
-
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String currentLine = reader.readLine();
-        while (currentLine != null){
-            list.add(currentLine);
-            currentLine = reader.readLine();
+        BufferedReader reader = new BufferedReader(new FileReader(file));  // creates reader object with file, that is declarated a line before
+        String currentLine = reader.readLine();  // reads a line
+        while (currentLine != null){ // runs loop until the current line is not empty.
+            values.add(currentLine);   // add line as an element to the array list
+            currentLine = reader.readLine();  // reads next line
         }
         reader.close();
 
-
-        return list;
+        return values;
     }
 }

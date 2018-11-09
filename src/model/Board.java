@@ -5,65 +5,63 @@ import util.GameTool;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**@author Hold 44
+ * @version 08/11-2018
+ *
+ * Defines the Board class and all of its fields and methods
+ * Class to represent the playing board and to contain and arrange the squares players can land on
+ */
 public class Board {
     private Square squareList[];
     private Square currSquare;
-    private ArrayList<String> content;
+    private ArrayList<String> scenerioStrings;
 
-
-
+    /**
+     * Constructor for Board
+     *
+     * @param squareAmount  Amounts of square needed to fill the board for a specific game
+     */
     public Board(int squareAmount) {
         squareList = new Square[squareAmount];
         loadContent();
         this.setBoard();
-
     }
 
-    public void loadContent(){
-
-
+    /**
+     * Loads the scenario descriptions of the squares through a hardcoded filename
+     */
+    private void loadContent(){
         try {
-            content = GameTool.readFromFile("EN_scenarios");
+            scenerioStrings = GameTool.readFromFile("EN_scenarios");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-
-
-
+    /**
+     * Creates instances of Square to fill the game board and puts them into a list for containment
+     */
     private void setBoard() {
-        squareList[0] = new Square(content.get(1),250);
-        squareList[1] = new Square(content.get(2),-100);
-        squareList[2] = new Square(content.get(3),100);
-        squareList[3] = new Square(content.get(4),-20);
-        squareList[4] = new Square(content.get(5),180);
-        squareList[5] = new Square(content.get(6),0);
-        squareList[6] = new Square(content.get(7),-70);
-        squareList[7] = new Square(content.get(8),60);
-        squareList[8] = new Square(content.get(9),-80);
-        squareList[9] = new Square(content.get(10),-50);
-        squareList[10] = new Square(content.get(11),650);
-
+        squareList[0] = new Square(scenerioStrings.get(1),250);
+        squareList[1] = new Square(scenerioStrings.get(2),-100);
+        squareList[2] = new Square(scenerioStrings.get(3),100);
+        squareList[3] = new Square(scenerioStrings.get(4),-20);
+        squareList[4] = new Square(scenerioStrings.get(5),180);
+        squareList[5] = new Square(scenerioStrings.get(6),0);
+        squareList[6] = new Square(scenerioStrings.get(7),-70);
+        squareList[7] = new Square(scenerioStrings.get(8),60);
+        squareList[8] = new Square(scenerioStrings.get(9),-80, true);
+        squareList[9] = new Square(scenerioStrings.get(10),-50);
+        squareList[10] = new Square(scenerioStrings.get(11),650);
     }
 
-    public String getCurrScenerio(){
-
-        return currSquare.getScenario();
-
-
-    }
-
-    public int getCurrMoneyInfluence(){
-        return currSquare.getCashInfluence();
-
-    }
-
-
-    public void updateCurrSquare(int totalEye){
-
-        switch (totalEye){
+    /**
+     * Updates the position of the current player after he have rolled the dices
+     *
+     * @param totalEyes Number of eyes on the dices the player have rolled
+     */
+    public void updateCurrSquare(int totalEyes){
+        switch (totalEyes){
             case 2:
                 currSquare = squareList[0];
                 break;
@@ -99,8 +97,25 @@ public class Board {
                 break;
             default:
                 currSquare = null;
-
         }
     }
-}
 
+    /**
+     * Controls if the Square is meant to give the player an extra turn
+     *
+     * @return  Boolean which is true if the player is to get an extra turn, else it is false
+     */
+    public boolean checkExtraTurn() {
+        return currSquare.checkExtraTurn();
+    }
+
+    /**
+     * Get methods of Board class
+     */
+    public String getCurrScenerio(){
+        return currSquare.getScenario();
+    }
+    public int getCurrCashInfluence(){
+        return currSquare.getCashInfluence();
+    }
+}
