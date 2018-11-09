@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
-    /**Test af 'getCurrentRollScore()'
+    /**Test case: TC1
+     * Test af 'getCurrentRollScore()'
      * Tests if Random() class gives random numbers within an approximated failure rate of 5% of what is estimated.
      * Tests this by trying it 100.000 times
      */
@@ -88,8 +89,7 @@ class GameTest {
         assertEquals(expect2and12, count12, dExpect2and12);
     }
 
-    /**
-     * Test case: TC2
+    /**Test case: TC2
      *
      * Tests if the time from rolling the dices to printing out the result is faster than 50ms.
      * First diceroll will take longer, so is tested for 100ms
@@ -124,8 +124,7 @@ class GameTest {
         assertTrue(timeResultForFirstRoll<100, "Time took: " + timeResultForFirstRoll);
     }
 
-    /**
-     * Test case:
+    /**Test case: TC4
      * Tests if winnerFound() method in Game class returns true,
      * when a current player reaches 3000 or above
      */
