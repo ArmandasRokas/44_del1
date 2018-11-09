@@ -59,7 +59,7 @@ public class Game {
      *
      * @return  boolean which is true if a winner has been found
      */
-    //TODO skal overvejes til at flytte metodens logik til Player class
+
     public boolean winnerFound() {
         boolean res = false;
         if(currPlayer.getTotalCash() >= winCondition) {

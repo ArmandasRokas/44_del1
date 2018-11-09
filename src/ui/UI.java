@@ -90,7 +90,6 @@ public class UI {
         System.out.println(content.get(15) + game.getPlayerTotalCash(2) + "$");
     }
 
-    //#TODO Consideration for next time: Create new class "UI_Content" in domain model, because now it has directly association with technical service
     /**
      * Loads the UI outputs from hardcoded filename
      */
