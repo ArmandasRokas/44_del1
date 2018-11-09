@@ -1,6 +1,7 @@
 package util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public final class GameTool {
         ArrayList<String> values = new ArrayList<>();  // declaring arraylist with name "values"
         values.add("spacing.....");   // add an element to 0 index, so element in index 1 is the same element
                                       // in the list in line number 1. It makes just easier to manage txt file.
-        String file ="languages\\"+filename+".txt"; // inserting filename parameter to the whole file name declaration
+        String file ="languages"+ File.separator +filename+".txt"; // inserting filename parameter to the whole file name declaration
 
         BufferedReader reader = new BufferedReader(new FileReader(file));  // creates reader object with file, that is declarated a line before
         String currentLine = reader.readLine();  // reads a line
