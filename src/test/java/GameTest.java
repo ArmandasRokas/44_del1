@@ -1,5 +1,4 @@
-package controller;
-
+import controller.Game;
 import model.Die;
 import model.Player;
 import org.junit.jupiter.api.Test;
