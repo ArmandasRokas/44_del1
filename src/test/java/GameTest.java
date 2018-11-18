@@ -12,6 +12,7 @@ class GameTest {
      * Tests this by trying it 100.000 times
      */
     @Test
+    //TODO lave om til junit test. Dvs. teste kun dies uden playround
     void testRandomNumberGenerated() {
         // Arrange
         Game roll = new Game();
@@ -93,6 +94,8 @@ class GameTest {
      * Tests if the time from rolling the dices to printing out the result is faster than 50ms.
      * First diceroll will take longer, so is tested for 100ms
      */
+    //TODO flytte til en classe for sig selv
+
     @Test
     void timePerformanceTest(){
         // Arrange
