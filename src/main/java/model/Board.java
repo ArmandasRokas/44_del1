@@ -119,9 +119,6 @@ public class Board {
         return currSquare.getCashInfluence();
     }
 
-    public int getLength(){
-        return squareList.length;
-    }
 
     //TODO implemenetere
     public int getNewPosition(int currPos, int totalEye){
