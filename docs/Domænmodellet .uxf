@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>666</x>
-      <y>234</y>
+      <y>270</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -18,7 +18,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>198</x>
-      <y>234</y>
+      <y>270</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -32,7 +32,7 @@ nummer
     <id>UMLClass</id>
     <coordinates>
       <x>450</x>
-      <y>234</y>
+      <y>270</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -45,7 +45,7 @@ nummer
     <id>UMLClass</id>
     <coordinates>
       <x>657</x>
-      <y>396</y>
+      <y>432</y>
       <w>135</w>
       <h>81</h>
     </coordinates>
@@ -59,7 +59,7 @@ scenarieBeskrivelse
     <id>UMLClass</id>
     <coordinates>
       <x>441</x>
-      <y>396</y>
+      <y>432</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -72,7 +72,7 @@ scenarieBeskrivelse
     <id>Relation</id>
     <coordinates>
       <x>306</x>
-      <y>261</y>
+      <y>297</y>
       <w>162</w>
       <h>45</h>
     </coordinates>
@@ -87,7 +87,7 @@ spiller
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>261</y>
+      <y>297</y>
       <w>126</w>
       <h>45</h>
     </coordinates>
@@ -102,7 +102,7 @@ spilles med
     <id>Relation</id>
     <coordinates>
       <x>495</x>
-      <y>306</y>
+      <y>342</y>
       <w>81</w>
       <h>108</h>
     </coordinates>
@@ -117,7 +117,7 @@ spilles på
     <id>Relation</id>
     <coordinates>
       <x>549</x>
-      <y>432</y>
+      <y>468</y>
       <w>126</w>
       <h>45</h>
     </coordinates>
@@ -132,7 +132,7 @@ lavet af
     <id>UMLClass</id>
     <coordinates>
       <x>198</x>
-      <y>396</y>
+      <y>432</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -145,7 +145,7 @@ saldo</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>234</x>
-      <y>306</y>
+      <y>342</y>
       <w>45</w>
       <h>108</h>
     </coordinates>
@@ -160,7 +160,7 @@ ejer
     <id>UMLClass</id>
     <coordinates>
       <x>450</x>
-      <y>63</y>
+      <y>99</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -173,14 +173,14 @@ scenarie</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>504</x>
-      <y>135</y>
-      <w>36</w>
+      <y>171</y>
+      <w>63</w>
       <h>117</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=18
 m2=1
-
+tilhører
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
@@ -188,7 +188,7 @@ m2=1
     <id>UMLClass</id>
     <coordinates>
       <x>189</x>
-      <y>63</y>
+      <y>99</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -201,14 +201,14 @@ scenarie</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>234</x>
-      <y>135</y>
+      <y>171</y>
       <w>63</w>
       <h>117</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
-tilhører
+tilhører 
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
@@ -216,7 +216,7 @@ tilhører
     <id>Relation</id>
     <coordinates>
       <x>225</x>
-      <y>9</y>
+      <y>45</y>
       <w>612</w>
       <h>468</h>
     </coordinates>
@@ -231,7 +231,7 @@ står på
     <id>UMLClass</id>
     <coordinates>
       <x>414</x>
-      <y>558</y>
+      <y>594</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
@@ -245,7 +245,7 @@ pengeIndflydelse
     <id>UMLClass</id>
     <coordinates>
       <x>297</x>
-      <y>558</y>
+      <y>594</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
@@ -259,7 +259,7 @@ pengeIndflydelse
     <id>UMLClass</id>
     <coordinates>
       <x>180</x>
-      <y>558</y>
+      <y>594</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
@@ -274,7 +274,7 @@ legePris
     <id>UMLClass</id>
     <coordinates>
       <x>531</x>
-      <y>558</y>
+      <y>594</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
@@ -288,7 +288,7 @@ legePris
     <id>UMLClass</id>
     <coordinates>
       <x>648</x>
-      <y>558</y>
+      <y>594</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
@@ -302,7 +302,7 @@ legePris
     <id>UMLClass</id>
     <coordinates>
       <x>765</x>
-      <y>558</y>
+      <y>594</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
@@ -316,7 +316,7 @@ legePris
     <id>Relation</id>
     <coordinates>
       <x>225</x>
-      <y>468</y>
+      <y>504</y>
       <w>522</w>
       <h>108</h>
     </coordinates>
@@ -327,14 +327,14 @@ legePris
     <id>Relation</id>
     <coordinates>
       <x>126</x>
-      <y>261</y>
+      <y>297</y>
       <w>90</w>
       <h>360</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..16
-
+ejer
 </panel_attributes>
     <additional_attributes>80.0;10.0;30.0;10.0;30.0;370.0;60.0;370.0</additional_attributes>
   </element>
@@ -342,7 +342,7 @@ m2=0..16
     <id>Relation</id>
     <coordinates>
       <x>342</x>
-      <y>513</y>
+      <y>549</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -355,7 +355,7 @@ m2=0..16
     <id>Relation</id>
     <coordinates>
       <x>459</x>
-      <y>513</y>
+      <y>549</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -368,7 +368,7 @@ m2=0..16
     <id>Relation</id>
     <coordinates>
       <x>576</x>
-      <y>513</y>
+      <y>549</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -381,7 +381,7 @@ m2=0..16
     <id>Relation</id>
     <coordinates>
       <x>693</x>
-      <y>513</y>
+      <y>549</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -394,7 +394,7 @@ m2=0..16
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>504</y>
+      <y>540</y>
       <w>108</w>
       <h>72</h>
     </coordinates>
