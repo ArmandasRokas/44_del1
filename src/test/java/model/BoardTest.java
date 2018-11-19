@@ -33,5 +33,4 @@ class BoardTest {
         assertEquals(expAfterMovingToLastSquare, newPositionAfterMovingToLastSquare );
         assertEquals(expAfterMovingOneRound, newPositionAfterMovingOneRound );
     }
-
 }
