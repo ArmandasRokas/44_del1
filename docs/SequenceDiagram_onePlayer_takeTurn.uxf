@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>80</y>
+      <x>360</x>
+      <y>130</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>80</y>
+      <x>610</x>
+      <y>130</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>80</y>
+      <x>770</x>
+      <y>130</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -35,21 +35,10 @@
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1060</x>
-      <y>80</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>:Field</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>100</y>
+      <x>400</x>
+      <y>150</y>
       <w>30</w>
       <h>80</h>
     </coordinates>
@@ -59,8 +48,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>100</y>
+      <x>650</x>
+      <y>150</y>
       <w>30</w>
       <h>100</h>
     </coordinates>
@@ -70,8 +59,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
-      <y>100</y>
+      <x>810</x>
+      <y>150</y>
       <w>30</w>
       <h>200</h>
     </coordinates>
@@ -81,32 +70,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1100</x>
-      <y>100</y>
-      <w>30</w>
-      <h>360</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;340.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>420</x>
-      <y>140</y>
-      <w>130</w>
+      <x>230</x>
+      <y>190</y>
+      <w>190</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-movePlayer()
+movePlayer(totalEyes)
 </panel_attributes>
-    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>530</x>
-      <y>160</y>
+      <x>400</x>
+      <y>210</y>
       <w>20</w>
       <h>210</h>
     </coordinates>
@@ -116,8 +94,8 @@ movePlayer()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>160</y>
+      <x>410</x>
+      <y>210</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
@@ -128,8 +106,8 @@ getCurrPosition()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>780</x>
-      <y>180</y>
+      <x>650</x>
+      <y>230</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -139,8 +117,8 @@ getCurrPosition()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>220</y>
+      <x>410</x>
+      <y>270</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
@@ -151,8 +129,8 @@ currPosition</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>260</y>
+      <x>410</x>
+      <y>310</y>
       <w>420</w>
       <h>40</h>
     </coordinates>
@@ -163,8 +141,8 @@ getNewPosition(currPosition)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>940</x>
-      <y>280</y>
+      <x>810</x>
+      <y>330</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -174,8 +152,8 @@ getNewPosition(currPosition)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>320</y>
+      <x>410</x>
+      <y>370</y>
       <w>420</w>
       <h>40</h>
     </coordinates>
@@ -186,8 +164,8 @@ newPosition</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>230</y>
+      <x>650</x>
+      <y>280</y>
       <w>30</w>
       <h>160</h>
     </coordinates>
@@ -197,8 +175,8 @@ newPosition</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>780</x>
-      <y>370</y>
+      <x>650</x>
+      <y>420</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -208,8 +186,8 @@ newPosition</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>350</y>
+      <x>410</x>
+      <y>400</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
@@ -220,31 +198,31 @@ setNewPosition(newPosition)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>380</y>
-      <w>130</w>
+      <x>220</x>
+      <y>430</y>
+      <w>200</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-getScenario()</panel_attributes>
-    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+getField(newPosition)</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>380</y>
+      <x>650</x>
+      <y>430</y>
       <w>30</w>
-      <h>160</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>360</y>
+      <x>400</x>
+      <y>410</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -254,8 +232,8 @@ getScenario()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>530</x>
-      <y>400</y>
+      <x>400</x>
+      <y>450</y>
       <w>20</w>
       <h>130</h>
     </coordinates>
@@ -265,20 +243,20 @@ getScenario()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>410</y>
+      <x>410</x>
+      <y>460</y>
       <w>420</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-getScenario(newPosition)</panel_attributes>
+getField(newPosition)</panel_attributes>
     <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
-      <y>330</y>
+      <x>810</x>
+      <y>380</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -288,8 +266,8 @@ getScenario(newPosition)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>940</x>
-      <y>430</y>
+      <x>810</x>
+      <y>480</y>
       <w>20</w>
       <h>70</h>
     </coordinates>
@@ -299,67 +277,32 @@ getScenario(newPosition)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>950</x>
-      <y>420</y>
-      <w>170</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-getScenario()</panel_attributes>
-    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>1100</x>
-      <y>440</y>
-      <w>20</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>950</x>
-      <y>460</y>
-      <w>170</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-scenario</panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>540</x>
-      <y>480</y>
+      <x>410</x>
+      <y>530</y>
       <w>420</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-scenario</panel_attributes>
+field</panel_attributes>
     <additional_attributes>10.0;20.0;400.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>410</x>
-      <y>510</y>
-      <w>140</w>
+      <x>210</x>
+      <y>560</y>
+      <w>210</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-scenario</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+field</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>410</x>
-      <y>150</y>
+      <x>220</x>
+      <y>200</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -369,12 +312,23 @@ scenario</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>410</x>
-      <y>390</y>
+      <x>210</x>
+      <y>440</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>540</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
   </element>
 </diagram>
