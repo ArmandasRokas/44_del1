@@ -123,7 +123,7 @@ public class Board {
         return squareList.length;
     }
 
-
+    //TODO implemenetere
     public int getNewPosition(int currPos, int totalEye){
         return 1;
     }
