@@ -1,6 +1,6 @@
 package model;
 
-import controller.Game;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,8 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardTest {
 
     @Test
-
-    private void getNewPositionTest(){
+    void getNewPositionTest(){
 
         //Arrange
 
