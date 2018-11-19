@@ -118,4 +118,13 @@ public class Board {
     public int getCurrCashInfluence(){
         return currSquare.getCashInfluence();
     }
+
+    public int getLength(){
+        return squareList.length;
+    }
+
+
+    public int getNewPosition(int currPos, int totalEye){
+        return 1;
+    }
 }

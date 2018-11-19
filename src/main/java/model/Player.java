@@ -9,6 +9,7 @@ package model;
 public class Player {
     private String number;  //Number of player
     private Account account;
+    private int currPosition;
 
     /**
      * Constructor for Player
