@@ -119,9 +119,23 @@ public class Board {
         return currSquare.getCashInfluence();
     }
 
+    /**
+     * Calculates the new position of a player after a roll, considering that the player moves in a circle.
+     *
+     * @param currPos The players position from last turn.
+     * @param totalEye The die's eye count.
+     * @return Returns the new position, after dice throw.
+     */
 
-    //TODO implemenetere
     public int getNewPosition(int currPos, int totalEye){
-        return 1;
+        int newPosition;
+        int squareListLength = squareList.length;
+
+        if (totalEye >= (squareListLength - currPos)) {
+            newPosition = totalEye - (squareListLength - currPos);
+        } else {
+            newPosition = currPos + totalEye;
+        }
+        return newPosition;
     }
 }
