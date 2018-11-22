@@ -39,4 +39,13 @@ public class Player {
     public String getNumber(){
         return number;
     }
+
+    public int getCurrPosition() {
+        return currPosition;
+    }
+
+    public void updateCurrPosition(int position) {
+        this.currPosition = position;
+    }
+
 }

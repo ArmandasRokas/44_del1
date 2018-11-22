@@ -148,4 +148,16 @@ public class Game {
         return board.checkExtraTurn();
     }
 
+
+    /**
+     *  Moves the player from their old position to the new position after the roll.
+     * @param totalEye The die's eye count.
+     */
+    public void movePlayer(int totalEye) {
+        int currPlayerPosition = currPlayer.getCurrPosition();
+        int newPosition = board.getNewPosition(currPlayerPosition,totalEye);
+
+        currPlayer.updateCurrPosition(newPosition);
+    }
+
 }

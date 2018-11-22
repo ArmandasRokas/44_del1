@@ -122,19 +122,19 @@ public class Board {
     /**
      * Calculates the new position of a player after a roll, considering that the player moves in a circle.
      *
-     * @param currPos The players position from last turn.
+     * @param currPosition The players position from last turn.
      * @param totalEye The die's eye count.
      * @return Returns the new position, after dice throw.
      */
 
-    public int getNewPosition(int currPos, int totalEye){
+    public int getNewPosition(int currPosition, int totalEye){
         int newPosition;
         int squareListLength = squareList.length;
 
-        if (totalEye >= (squareListLength - currPos)) {
-            newPosition = totalEye - (squareListLength - currPos);
+        if (totalEye >= (squareListLength - currPosition)) {
+            newPosition = totalEye - (squareListLength - currPosition);
         } else {
-            newPosition = currPos + totalEye;
+            newPosition = currPosition + totalEye;
         }
         return newPosition;
     }
