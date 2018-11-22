@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLGeneric</id>
@@ -18,10 +18,10 @@
       <x>730</x>
       <y>80</y>
       <w>30</w>
-      <h>580</h>
+      <h>610</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;560.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;590.0</additional_attributes>
   </element>
   <element>
     <id>UMLActor</id>
@@ -40,10 +40,10 @@
       <x>420</x>
       <y>120</y>
       <w>30</w>
-      <h>540</h>
+      <h>570</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;520.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;550.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -87,7 +87,7 @@ sætNavn(navn)</panel_attributes>
     <id>UMLFrame</id>
     <coordinates>
       <x>340</x>
-      <y>490</y>
+      <y>530</y>
       <w>440</w>
       <h>60</h>
     </coordinates>
@@ -149,7 +149,7 @@ resultatAfScenarie</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>580</y>
+      <y>620</y>
       <w>340</w>
       <h>40</h>
     </coordinates>
@@ -161,12 +161,12 @@ spilResultat</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>500</y>
+      <y>540</y>
       <w>340</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-skiftSpiller</panel_attributes>
+næsteSpiller</panel_attributes>
     <additional_attributes>10.0;20.0;320.0;20.0</additional_attributes>
   </element>
   <element>
@@ -175,12 +175,24 @@ skiftSpiller</panel_attributes>
       <x>330</x>
       <y>310</y>
       <w>470</w>
-      <h>260</h>
+      <h>300</h>
     </coordinates>
     <panel_attributes>loop
 --
 halign=left
 [ingen taber]</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>490</y>
+      <w>340</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+afslutTur</panel_attributes>
+    <additional_attributes>320.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
