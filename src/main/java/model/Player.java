@@ -19,6 +19,7 @@ public class Player {
     public Player(String number){
         this.account = new Account();
         this.number = number;
+        currPosition = 0;
     }
 
     /**

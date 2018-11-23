@@ -28,6 +28,13 @@ public class Board {
     }
 
     /**
+     * This constructor is for testing purposes!
+     */
+    public Board(int squareAmount, boolean isTest){
+        squareList = new Square[squareAmount];
+    }
+
+    /**
      * Loads the scenario descriptions of the squares through a hardcoded filename
      */
     private void loadContent(){

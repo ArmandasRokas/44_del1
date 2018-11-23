@@ -12,13 +12,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * the beginning, if the end of squares reaches.
  *
  */
-//TODO Test if totalEyes  minus.
+
 class BoardTest {
     @Test
     void getNewPositionTest(){
         //Arrange
         int boardLength = 12;
-        Board board = new Board(boardLength);
+        Board board = new Board(boardLength,true);
         int startPosition = 0;
         int expAfterMovingToLastSquare = boardLength - 1;
 
@@ -30,4 +30,6 @@ class BoardTest {
         assertEquals(expAfterMovingToLastSquare, newPosition_Last_Square );
         assertEquals(startPosition, newPosition_Completing_One_Round );
     }
+
+
 }

@@ -37,6 +37,8 @@ public class Game {
         this.p1 = p1;
         this.currPlayer = p1;
         this.winCondition = 3000;
+        this.board = new Board(24,true);
+
     }
 
     /**
