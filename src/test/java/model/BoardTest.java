@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * the beginning, if the end of squares reaches.
  *
  */
-
+//TODO Test if totalEyes  minus.
 class BoardTest {
     @Test
     void getNewPositionTest(){
