@@ -135,7 +135,7 @@ currPosition</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-getNewPosition(currPosition)</panel_attributes>
+getNewPosition(currPosition, totalEye)</panel_attributes>
     <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
@@ -192,7 +192,7 @@ newPosition</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-setNewPosition(newPosition)</panel_attributes>
+updateCurrPosition(position)</panel_attributes>
     <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
@@ -204,7 +204,7 @@ setNewPosition(newPosition)</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-getField(newPosition)</panel_attributes>
+getSquare(newPosition)</panel_attributes>
     <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
@@ -249,7 +249,7 @@ getField(newPosition)</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-getField(newPosition)</panel_attributes>
+getSquare(newPosition)</panel_attributes>
     <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
@@ -283,7 +283,7 @@ getField(newPosition)</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-field</panel_attributes>
+Square</panel_attributes>
     <additional_attributes>10.0;20.0;400.0;20.0</additional_attributes>
   </element>
   <element>
@@ -295,7 +295,7 @@ field</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-field</panel_attributes>
+Square</panel_attributes>
     <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
   </element>
   <element>

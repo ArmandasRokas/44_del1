@@ -138,6 +138,7 @@ public class Board {
         int newPosition;
         int squareListLength = squareList.length;
 
+
         if (totalEye >= (squareListLength - currPosition)) {
             newPosition = totalEye - (squareListLength - currPosition);
         } else {
