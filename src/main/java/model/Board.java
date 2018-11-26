@@ -1,5 +1,6 @@
 package model;
 
+import model.AllSquares.*;
 import util.GameTool;
 
 import java.io.IOException;
@@ -49,17 +50,30 @@ public class Board {
      * Creates instances of Square to fill the game board and puts them into a list for containment
      */
     private void setBoard() {
-        squareList[0] = new Square(scenerioStrings.get(1),250);
-        squareList[1] = new Square(scenerioStrings.get(2),-100);
-        squareList[2] = new Square(scenerioStrings.get(3),100);
-        squareList[3] = new Square(scenerioStrings.get(4),-20);
-        squareList[4] = new Square(scenerioStrings.get(5),180);
-        squareList[5] = new Square(scenerioStrings.get(6),0);
-        squareList[6] = new Square(scenerioStrings.get(7),-70);
-        squareList[7] = new Square(scenerioStrings.get(8),60);
-        squareList[8] = new Square(scenerioStrings.get(9),-80, true);
-        squareList[9] = new Square(scenerioStrings.get(10),-50);
-        squareList[10] = new Square(scenerioStrings.get(11),650);
+        squareList[0] = new StartSquare;
+        squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
+        squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
+        squareList[3] = new ChanceSquare();
+        squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
+        squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
+        squareList[6] = new JailSquare;
+        squareList[7] = new PropertySquare("Museum",2,2,"Purple");
+        squareList[8] = new PropertySquare("Libary",2,2,"Purple");
+        squareList[9] = new ChanceSquare;
+        squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
+        squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
+        squareList[12] = new ParkingSquare;
+        squareList[13] = new PropertySquare("GameHall",3,3,"Red");
+        squareList[14] = new PropertySquare("Cinema",3,3,"Red");
+        squareList[15] = new ChanceSquare;
+        squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
+        squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
+        squareList[18] = new ToJail;
+        squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
+        squareList[20] = new PropertySquare("Zoo",4,4,"Green");
+        squareList[21] = new ChanceSquare;
+        squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
+        squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
     }
 
     /**
@@ -107,14 +121,7 @@ public class Board {
         }
     }
 
-    /**
-     * Controls if the Square is meant to give the player an extra turn
-     *
-     * @return  Boolean which is true if the player is to get an extra turn, else it is false
-     */
-    public boolean checkExtraTurn() {
-        return currSquare.checkExtraTurn();
-    }
+
 
     /**
      * Get methods of Board class
@@ -122,9 +129,7 @@ public class Board {
     public String getCurrScenerio(){
         return currSquare.getScenario();
     }
-    public int getCurrCashInfluence(){
-        return currSquare.getCashInfluence();
-    }
+
 
     /**
      * Calculates the new position of a player after a roll, considering that the player moves in a circle.
