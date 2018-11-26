@@ -1,7 +1,6 @@
 package model.chanceCardTypes;
 
 import controller.Game;
-import model.ChanceCard;
 import model.Player;
 
 public class CCMoneyInfluence extends ChanceCard {

@@ -1,6 +1,5 @@
 package model.chanceCardTypes;
 
-import model.ChanceCard;
 import model.Player;
 
 public class CCMoveToSquare extends ChanceCard {
