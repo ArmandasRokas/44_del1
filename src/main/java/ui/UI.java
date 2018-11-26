@@ -17,13 +17,6 @@ public class UI {
     private Game game;
     private ArrayList<String> content;
 
-    /**
-     * main method to start the program
-     */
-    public static void main(String[] args) {
-        UI ui = new UI();
-        ui.startDicegame();
-    }
 
     /**
      * Constructor of UI and initializes a game and loads the ui and scenarios for it

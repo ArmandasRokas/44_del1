@@ -22,6 +22,7 @@ public class Game {
      * Constructor of Game class
      */
     public Game() {
+
         this.cup = new Cup();
         this.p1 = new Player("Spiller 1");
         this.p2 = new Player("Spiller 2");
@@ -29,6 +30,10 @@ public class Game {
         this.board = new Board(11);
         this.winCondition = 3000;
 
+    }
+
+    public void init(){
+        uiController.askForNumberOfPlayers;
     }
 
     /**
