@@ -79,7 +79,7 @@ public class Player {
         this.updateCurrPosition(newPosition);
     }
 
-    public void movePlayerToSquare(int squareNumber){
+    public void moveToSquare(int squareNumber){
 
         this.updateCurrPosition(squareNumber);
         Square square = board.getSquare(this.currPosition);
