@@ -1,6 +1,7 @@
 package controller;
 
 import model.Board;
+import model.Cup;
 import model.Die;
 import model.Player;
 
@@ -15,16 +16,19 @@ public class Game {
     private Player p1, p2, currPlayer;      //Instances of Player
     private Board board;
     private int winCondition;
+    private Cup cup;
 
     /**
      * Constructor of Game class
      */
     public Game() {
+        this.cup = new Cup();
         this.p1 = new Player("Spiller 1");
         this.p2 = new Player("Spiller 2");
         this.currPlayer = p1;
         this.board = new Board(11);
         this.winCondition = 3000;
+
     }
 
     /**

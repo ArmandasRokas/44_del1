@@ -23,8 +23,8 @@ public class Player {
      *
      * @param number    Player number
      */
-    public Player(String number, Board board){
-        cup = new Cup();
+    public Player(String number, Board board, Cup cup){
+        this.cup = cup;
         this.board = board;
         this.account = new Account();
         this.number = number;
@@ -68,6 +68,10 @@ public class Player {
         cup.roll();
         int newPosition = board.getNewPosition(currPosition,cup.getCurrentRollScore());
         this.updateCurrPosition(newPosition);
+    }
+
+    public int getTotalSquareOwned(){
+        return squaresOwned.size();
     }
 
 }
