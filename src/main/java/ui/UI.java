@@ -13,6 +13,8 @@ import java.util.Scanner;
  * Defines the UI class and its fields and methods
  * Takes inputs from user and directs it through the system
  */
+//TODO skal forsvinde
+
 public class UI {
     private Game game;
     private ArrayList<String> content;

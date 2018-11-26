@@ -4,6 +4,10 @@ import model.Board;
 import model.Cup;
 import model.Die;
 import model.Player;
+import ui.Abstract_UI;
+import ui.TUI;
+
+import java.util.ArrayList;
 
 /**@author Hold 44
  * @version 08/11-2018
@@ -17,11 +21,17 @@ public class Game {
     private Board board;
     private int winCondition;
     private Cup cup;
+    private Abstract_UI ui;
+    private int numberOfPlayers;
+
 
     /**
      * Constructor of Game class
      */
     public Game() {
+        ui = new TUI();
+        numberOfPlayers = ui.askForNumberOfPlayers();
+        ArrayList<String> names = ui.askForNames(numberOfPlayers);
 
         this.cup = new Cup();
         this.p1 = new Player("Spiller 1");
@@ -32,9 +42,6 @@ public class Game {
 
     }
 
-    public void init(){
-        uiController.askForNumberOfPlayers;
-    }
 
     /**
      * This constructor is just for testing purposes!
