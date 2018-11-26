@@ -23,6 +23,7 @@ public class Game {
     private int winCondition;
     private Cup cup;
     private Abstract_UI ui;
+    private boolean isOn;
 
 
     /**
@@ -33,11 +34,9 @@ public class Game {
         this.board = new Board(11);
         this.cup = new Cup();
 
-
         int numberOfPlayers = ui.askForNumberOfPlayers();
-        ArrayList<String> names = ui.askForNames(numberOfPlayers);
-
         players = new Player[numberOfPlayers];
+        ArrayList<String> names = ui.askForNames(players.length);
 
         for(int i=0; i<players.length; i++){
             players[i] = new Player(names.get(i),board, cup);
@@ -47,17 +46,30 @@ public class Game {
 
     }
 
+    public void run(){
+        ui.setGame(this);
+
+        while(isOn){
+            for (Player player: players) {
+                ui.askToTakeTurn();
+                player.takeTurn();
+                ui.updateBoardView();
+            }
+
+        }
+    }
+
 
     /**
      * This constructor is just for testing purposes!
      */
-    public Game(Player p1){
-        this.p1 = p1;
-        this.currPlayer = p1;
-        this.winCondition = 3000;
-        this.board = new Board(24,true);
-
-    }
+//    public Game(Player p1){
+//        this.p1 = p1;
+//        this.currPlayer = p1;
+//        this.winCondition = 3000;
+//        this.board = new Board(24,true);
+//
+//    }
 
     /**
      * Plays the essentials of a players turn. Rolls the dices, checks on what effect it has
