@@ -28,6 +28,13 @@ public class Board {
     }
 
     /**
+     * This constructor is for testing purposes!
+     */
+    public Board(int squareAmount, boolean isTest){
+        squareList = new Square[squareAmount];
+    }
+
+    /**
      * Loads the scenario descriptions of the squares through a hardcoded filename
      */
     private void loadContent(){
@@ -119,9 +126,25 @@ public class Board {
         return currSquare.getCashInfluence();
     }
 
+    /**
+     * Calculates the new position of a player after a roll, considering that the player moves in a circle.
+     *
+     * @param currPosition The players position from last turn.
+     * @param totalEye The die's eye count.
+     * @return Returns the new position, after dice throw.
+     */
 
-    //TODO implemenetere
-    public int getNewPosition(int currPos, int totalEye){
-        return 1;
+    public int getNewPosition(int currPosition, int totalEye){
+        int newPosition;
+        int squareListLength = squareList.length;
+
+
+        if (totalEye >= (squareListLength - currPosition)) {
+            newPosition = totalEye - (squareListLength - currPosition);
+        } else {
+            newPosition = currPosition + totalEye;
+        }
+        return newPosition;
     }
+
 }

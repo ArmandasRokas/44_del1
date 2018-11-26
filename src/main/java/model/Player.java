@@ -19,6 +19,7 @@ public class Player {
     public Player(String number){
         this.account = new Account();
         this.number = number;
+        currPosition = 0;
     }
 
     /**
@@ -39,4 +40,13 @@ public class Player {
     public String getNumber(){
         return number;
     }
+
+    public int getCurrPosition() {
+        return currPosition;
+    }
+
+    public void updateCurrPosition(int position) {
+        this.currPosition = position;
+    }
+
 }

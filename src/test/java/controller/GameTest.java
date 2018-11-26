@@ -1,3 +1,6 @@
+package controller;
+
+import com.sun.xml.internal.bind.v2.TODO;
 import controller.Game;
 import model.Die;
 import model.Player;
@@ -149,5 +152,30 @@ class GameTest {
         assertFalse(isPlayer1WinnerWith2999);
         assertTrue(isPlayer1WinnerWith3000);
         assertTrue(isPlayer1WinnerWith3001);
+    }
+
+    /**Test case: TC6
+     * Tests if a player can move in the range of total eyes between 2 and 12 on the play board.
+     * In addition it tests if the total eyes is added to player´s current standing position,
+     * so that the player moves continuously.
+     */
+    @Test
+    void movePlayerTest(){
+
+        // Arrange
+        Player p1 = new Player("1");
+        Game gameTest = new Game(p1);
+        int expectedPositionAfter2 = 2;
+        int expPosWhenCurrPos2After12 = 14;
+
+        // Act
+        gameTest.movePlayer(2);
+        int positionAfterMove2 = p1.getCurrPosition();
+        gameTest.movePlayer(12);
+        int posWhenCurrPos2After12 = p1.getCurrPosition();
+
+        // Assert
+        assertEquals(expectedPositionAfter2, positionAfterMove2);
+        assertEquals(expPosWhenCurrPos2After12, posWhenCurrPos2After12);
     }
 }

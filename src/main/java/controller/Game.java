@@ -37,6 +37,8 @@ public class Game {
         this.p1 = p1;
         this.currPlayer = p1;
         this.winCondition = 3000;
+        this.board = new Board(24,true);
+
     }
 
     /**
@@ -146,6 +148,18 @@ public class Game {
      */
     public boolean checkExtraTurn(){
         return board.checkExtraTurn();
+    }
+
+
+    /**
+     *  Moves the player from their old position to the new position after the roll.
+     * @param totalEye The die's eye count.
+     */
+    public void movePlayer(int totalEye) {
+        int currPlayerPosition = currPlayer.getCurrPosition();
+        int newPosition = board.getNewPosition(currPlayerPosition,totalEye);
+
+        currPlayer.updateCurrPosition(newPosition);
     }
 
 }
