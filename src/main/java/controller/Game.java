@@ -13,7 +13,6 @@ import model.Player;
  */
 public class Game {
     private Player p1, p2, currPlayer;      //Instances of Player
-    private Die d1, d2;                     //Instances of Die
     private Board board;
     private int winCondition;
 
@@ -23,8 +22,6 @@ public class Game {
     public Game() {
         this.p1 = new Player("Spiller 1");
         this.p2 = new Player("Spiller 2");
-        this.d1 = new Die(1,6);
-        this.d2 = new Die(1,6);
         this.currPlayer = p1;
         this.board = new Board(11);
         this.winCondition = 3000;
@@ -46,11 +43,10 @@ public class Game {
      * on the player and acts on it
      */
     public void playRound() {  // Måske ændre navn til newRound() ?
-        d1.rollDie();
-        d2.rollDie();
 
-        int totalEye = getCurrentRollScore();
-        board.updateCurrSquare(totalEye);
+
+    //    int totalEye = getCurrentRollScore();
+    //    board.updateCurrSquare(totalEye);
 
         int currCashInfluence = this.getCurrCashInfluence();
         this.currPlayer.addToCash(currCashInfluence);
@@ -91,14 +87,6 @@ public class Game {
     }
 
 
-    /**
-     * Addd the eyes of the two dices
-     *
-     * @return  Sum of the two dices
-     */
-    public int getCurrentRollScore() {
-        return d1.getEyes() + d2.getEyes();
-    }
 
     /**
      * Get methods to get instance of current player
@@ -151,15 +139,6 @@ public class Game {
     }
 
 
-    /**
-     *  Moves the player from their old position to the new position after the roll.
-     * @param totalEye The die's eye count.
-     */
-    public void movePlayer(int totalEye) {
-        int currPlayerPosition = currPlayer.getCurrPosition();
-        int newPosition = board.getNewPosition(currPlayerPosition,totalEye);
 
-        currPlayer.updateCurrPosition(newPosition);
-    }
 
 }
