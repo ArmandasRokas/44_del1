@@ -66,8 +66,14 @@ public class Player {
 
     public void takeTurn() {
 
+        int tempCurrPosition = currPosition;
         cup.roll();
         movePlayer(cup.getCurrentRollScore());
+
+        if(tempCurrPosition>currPosition){  // checks if player completed one round
+            this.addToCash(2);
+        }
+
         Square square = board.getSquare(this.currPosition);
         square.landedOn(this);
 
