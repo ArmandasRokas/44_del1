@@ -5,8 +5,10 @@ import model.Player;
 public abstract class Square {
 
     protected String scenario;
+    protected String name;
 
-    public Square(String scenario){
+    public Square(String name, String scenario){
+        this.name = name;
         this.scenario = scenario;
     }
 
