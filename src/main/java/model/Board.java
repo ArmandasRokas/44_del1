@@ -50,28 +50,28 @@ public class Board {
      * Creates instances of Square to fill the game board and puts them into a list for containment
      */
     private void setBoard() {
-        squareList[0] = new StartSquare;
+        squareList[0] = new StartSquare("Start");
         squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
         squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
-        squareList[3] = new ChanceSquare();
+        squareList[3] = new ChanceSquare("Chance");
         squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
         squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
-        squareList[6] = new JailSquare;
+        squareList[6] = new PrisonSquare("Prison");
         squareList[7] = new PropertySquare("Museum",2,2,"Purple");
         squareList[8] = new PropertySquare("Libary",2,2,"Purple");
-        squareList[9] = new ChanceSquare;
+        squareList[9] = new ChanceSquare("Chance");
         squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
         squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
-        squareList[12] = new ParkingSquare;
+        squareList[12] = new ParkingSquare("Free Parking");
         squareList[13] = new PropertySquare("GameHall",3,3,"Red");
         squareList[14] = new PropertySquare("Cinema",3,3,"Red");
-        squareList[15] = new ChanceSquare;
+        squareList[15] = new ChanceSquare(Chance);
         squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
         squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
-        squareList[18] = new ToJail;
+        squareList[18] = new ToPrisonSquare("To Prison");
         squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
         squareList[20] = new PropertySquare("Zoo",4,4,"Green");
-        squareList[21] = new ChanceSquare;
+        squareList[21] = new ChanceSquare("Chance");
         squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
         squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
     }
@@ -81,45 +81,45 @@ public class Board {
      *
      * @param totalEyes Number of eyes on the dices the player have rolled
      */
-    public void updateCurrSquare(int totalEyes){
-        switch (totalEyes){
-            case 2:
-                currSquare = squareList[0];
-                break;
-            case 3:
-                currSquare = squareList[1];
-                break;
-            case 4:
-                currSquare = squareList[2];
-                break;
-            case 5:
-                currSquare = squareList[3];
-                break;
-            case 6:
-                currSquare = squareList[4];
-                break;
-            case 7:
-                currSquare = squareList[5];
-                break;
-            case 8:
-                currSquare = squareList[6];
-                break;
-            case 9:
-                currSquare = squareList[7];
-                break;
-            case 10:
-                currSquare = squareList[8];
-                break;
-            case 11:
-                currSquare = squareList[9];
-                break;
-            case 12:
-                currSquare = squareList[10];
-                break;
-            default:
-                currSquare = null;
-        }
-    }
+//    public void updateCurrSquare(int totalEyes){
+//        switch (totalEyes){
+//            case 2:
+//                currSquare = squareList[0];
+//                break;
+//            case 3:
+//                currSquare = squareList[1];
+//                break;
+//            case 4:
+//                currSquare = squareList[2];
+//                break;
+//            case 5:
+//                currSquare = squareList[3];
+//                break;
+//            case 6:
+//                currSquare = squareList[4];
+//                break;
+//            case 7:
+//                currSquare = squareList[5];
+//                break;
+//            case 8:
+//                currSquare = squareList[6];
+//                break;
+//            case 9:
+//                currSquare = squareList[7];
+//                break;
+//            case 10:
+//                currSquare = squareList[8];
+//                break;
+//            case 11:
+//                currSquare = squareList[9];
+//                break;
+//            case 12:
+//                currSquare = squareList[10];
+//                break;
+//            default:
+//                currSquare = null;
+//        }
+//    }
 
 
 
