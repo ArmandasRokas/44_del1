@@ -9,6 +9,7 @@ public class PrisonSquare extends Square {
         super(scenario);
     }
 
+    //TODO skal implementeres
     @Override
     public void landedOn(Player p) {
 

@@ -51,6 +51,8 @@ public class Game {
 
         while(isOn){
             for (Player player: players) {
+                currPlayer = player;
+
                 ui.askToTakeTurn();
                 player.takeTurn();
                 ui.updateBoardView();
@@ -90,7 +92,7 @@ public class Game {
      *
      * @return  boolean which is true if a winner has been found
      */
-    //TODO skal overvejes til at flytte metodens logik til Player class
+    //TODO skal overvejes til at flytte metodens logik til Player class og laves om til taber fundet
     public boolean winnerFound() {
         boolean res = false;
         if(currPlayer.getTotalCash() >= winCondition) {
