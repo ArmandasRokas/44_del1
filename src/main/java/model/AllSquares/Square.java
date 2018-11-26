@@ -10,5 +10,9 @@ public abstract class Square {
         this.scenario = scenario;
     }
 
+    public String getScenario(){
+        return this.scenario;
+    }
+
     abstract public void landedOn(Player p);
 }

@@ -1,5 +1,7 @@
 package model.AllSquares;
 
+import model.Player;
+
 public class PropertySquare extends Square{
 
     private int price;
@@ -12,6 +14,12 @@ public class PropertySquare extends Square{
 
     }
 
+    @Override
+    public void landedOn(Player p) {
+
+
+
+    }
 }
 
 
