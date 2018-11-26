@@ -98,7 +98,7 @@ public class Game {
      * @return  Instance of Player
      */
     public String getCurrPlayerNumber(){
-        return currPlayer.getNumber();
+        return currPlayer.getNumberOfPlayers();
     }
 
     /**
