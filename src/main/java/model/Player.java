@@ -15,13 +15,17 @@ public class Player {
     private Account account;
     private int currPosition;
     private ArrayList<PropertySquare> squaresOwned;
+    private Board board;
+    private Cup cup;
 
     /**
      * Constructor for Player
      *
      * @param number    Player number
      */
-    public Player(String number){
+    public Player(String number, Board board){
+        cup = new Cup();
+        this.board = board;
         this.account = new Account();
         this.number = number;
         currPosition = 0;
@@ -56,6 +60,14 @@ public class Player {
 
     public void addOwnedSquare(PropertySquare square){
         squaresOwned.add(square);
+    }
+
+
+    public void takeTurn() {
+
+        cup.roll();
+        int newPosition = board.getNewPosition(currPosition,cup.getCurrentRollScore());
+        this.updateCurrPosition(newPosition);
     }
 
 }
