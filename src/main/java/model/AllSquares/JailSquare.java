@@ -1,6 +1,6 @@
 package model.AllSquares;
 
-public class JailSquare extends Square {
+public class PrisonSquare extends Square {
 
 
 

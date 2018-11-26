@@ -7,7 +7,7 @@ package model;
  * Class to represent a single player throughout the game
  */
 public class Player {
-    private String number;  //Number of player
+    private String numberOfPlayers;
     private Account account;
     private int currPosition;
 
@@ -18,7 +18,7 @@ public class Player {
      */
     public Player(String number){
         this.account = new Account();
-        this.number = number;
+        this.numberOfPlayers = number;
         currPosition = 0;
     }
 
@@ -37,8 +37,8 @@ public class Player {
     public int getTotalCash() {
         return account.getTotalCash();
     }
-    public String getNumber(){
-        return number;
+    public String getNumberOfPlayers(){
+        return numberOfPlayers;
     }
 
     public int getCurrPosition() {
