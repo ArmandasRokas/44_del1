@@ -65,7 +65,7 @@ public class Board {
         squareList[12] = new ParkingSquare("Free Parking");
         squareList[13] = new PropertySquare("GameHall",3,3,"Red");
         squareList[14] = new PropertySquare("Cinema",3,3,"Red");
-        squareList[15] = new ChanceSquare(Chance);
+        squareList[15] = new ChanceSquare("Chance");
         squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
         squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
         squareList[18] = new ToPrisonSquare("To Prison");
