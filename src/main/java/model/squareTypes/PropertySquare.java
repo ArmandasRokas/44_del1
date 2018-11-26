@@ -6,11 +6,11 @@ public class PropertySquare extends Square{
 
     private int price;
     private int rentPrice;
-    private String color;
+    private final String color;  //Todo enum list? https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
     private Player owner;
     private boolean isOwned;
 
-    public PropertySquare(String scenario, int price, int rentPrice,String color){
+    public PropertySquare(String scenario, int price, int rentPrice, String color){
         super(scenario);
         this.price = price;
         this.rentPrice = rentPrice;

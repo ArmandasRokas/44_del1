@@ -1,6 +1,7 @@
 package model;
 
 import model.squareTypes.PropertySquare;
+import model.squareTypes.Square;
 
 import java.util.ArrayList;
 
@@ -66,13 +67,24 @@ public class Player {
     public void takeTurn() {
 
         cup.roll();
-        int newPosition = board.getNewPosition(currPosition,cup.getCurrentRollScore());
+        movePlayer(cup.getCurrentRollScore());
+        Square square = board.getSquare(this.currPosition);
+        square.landedOn(this);
+
+    }
+
+    public void movePlayer(int squaresNumberToMove){
+
+        int newPosition = board.getNewPosition(currPosition,squaresNumberToMove);
         this.updateCurrPosition(newPosition);
     }
 
-    public void movePlayer(){}
+    public void movePlayerToSquare(int squareNumber){
 
-    public void movePlayerToSquare(){}
+        this.updateCurrPosition(squareNumber);
+        Square square = board.getSquare(this.currPosition);
+        square.landedOn(this);
+    }
 
     public int getTotalSquareOwned(){
         return squaresOwned.size();

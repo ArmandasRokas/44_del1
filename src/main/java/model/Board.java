@@ -151,4 +151,8 @@ public class Board {
         return newPosition;
     }
 
+    public Square getSquare(int index){
+        return squareList[index];
+    }
+
 }
