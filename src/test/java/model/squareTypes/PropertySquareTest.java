@@ -1,4 +1,4 @@
-package model.AllSquares;
+package model.squareTypes;
 
 import model.Board;
 import model.Cup;

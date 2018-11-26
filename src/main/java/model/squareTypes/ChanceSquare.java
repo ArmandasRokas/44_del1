@@ -1,4 +1,4 @@
-package model.AllSquares;
+package model.squareTypes;
 
 public class ChanceSquare extends Square {
 

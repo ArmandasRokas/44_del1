@@ -1,6 +1,6 @@
 package model;
 
-import model.AllSquares.PropertySquare;
+import model.squareTypes.PropertySquare;
 
 import java.util.ArrayList;
 
@@ -69,6 +69,10 @@ public class Player {
         int newPosition = board.getNewPosition(currPosition,cup.getCurrentRollScore());
         this.updateCurrPosition(newPosition);
     }
+
+    public void movePlayer(){}
+
+    public void movePlayerToSquare(){}
 
     public int getTotalSquareOwned(){
         return squaresOwned.size();

@@ -1,6 +1,6 @@
 package model;
 
-import model.AllSquares.*;
+import model.squareTypes.*;
 import util.GameTool;
 
 import java.io.IOException;
