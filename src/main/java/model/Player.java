@@ -1,5 +1,7 @@
 package model;
 
+import model.AllSquares.PropertySquare;
+
 import java.util.ArrayList;
 
 /**@author Hold 44
@@ -12,7 +14,7 @@ public class Player {
     private String number;  //Number of player
     private Account account;
     private int currPosition;
-    private ArrayList<Square> squaresOwned;
+    private ArrayList<PropertySquare> squaresOwned;
 
     /**
      * Constructor for Player
@@ -52,7 +54,7 @@ public class Player {
         this.currPosition = position;
     }
 
-    public void addOwnedSquare(Square square){
+    public void addOwnedSquare(PropertySquare square){
         squaresOwned.add(square);
     }
 
