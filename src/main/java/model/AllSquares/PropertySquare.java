@@ -26,8 +26,8 @@ public class PropertySquare extends Square{
         } else {
             p.addToCash(-price);
             owner = p;
+            p.addOwnedSquare(this);
         }
-
     }
 }
 

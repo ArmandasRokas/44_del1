@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**@author Hold 44
  * @version 08/11-2018
  *
@@ -10,6 +12,7 @@ public class Player {
     private String number;  //Number of player
     private Account account;
     private int currPosition;
+    private ArrayList<Square> squaresOwned;
 
     /**
      * Constructor for Player
@@ -47,6 +50,10 @@ public class Player {
 
     public void updateCurrPosition(int position) {
         this.currPosition = position;
+    }
+
+    public void addOwnedSquare(Square square){
+        squaresOwned.add(square);
     }
 
 }
