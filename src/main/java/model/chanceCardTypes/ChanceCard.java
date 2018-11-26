@@ -10,9 +10,10 @@ public abstract class ChanceCard {
     public ChanceCard(String scenario) {
         this.scenario = scenario;
 //        this.onHand = false;
+
     }
 
-    protected abstract void actOnCard(Player p);
+    public abstract void actOnCard(Player p);
 
     protected int findSquare(String squareName) {
         Board board;

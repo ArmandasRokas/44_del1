@@ -22,6 +22,9 @@ public class ChanceSquare extends Square {
     @Override
     public void landedOn(Player p) {
 
+        // Todo getRandomCard skal implementeres
+        int index = getRandomCard();
+        chanceCards[index].actOnCard(p);
 
     }
 }
