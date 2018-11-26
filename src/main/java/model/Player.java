@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Class to represent a single player throughout the game
  */
 public class Player {
-    private String numberOfPlayers;
+    private String name;
     private Account account;
     private int currPosition;
     private ArrayList<PropertySquare> squaresOwned;
@@ -28,7 +28,7 @@ public class Player {
         this.cup = cup;
         this.board = board;
         this.account = new Account();
-        this.numberOfPlayers = number;
+        this.name = number;
         currPosition = 0;
     }
 
@@ -47,8 +47,8 @@ public class Player {
     public int getTotalCash() {
         return account.getTotalCash();
     }
-    public String getNumberOfPlayers(){
-        return numberOfPlayers;
+    public String getName(){
+        return name;
     }
 
     public int getCurrPosition() {

@@ -17,12 +17,12 @@ import java.util.ArrayList;
  * according to this logic
  */
 public class Game {
-    private Player p1, p2, currPlayer;      //Instances of Player
+    private Player currPlayer;      //Instances of Player
+    private Player[] players;
     private Board board;
     private int winCondition;
     private Cup cup;
     private Abstract_UI ui;
-    private int numberOfPlayers;
 
 
     /**
@@ -30,15 +30,20 @@ public class Game {
      */
     public Game() {
         ui = new TUI();
-        numberOfPlayers = ui.askForNumberOfPlayers();
+        this.board = new Board(11);
+        this.cup = new Cup();
+
+
+        int numberOfPlayers = ui.askForNumberOfPlayers();
         ArrayList<String> names = ui.askForNames(numberOfPlayers);
 
-        this.cup = new Cup();
-        this.p1 = new Player("Spiller 1");
-        this.p2 = new Player("Spiller 2");
-        this.currPlayer = p1;
-        this.board = new Board(11);
-        this.winCondition = 3000;
+        players = new Player[numberOfPlayers];
+
+        for(int i=0; i<players.length; i++){
+            players[i] = new Player(names.get(i),board, cup);
+        }
+
+        currPlayer = players[0];
 
     }
 
