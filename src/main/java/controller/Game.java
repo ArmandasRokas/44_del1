@@ -20,7 +20,6 @@ public class Game {
     private Player currPlayer;      //Instances of Player
     private Player[] players;
     private Board board;
-    private int winCondition;
     private Cup cup;
     private Abstract_UI ui;
     private boolean isOn;
@@ -56,10 +55,13 @@ public class Game {
                 if(ui.askToTakeTurn()){
                     player.takeTurn();
                 } else {
-                    System.out.println(" ");
+                    //trow exception?
+                }
+                ui.updateBoardView();
+                if(loserFound()){
+                    break;
                 }
 
-                ui.updateBoardView();
             }
 
         }
@@ -97,9 +99,9 @@ public class Game {
      * @return  boolean which is true if a winner has been found
      */
     //TODO skal overvejes til at flytte metodens logik til Player class og laves om til taber fundet
-    public boolean winnerFound() {
+    public boolean loserFound() {
         boolean res = false;
-        if(currPlayer.getTotalCash() >= winCondition) {
+        if(currPlayer.getTotalCash() <= 0) {
             res = true;
         }
         return res;
