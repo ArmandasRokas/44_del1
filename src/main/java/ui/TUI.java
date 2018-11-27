@@ -46,12 +46,13 @@ public class TUI extends Abstract_UI {
     @Override
     public boolean askToTakeTurn() {
 
-        System.out.println("Press 1 for roll dice: ");
+        System.out.println("Press 1 for roll dies: ");
         String input = scan.nextLine();
         if(input.equals("1")){
             return true;
         } else {
             System.out.println("Forkert input");
+            askToTakeTurn();
             return false;
         }
 
@@ -62,10 +63,13 @@ public class TUI extends Abstract_UI {
     public boolean updateBoardView() {
 
         for (Player p: game.getPlayers()) {
-            System.out.println();
+            System.out.println(p.toString());
         }
-
+        return true;
     }
 
-
+    @Override
+    public boolean showFinalResult() {
+        return false;
+    }
 }

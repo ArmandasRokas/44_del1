@@ -53,8 +53,12 @@ public class Game {
             for (Player player: players) {
                 currPlayer = player;
 
-                ui.askToTakeTurn();
-                player.takeTurn();
+                if(ui.askToTakeTurn()){
+                    player.takeTurn();
+                } else {
+                    System.out.println(" ");
+                }
+
                 ui.updateBoardView();
             }
 
@@ -129,7 +133,7 @@ public class Game {
      * @return  Instance of Player
      */
     public String getCurrPlayerNumber(){
-        return currPlayer.getNumberOfPlayers();
+        return currPlayer.getName();
     }
 
     /**
