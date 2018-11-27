@@ -7,10 +7,10 @@ import model.chanceCardTypes.*;
 import java.util.ArrayList;
 
 public class ChanceSquare extends Square {
-    private static ChanceCard[] chanceCards;
-    private static int deckSize;
-    private static int cardsDrawn = 0;
-    private static ChanceCard currCard;
+    private ChanceCard[] chanceCards;
+    private int deckSize;
+    private int cardsDrawn = 0;
+    private ChanceCard currCard;
 
     public ChanceSquare(String scenario, Player[] players, Board board){
         super(scenario);
@@ -35,6 +35,7 @@ public class ChanceSquare extends Square {
         chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark", board);
 
 //        chanceCards[] = new CCMoveToColour();
+        shuffleCards();
     }
 
     @Override
@@ -48,7 +49,7 @@ public class ChanceSquare extends Square {
     }
 
     public ChanceCard drawCard() {
-        ChanceCard card;
+//        ChanceCard card;
 
         if(cardsDrawn == deckSize) {
             shuffleCards();

@@ -59,20 +59,22 @@ public class Board {
         squareList[6] = new PrisonSquare("Prison");
         squareList[7] = new PropertySquare("Museum",2,2,"Purple");
         squareList[8] = new PropertySquare("Libary",2,2,"Purple");
-        squareList[9] = new ChanceSquare("Chance", players, this);
+//        squareList[9] = new ChanceSquare("Chance", players, this);
+        squareList[9] = squareList[3];
         squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
         squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
         squareList[12] = new ParkingSquare("Free Parking");
         squareList[13] = new PropertySquare("GameHall",3,3,"Red");
         squareList[14] = new PropertySquare("Cinema",3,3,"Red");
-        squareList[15] = new ChanceSquare("Chance", players, this);
+//        squareList[15] = new ChanceSquare("Chance", players, this);
+        squareList[15] = squareList[3];
         squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
         squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
         squareList[18] = new ToPrisonSquare("To Prison");
         squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
         squareList[20] = new PropertySquare("Zoo",4,4,"Green");
-        squareList[21] = new ChanceSquare("Chance", players, this);
-//        squareList[21] = squareList[3];
+//        squareList[21] = new ChanceSquare("Chance", players, this);
+        squareList[21] = squareList[3];
         squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
         squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
     }
