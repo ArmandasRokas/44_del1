@@ -1,15 +1,13 @@
 package ui;
 
-import com.sun.java.util.jar.pack.Instruction;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
-import gui_main.GUI;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GUIBoundary extends Abstract_UI {
-    private GUI gui;
+public class GUI_Boundary extends Abstract_UI {
+    private GUI_Boundary guiBoundary;
     private GUI_Field[] fields;
     private GUI_Player[] players;
 
