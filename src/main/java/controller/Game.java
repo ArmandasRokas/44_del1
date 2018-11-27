@@ -4,6 +4,7 @@ import model.Board;
 import model.Cup;
 import model.Die;
 import model.Player;
+import model.squareTypes.Square;
 import ui.Abstract_UI;
 import ui.TUI;
 
@@ -23,7 +24,6 @@ public class Game {
     private Cup cup;
     private Abstract_UI ui;
     private boolean isOn;
-
 
     /**
      * Constructor of Game class
@@ -57,6 +57,7 @@ public class Game {
 
                 if(ui.askToTakeTurn()){
                     player.takeTurn();
+                    ui.showScenario();
                 } else {
                     //trow exception?
                 }
@@ -185,6 +186,14 @@ public class Game {
 
     public Player[] getPlayers(){
         return players;
+    }
+
+    public Player getCurrPlayer(){
+        return currPlayer;
+    }
+
+    public Square getCurrSquare(){
+        return board.getSquare(currPlayer.getCurrPosition());
     }
 
 

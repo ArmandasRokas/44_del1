@@ -128,7 +128,9 @@ public class Board {
      * Get methods of Board class
      */
     public String getCurrScenerio(){
-        return currSquare.getScenario();
+        // if currSquare instanseOf
+
+        return currSquare.toString();
     }
 
 
