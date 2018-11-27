@@ -46,7 +46,7 @@ public class ChanceSquare extends Square {
         card.actOnCard(p);
     }
 
-    private ChanceCard drawCard() {
+    public ChanceCard drawCard() {
         ChanceCard card;
 
         if(cardsDrawn == deckSize) {
@@ -58,7 +58,7 @@ public class ChanceSquare extends Square {
         return card;
     }
 
-    private void shuffleCards() {
+    public void shuffleCards() {
         ChanceCard[] shuffledCards = new ChanceCard[deckSize];
 
         for(int cardsShuffled = 0; cardsShuffled < deckSize ; cardsShuffled++) {
@@ -74,5 +74,14 @@ public class ChanceSquare extends Square {
             }
         }
         chanceCards = shuffledCards;
+    }
+
+    /**
+     * Returns current deck. Only used for tests.
+     *
+     * @return
+     */
+    public ChanceCard[] getDeck() {
+        return chanceCards;
     }
 }

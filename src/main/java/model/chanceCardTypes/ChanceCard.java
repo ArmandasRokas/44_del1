@@ -13,7 +13,7 @@ public abstract class ChanceCard {
 
     }
 
-    protected abstract void actOnCard(Player p);
+    public abstract void actOnCard(Player p);
 
 
 }
