@@ -16,7 +16,7 @@ class GameTest {
      * Tests this by trying it 100.000 times
      */
 //    @Test
-    //TODO lave om til junit test. Dvs. teste kun dies uden playround
+    //TODO lave om til junit test. Dvs. teste kun Cup uden Game
 //    void testRandomNumberGenerated() {
 //        // Arrange
 //        Game roll = new Game();
