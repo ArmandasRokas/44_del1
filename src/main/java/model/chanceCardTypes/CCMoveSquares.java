@@ -12,6 +12,6 @@ public class CCMoveSquares extends ChanceCard {
 
     @Override
     public void actOnCard(Player p) {
-        p.takeTurn(this.squaresToMove); //TODO Skal fikses så det passer når Armandas har flyttet metode.
+        p.movePlayer(this.squaresToMove); //TODO Skal fikses så det passer når Armandas har flyttet metode.
     }
 }

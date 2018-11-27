@@ -1,5 +1,6 @@
 package model.squareTypes;
 
+import model.Board;
 import model.Player;
 import model.chanceCardTypes.*;
 
@@ -10,27 +11,27 @@ public class ChanceSquare extends Square {
     private static int deckSize;
     private static int cardsDrawn = 0;
 
-    public ChanceSquare(String scenario){
+    public ChanceSquare(String scenario, Player[] players, Board board){
         super(scenario);
-        initChanceCards();
+        initChanceCards(players, board);
     }
 
     //Todo skal implementeres
-    private void initChanceCards(){
+    private void initChanceCards(Player[] players, Board board){
         deckSize = 7; //Amount of cards
 
         chanceCards = new ChanceCard[deckSize]; //FixMe Remove hardcoding, for now let it have this excess amount
 
         chanceCards[0] = new CCOutOfJail("Use this card to get out of prison for free! Keep this card until needed.");
 
-        chanceCards[1] = new CCMoneyInfluence("You've eaten too much candy! Pay 2M.", -2, false);
-        chanceCards[2] = new CCMoneyInfluence("It's your birthday! Collect 1M from every other player.", 1, true);
-        chanceCards[3] = new CCMoneyInfluence("You've done your homework! Collect 2M from the bank.", 2, false);
+        chanceCards[1] = new CCMoneyInfluence("You've eaten too much candy! Pay 2M.", -2, false, players);
+        chanceCards[2] = new CCMoneyInfluence("It's your birthday! Collect 1M from every other player.", 1, true, players);
+        chanceCards[3] = new CCMoneyInfluence("You've done your homework! Collect 2M from the bank.", 2, false, players);
 
         chanceCards[4] = new CCMoveSquares("Move 5 space forward", 5);
 
-        chanceCards[5] = new CCMoveToSquare("Move to Strandpromenaden", "TheBeach"); //FixMe Correct here and in Board setup.. Mby make a setup up class?
-        chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark");
+        chanceCards[5] = new CCMoveToSquare("Move to Strandpromenaden", "TheBeach", board); //FixMe Correct here and in Board setup.. Mby make a setup up class?
+        chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark", board);
 
 //        chanceCards[] = new CCMoveToColour();
     }

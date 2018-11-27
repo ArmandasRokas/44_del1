@@ -18,6 +18,7 @@ public class Player {
     private ArrayList<PropertySquare> squaresOwned;
     private Board board;
     private Cup cup;
+    private int outOfJailCard;
 
     /**
      * Constructor for Player
@@ -30,6 +31,7 @@ public class Player {
         this.account = new Account();
         this.name = number;
         currPosition = 0;
+        outOfJailCard = 0;
     }
 
     /**
@@ -94,6 +96,10 @@ public class Player {
 
     public int getTotalSquareOwned(){
         return squaresOwned.size();
+    }
+
+    public void giveOutOfJailCard() {
+        this.outOfJailCard++;
     }
 
 }

@@ -13,11 +13,7 @@ public abstract class ChanceCard {
 
     }
 
-    public abstract void actOnCard(Player p);
+    protected abstract void actOnCard(Player p);
 
-    protected int findSquare(String squareName) {
-        Board board;
-        int index = board.findSquareByName(squareName);
-        return index;
-    }
+
 }

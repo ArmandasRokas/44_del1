@@ -22,10 +22,10 @@ public class Board {
      *
      * @param squareAmount  Amounts of square needed to fill the board for a specific game
      */
-    public Board(int squareAmount) {
+    public Board(int squareAmount, Player[] players) {
         squareList = new Square[squareAmount];
         loadContent();
-        this.setBoard();
+        this.setBoard(players);
     }
 
     /**
@@ -49,29 +49,30 @@ public class Board {
     /**
      * Creates instances of Square to fill the game board and puts them into a list for containment
      */
-    private void setBoard() {
+    private void setBoard(Player[] players) {
         squareList[0] = new StartSquare("Start");
         squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
         squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
-        squareList[3] = new ChanceSquare("Chance");
+        squareList[3] = new ChanceSquare("Chance", players, this);
         squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
         squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
         squareList[6] = new PrisonSquare("Prison");
         squareList[7] = new PropertySquare("Museum",2,2,"Purple");
         squareList[8] = new PropertySquare("Libary",2,2,"Purple");
-        squareList[9] = new ChanceSquare("Chance");
+        squareList[9] = new ChanceSquare("Chance", players, this);
         squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
         squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
         squareList[12] = new ParkingSquare("Free Parking");
         squareList[13] = new PropertySquare("GameHall",3,3,"Red");
         squareList[14] = new PropertySquare("Cinema",3,3,"Red");
-        squareList[15] = new ChanceSquare("Chance");
+        squareList[15] = new ChanceSquare("Chance", players, this);
         squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
         squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
         squareList[18] = new ToPrisonSquare("To Prison");
         squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
         squareList[20] = new PropertySquare("Zoo",4,4,"Green");
-        squareList[21] = new ChanceSquare("Chance");
+        squareList[21] = new ChanceSquare("Chance", players, this);
+//        squareList[21] = squareList[3];
         squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
         squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
     }
@@ -155,4 +156,13 @@ public class Board {
         return squareList[index];
     }
 
+    public int findSquareByName(String name) {
+        int res = 0;
+        for(int i = 0 ; i < squareList.length ; i++) {
+            if(squareList[i].getScenario().equals(name)) {
+                res = i;
+            }
+        }
+        return res;
+    }
 }

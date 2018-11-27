@@ -31,11 +31,13 @@ public class Game {
      */
     public Game() {
         ui = new TUI();
-        this.board = new Board(11);
-        this.cup = new Cup();
 
         int numberOfPlayers = ui.askForNumberOfPlayers();
         players = new Player[numberOfPlayers];
+
+        this.board = new Board(24, players);
+        this.cup = new Cup();
+
         ArrayList<String> names = ui.askForNames(players.length);
 
         for(int i=0; i<players.length; i++){
@@ -43,7 +45,6 @@ public class Game {
         }
 
         currPlayer = players[0];
-
     }
 
     public void run(){
@@ -57,7 +58,6 @@ public class Game {
                 player.takeTurn();
                 ui.updateBoardView();
             }
-
         }
     }
 
