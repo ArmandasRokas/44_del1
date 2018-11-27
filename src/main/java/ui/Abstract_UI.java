@@ -6,13 +6,22 @@ import java.util.ArrayList;
 
 public abstract class Abstract_UI {
 
-    private Game game;
+    protected Game game;
+
+    public void setGame(Game game){
+        this.game = game;
+    }
+
+    public abstract void sayWelcome();
 
     public abstract int askForNumberOfPlayers();
 
     public abstract ArrayList<String> askForNames(int numberOfPlayers);
 
-    public void setGame(Game game){
-        this.game = game;
-    }
+    public abstract boolean askToTakeTurn();
+
+    public abstract boolean updateBoardView();
+
+    public abstract boolean showFinalResult();
+
 }

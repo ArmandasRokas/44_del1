@@ -1,11 +1,18 @@
 package ui;
 
+import model.Player;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TUI extends Abstract_UI {
 
     Scanner scan = new Scanner(System.in);
+
+    @Override
+    public void sayWelcome() {
+
+    }
 
     @Override
     public int askForNumberOfPlayers() {
@@ -34,5 +41,36 @@ public class TUI extends Abstract_UI {
             names.add(input);
         }
         return names;
+    }
+
+    @Override
+    public boolean askToTakeTurn() {
+
+        System.out.println(game.getCurrPlayerName() + " has a turn.");
+        System.out.println("Press 1 for roll dies: ");
+        String input = scan.nextLine();
+        if(input.equals("1")){
+            return true;
+        } else {
+            System.out.println("Forkert input");
+            askToTakeTurn();
+            return false;
+        }
+
+
+    }
+
+    @Override
+    public boolean updateBoardView() {
+
+        for (Player p: game.getPlayers()) {
+            System.out.println(p.toString());
+        }
+        return true;
+    }
+
+    @Override
+    public boolean showFinalResult() {
+        return false;
     }
 }

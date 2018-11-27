@@ -102,4 +102,8 @@ public class Player {
         this.outOfJailCard++;
     }
 
+    public String toString(){
+        return "" + name + " is on " + currPosition + " has: " + getTotalCash();
+    }
+
 }
