@@ -46,6 +46,7 @@ public class TUI extends Abstract_UI {
     @Override
     public boolean askToTakeTurn() {
 
+        System.out.println(game.getCurrPlayerName() + " has a turn.");
         System.out.println("Press 1 for roll dies: ");
         String input = scan.nextLine();
         if(input.equals("1")){

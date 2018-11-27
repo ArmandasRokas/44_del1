@@ -132,7 +132,7 @@ public class Game {
      *
      * @return  Instance of Player
      */
-    public String getCurrPlayerNumber(){
+    public String getCurrPlayerName(){
         return currPlayer.getName();
     }
 
