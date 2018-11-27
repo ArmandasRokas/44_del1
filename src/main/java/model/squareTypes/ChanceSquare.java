@@ -10,6 +10,7 @@ public class ChanceSquare extends Square {
     private static ChanceCard[] chanceCards;
     private static int deckSize;
     private static int cardsDrawn = 0;
+    private static ChanceCard currCard;
 
     public ChanceSquare(String scenario, Player[] players, Board board){
         super(scenario);
@@ -53,9 +54,9 @@ public class ChanceSquare extends Square {
             shuffleCards();
             cardsDrawn = 0;
         }
-        card = chanceCards[cardsDrawn++]; //TODO Control "variable++" is correct here, never tried it in an array call before
+        currCard = chanceCards[cardsDrawn++]; //TODO Control "variable++" is correct here, never tried it in an array call before
 
-        return card;
+        return currCard;
     }
 
     public void shuffleCards() {
@@ -83,5 +84,9 @@ public class ChanceSquare extends Square {
      */
     public ChanceCard[] getDeck() {
         return chanceCards;
+    }
+
+    public String toString(){
+        return "You#ve drawn a Chance Card!" + "\n" + currCard.getScenario();
     }
 }

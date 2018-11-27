@@ -15,5 +15,9 @@ public abstract class ChanceCard {
 
     public abstract void actOnCard(Player p);
 
+    public String getScenario(){
+        return scenario;
+    }
+
 
 }

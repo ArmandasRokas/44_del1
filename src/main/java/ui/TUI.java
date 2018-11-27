@@ -61,6 +61,12 @@ public class TUI extends Abstract_UI {
     }
 
     @Override
+    public boolean showScenario() {
+        System.out.println(game.getCurrSquare().toString());
+        return false;
+    }
+
+    @Override
     public boolean updateBoardView() {
 
         for (Player p: game.getPlayers()) {

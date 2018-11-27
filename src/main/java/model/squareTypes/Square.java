@@ -15,4 +15,8 @@ public abstract class Square {
     }
 
     public abstract void landedOn(Player p);
+
+    public String toString(){
+        return scenario;
+    }
 }
