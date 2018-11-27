@@ -58,8 +58,6 @@ public class Game {
                 if(ui.askToTakeTurn()){
                     player.takeTurn();
                     ui.showScenario();
-                } else {
-                    //trow exception?
                 }
                 ui.updateBoardView();
                 if(loserFound()){

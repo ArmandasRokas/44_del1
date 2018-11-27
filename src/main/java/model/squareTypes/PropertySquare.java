@@ -21,6 +21,7 @@ public class PropertySquare extends Square{
     }
 
     //TODO hvis spilleren selv ejer feltet, skal spilleren ikke betale rente.
+    //TODO rent og buy metoder
     @Override
     public void landedOn(Player p) {
 
