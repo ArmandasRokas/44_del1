@@ -12,6 +12,7 @@ public class ChanceSquare extends Square {
 
     public ChanceSquare(String scenario){
         super(scenario);
+        initChanceCards();
     }
 
     //Todo skal implementeres
@@ -29,7 +30,7 @@ public class ChanceSquare extends Square {
         chanceCards[4] = new CCMoveSquares("Move 5 space forward", 5);
 
         chanceCards[5] = new CCMoveToSquare("Move to Strandpromenaden", "TheBeach"); //FixMe Correct here and in Board setup.. Mby make a setup up class?
-        chanceCards[6] = new CCMoveToSquare("Move to Strandpromenaden", "Skaterpark");
+        chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark");
 
 //        chanceCards[] = new CCMoveToColour();
     }
@@ -67,6 +68,7 @@ public class ChanceSquare extends Square {
                 int randomPlacement = (int)(Math.random() * deckSize);
                 if(shuffledCards[randomPlacement] != null) {
                     shuffledCards[randomPlacement] = card;
+                    cardShuffled = true;
                 }
             }
         }
