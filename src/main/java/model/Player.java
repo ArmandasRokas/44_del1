@@ -32,6 +32,7 @@ public class Player {
         this.name = number;
         currPosition = 0;
         outOfJailCard = 0;
+        squaresOwned = new ArrayList<>();
     }
 
     /**

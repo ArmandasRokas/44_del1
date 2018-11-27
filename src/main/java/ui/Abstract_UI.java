@@ -20,6 +20,8 @@ public abstract class Abstract_UI {
 
     public abstract boolean askToTakeTurn();
 
+  //  public abstract boolean showDiesResult();
+
     public abstract boolean updateBoardView();
 
     public abstract boolean showFinalResult();

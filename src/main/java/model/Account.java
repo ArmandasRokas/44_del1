@@ -24,9 +24,6 @@ public class Account {
      */
     public void addToCash(int cashInfluence) {
         this.totalCash = this.totalCash + cashInfluence;
-        if(this.totalCash < 0) {
-            this.totalCash = 0;
-        }
 
         }
 

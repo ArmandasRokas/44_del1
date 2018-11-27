@@ -44,6 +44,8 @@ public class Game {
         }
 
         currPlayer = players[0];
+
+        isOn = true;
     }
 
     public void run(){
