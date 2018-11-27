@@ -41,7 +41,6 @@ public class ChanceSquare extends Square {
     @Override
     public void landedOn(Player p) {
 
-        // Todo getRandomCard skal implementeres
 //        int index = getRandomCard();
 //        chanceCards[index].actOnCard(p);
         ChanceCard card = drawCard();
@@ -88,6 +87,6 @@ public class ChanceSquare extends Square {
     }
 
     public String toString(){
-        return "You#ve drawn a Chance Card!" + "\n" + currCard.getScenario();
+        return "You have drawn a Chance Card!" + "\n" + currCard.getScenario();
     }
 }

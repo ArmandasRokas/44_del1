@@ -77,6 +77,9 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean showFinalResult() {
-        return false;
+
+        System.out.println("The winner is: " + game.getWinnerName());
+        updateBoardView();
+        return true;
     }
 }

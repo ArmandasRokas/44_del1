@@ -178,4 +178,8 @@ class GameTest {
 
     }
 
+
+    //TODO getWinnerNameTest()
+
+
 }

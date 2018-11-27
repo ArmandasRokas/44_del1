@@ -194,6 +194,18 @@ public class Game {
         return board.getSquare(currPlayer.getCurrPosition());
     }
 
+    //TODO skal implementeres, hvis der to vinder
+    public String getWinnerName(){
+        Player tempWinner = players[0];
+        for(int i = 1; i<players.length ; i++){
+            if (tempWinner.getTotalCash() < players[i].getTotalCash()){
+                tempWinner = players[i];
+            }
+        }
+        return tempWinner.getName();
+
+    }
+
 
     /**
      * Test constructor, only used for tests!
