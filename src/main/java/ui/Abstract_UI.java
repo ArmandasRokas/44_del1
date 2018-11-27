@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public abstract class Abstract_UI {
 
-    private Game game;
+    protected Game game;
 
     public void setGame(Game game){
         this.game = game;

@@ -1,5 +1,7 @@
 package ui;
 
+import model.Player;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,12 +44,26 @@ public class TUI extends Abstract_UI {
     }
 
     @Override
-    public void askToTakeTurn() {
+    public boolean askToTakeTurn() {
+
+        System.out.println("Press 1 for roll dice: ");
+        String input = scan.nextLine();
+        if(input.equals("1")){
+            return true;
+        } else {
+            System.out.println("Forkert input");
+            return false;
+        }
+
 
     }
 
     @Override
-    public void updateBoardView() {
+    public boolean updateBoardView() {
+
+        for (Player p: game.getPlayers()) {
+            System.out.println();
+        }
 
     }
 

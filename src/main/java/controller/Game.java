@@ -173,6 +173,9 @@ public class Game {
         return board.checkExtraTurn();
     }
 
+    public Player[] getPlayers(){
+        return players;
+    }
 
 
 

@@ -96,4 +96,8 @@ public class Player {
         return squaresOwned.size();
     }
 
+    public String toString(){
+        return "" + name + " is on " + currPosition + " has: " + getTotalCash();
+    }
+
 }
