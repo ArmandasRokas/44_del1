@@ -67,7 +67,7 @@ public class ChanceSquare extends Square {
 
             while(!cardShuffled){
                 int randomPlacement = (int)(Math.random() * deckSize);
-                if(shuffledCards[randomPlacement] != null) {
+                if(shuffledCards[randomPlacement] == null) {
                     shuffledCards[randomPlacement] = card;
                     cardShuffled = true;
                 }
