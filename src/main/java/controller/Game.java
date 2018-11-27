@@ -60,11 +60,13 @@ public class Game {
                 }
                 ui.updateBoardView();
                 if(loserFound()){
+                    isOn = false;
                     break;
                 }
 
             }
         }
+        ui.showFinalResult();
     }
 
 
@@ -83,15 +85,15 @@ public class Game {
      * Plays the essentials of a players turn. Rolls the dices, checks on what effect it has
      * on the player and acts on it
      */
-    public void playRound() {  // Måske ændre navn til newRound() ?
-
+//    public void playRound() {  // Måske ændre navn til newRound() ?
+//
 
     //    int totalEye = getCurrentRollScore();
     //    board.updateCurrSquare(totalEye);
-
-        int currCashInfluence = this.getCurrCashInfluence();
-        this.currPlayer.addToCash(currCashInfluence);
-    }
+//
+//        int currCashInfluence = this.getCurrCashInfluence();
+//        this.currPlayer.addToCash(currCashInfluence);
+//    }
 
     /**
      * Method to control if a winner has been found
@@ -110,22 +112,22 @@ public class Game {
     /**
      * Sets up round for next player if to be changed, else it does nothing
      */
-    public void endRound() {
-        if(!board.checkExtraTurn()) {
-            this.changePlayer();
-        }
-    }
+//    public void endRound() {
+//        if(!board.checkExtraTurn()) {
+//            this.changePlayer();
+//        }
+//    }
 
     /**
      * Changes current player
      */
-    private void changePlayer() {
-        if(currPlayer.equals(p1)) {
-            this.currPlayer = p2;
-        } else if(currPlayer.equals(p2)) {
-            this.currPlayer = p1;
-        }
-    }
+//    private void changePlayer() {
+//        if(currPlayer.equals(p1)) {
+//            this.currPlayer = p2;
+//        } else if(currPlayer.equals(p2)) {
+//            this.currPlayer = p1;
+//        }
+//    }
 
 
 
@@ -144,13 +146,13 @@ public class Game {
      * @param playerNumber  The number of which player is to be checked
      * @return              Amount of cash stashed
      */
-    public int getPlayerTotalCash(int playerNumber){
-        if (playerNumber == 1){
-            return p1.getTotalCash();
-        } else{
-            return p2.getTotalCash();
-        }
-    }
+//    public int getPlayerTotalCash(int playerNumber){
+//        if (playerNumber == 1){
+//            return p1.getTotalCash();
+//        } else{
+//            return p2.getTotalCash();
+//        }
+//    }
 
     /**
      * Gets what scenario the current square is
@@ -166,18 +168,18 @@ public class Game {
      *
      * @return  An integer of what effect it will have on the players account
      */
-    public int getCurrCashInfluence() {
-        return board.getCurrCashInfluence();
-    }
+//    public int getCurrCashInfluence() {
+//        return board.getCurrCashInfluence();
+//    }
 
     /**
      * Controls if the Square is meant to give the player an extra turn
      *
      * @return  Boolean which is true if the player is to get an extra turn, else it is false
      */
-    public boolean checkExtraTurn(){
-        return board.checkExtraTurn();
-    }
+//    public boolean checkExtraTurn(){
+//        return board.checkExtraTurn();
+//    }
 
     public Player[] getPlayers(){
         return players;
