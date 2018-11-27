@@ -8,6 +8,11 @@ public class TUI extends Abstract_UI {
     Scanner scan = new Scanner(System.in);
 
     @Override
+    public void sayWelcome() {
+
+    }
+
+    @Override
     public int askForNumberOfPlayers() {
         System.out.println("Write number of players: ");
         String input = scan.nextLine();
@@ -35,4 +40,16 @@ public class TUI extends Abstract_UI {
         }
         return names;
     }
+
+    @Override
+    public void askToTakeTurn() {
+
+    }
+
+    @Override
+    public void updateBoardView() {
+
+    }
+
+
 }

@@ -18,10 +18,10 @@ public abstract class Abstract_UI {
 
     public abstract ArrayList<String> askForNames(int numberOfPlayers);
 
-    public abstract void askToTakeTurn();
+    public abstract boolean askToTakeTurn();
 
-    public abstract void updateBoardView();
+    public abstract boolean updateBoardView();
 
-
+    public abstract boolean showFinalResult();
 
 }
