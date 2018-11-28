@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PropertySquareTest {
 
+    //TODO ARM: skal kommenteres og navnet skal ændres til landOnTestProperty
     @Test
     void landedOnTest() {
 
