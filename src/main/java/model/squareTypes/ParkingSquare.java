@@ -9,7 +9,5 @@ public class ParkingSquare extends Square {
     }
 
     @Override
-    public void landedOn(Player p) {
-
-    }
+    public void landedOn(Player p) {    }
 }

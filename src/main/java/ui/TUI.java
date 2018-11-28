@@ -27,12 +27,11 @@ public class TUI extends Abstract_UI {
                 return 4;
             default:
                 System.out.println("Forkert input");
-                return -1;
+                return -1; //FixMe KNA: "Crashes" the program and text is on danish
         }
     }
 
     public ArrayList<String> askForNames(int numberOfPlayers){
-
         ArrayList<String> names = new ArrayList<>();
 
         for(int i = 0; i < numberOfPlayers; i++){
@@ -45,7 +44,6 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean askToTakeTurn() {
-
         System.out.println(game.getCurrPlayerName() + " has a turn.");
         System.out.println("Press 1 for roll dies: ");
         String input = scan.nextLine();
@@ -56,8 +54,6 @@ public class TUI extends Abstract_UI {
             askToTakeTurn();
             return false;
         }
-
-
     }
 
     @Override
@@ -68,7 +64,6 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean updateBoardView() {
-
         for (Player p: game.getPlayers()) {
             System.out.println(p.toString());
         }
@@ -77,7 +72,6 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean showFinalResult() {
-
         System.out.println("The winner is: " + game.getWinnerName());
         updateBoardView();
         return true;

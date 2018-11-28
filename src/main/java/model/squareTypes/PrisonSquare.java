@@ -10,6 +10,7 @@ public class PrisonSquare extends Square {
     }
 
     //TODO skal implementeres
+    //TODO KNA: What is to be implemented?
     @Override
     public void landedOn(Player p) {
 

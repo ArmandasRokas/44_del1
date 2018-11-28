@@ -17,19 +17,18 @@ public class PropertySquare extends Square{
         this.color = color;
         this.owner = null;
         isOwned = false;
-
     }
 
-    //TODO hvis spilleren selv ejer feltet, skal spilleren ikke betale rente.
     //TODO rent og buy metoder
     @Override
     public void landedOn(Player p) {
-
-        if(isOwned){
-           p.addToCash(-rentPrice);
-        } else {
+        if(isOwned && !p.equals(owner)){
+            //TODO KNA: Proper method for rent, must control if player owns a set.
+            p.addToCash(-rentPrice);
+            owner.addToCash(rentPrice);
+        } else if(!isOwned){
             p.addToCash(-price);
-            owner = p;
+            this.owner = p;
             p.addOwnedSquare(this);
         }
     }

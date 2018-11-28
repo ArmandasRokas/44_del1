@@ -5,12 +5,9 @@ import model.Player;
 
 public abstract class ChanceCard {
     private String scenario;
-//    private boolean onHand; //Flyttet til CCOutOfJail
 
     public ChanceCard(String scenario) {
         this.scenario = scenario;
-//        this.onHand = false;
-
     }
 
     public abstract void actOnCard(Player p);
@@ -18,6 +15,4 @@ public abstract class ChanceCard {
     public String getScenario(){
         return scenario;
     }
-
-
 }

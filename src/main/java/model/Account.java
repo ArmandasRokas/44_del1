@@ -24,7 +24,6 @@ public class Account {
      */
     public void addToCash(int cashInfluence) {
         this.totalCash = this.totalCash + cashInfluence;
-
         }
 
     /**
@@ -35,12 +34,4 @@ public class Account {
     public int getTotalCash() {
         return this.totalCash;
     }
-
-    //TODO Skal nok have forbindelse til en tilsvarende metode i Player, som kan tjekke om spilleren har passeret start i Board.
-    public void moneyForPassingStart() {
-
-    }
-
-
-
 }

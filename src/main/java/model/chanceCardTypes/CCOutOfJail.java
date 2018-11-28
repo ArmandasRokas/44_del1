@@ -1,7 +1,7 @@
 package model.chanceCardTypes;
 
 import model.Player;
-//TODO opret metode til onHand, så flere spillere ikke kan trække det samme kort samtidigt.
+//TODO opret metode til onHand, så flere spillere ikke kan trække det samme kort samtidigt. > Kommer til at gøre ting ved blandingen af kort også.
 public class CCOutOfJail extends ChanceCard {
 //    private boolean onHand;
 

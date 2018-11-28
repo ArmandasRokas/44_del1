@@ -14,7 +14,6 @@ public class Cup {
         d2.rollDie();
     }
 
-
     /**
      * Addd the eyes of the two dices
      *
@@ -23,5 +22,4 @@ public class Cup {
     public int getCurrentRollScore() {
         return d1.getEyes() + d2.getEyes();
     }
-
 }

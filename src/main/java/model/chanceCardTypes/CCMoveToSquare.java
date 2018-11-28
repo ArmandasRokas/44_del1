@@ -5,7 +5,7 @@ import model.Player;
 
 public class CCMoveToSquare extends ChanceCard {
     private String squareName; //fixme Kun relevant med toString?
-    private int squareNmb;
+//    private int squareNmb;
     private Board board;
 
     public CCMoveToSquare(String scenario, String squareName, Board board) {

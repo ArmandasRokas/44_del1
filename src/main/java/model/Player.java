@@ -50,6 +50,7 @@ public class Player {
     public int getTotalCash() {
         return account.getTotalCash();
     }
+
     public String getName(){
         return name;
     }
@@ -68,7 +69,6 @@ public class Player {
 
 
     public void takeTurn() {
-
         int tempCurrPosition = currPosition;
         cup.roll();
         movePlayer(cup.getCurrentRollScore());
@@ -79,7 +79,6 @@ public class Player {
 
         Square square = board.getSquare(this.currPosition);
         square.landedOn(this);
-
     }
 
     public void movePlayer(int squaresNumberToMove){
@@ -106,5 +105,4 @@ public class Player {
     public String toString(){
         return "" + name + " is on " + currPosition + " has: " + getTotalCash();
     }
-
 }

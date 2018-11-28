@@ -40,16 +40,11 @@ public class ChanceSquare extends Square {
 
     @Override
     public void landedOn(Player p) {
-
-//        int index = getRandomCard();
-//        chanceCards[index].actOnCard(p);
         ChanceCard card = drawCard();
         card.actOnCard(p);
     }
 
     public ChanceCard drawCard() {
-//        ChanceCard card;
-
         if(cardsDrawn == deckSize) {
             shuffleCards();
             cardsDrawn = 0;

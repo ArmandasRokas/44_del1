@@ -1,5 +1,6 @@
 package model;
 
+import controller.Game;
 import model.squareTypes.*;
 import util.GameTool;
 
@@ -14,7 +15,6 @@ import java.util.ArrayList;
  */
 public class Board {
     private Square squareList[];
-    private Square currSquare;
     private ArrayList<String> scenerioStrings;
 
     /**
@@ -22,10 +22,11 @@ public class Board {
      *
      * @param squareAmount  Amounts of square needed to fill the board for a specific game
      */
-    public Board(int squareAmount, Player[] players) {
+//    public Board(int squareAmount, Player[] players) {
+    public Board(int squareAmount, Game game) {
         squareList = new Square[squareAmount];
-        loadContent();
-        this.setBoard(players);
+//        loadContent();
+        this.setBoard(game);
     }
 
     /**
@@ -38,6 +39,7 @@ public class Board {
     /**
      * Loads the scenario descriptions of the squares through a hardcoded filename
      */
+    //FixMe KNA: Didn't delete since I think it's an interesting thing to add to the program, if time is there
     private void loadContent(){
         try {
             scenerioStrings = GameTool.readFromFile("EN_scenarios");
@@ -49,11 +51,12 @@ public class Board {
     /**
      * Creates instances of Square to fill the game board and puts them into a list for containment
      */
-    private void setBoard(Player[] players) {
+//    private void setBoard(Player[] players) {
+    private void setBoard(Game game) {
         squareList[0] = new StartSquare("Start");
         squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
         squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
-        squareList[3] = new ChanceSquare("Chance", players, this);
+        squareList[3] = new ChanceSquare("Chance", game.getPlayers(), this);
         squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
         squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
         squareList[6] = new PrisonSquare("Prison");
@@ -78,63 +81,6 @@ public class Board {
         squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
         squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
     }
-
-    /**
-     * Updates the position of the current player after he have rolled the dices
-     *
-     * @param totalEyes Number of eyes on the dices the player have rolled
-     */
-//    public void updateCurrSquare(int totalEyes){
-//        switch (totalEyes){
-//            case 2:
-//                currSquare = squareList[0];
-//                break;
-//            case 3:
-//                currSquare = squareList[1];
-//                break;
-//            case 4:
-//                currSquare = squareList[2];
-//                break;
-//            case 5:
-//                currSquare = squareList[3];
-//                break;
-//            case 6:
-//                currSquare = squareList[4];
-//                break;
-//            case 7:
-//                currSquare = squareList[5];
-//                break;
-//            case 8:
-//                currSquare = squareList[6];
-//                break;
-//            case 9:
-//                currSquare = squareList[7];
-//                break;
-//            case 10:
-//                currSquare = squareList[8];
-//                break;
-//            case 11:
-//                currSquare = squareList[9];
-//                break;
-//            case 12:
-//                currSquare = squareList[10];
-//                break;
-//            default:
-//                currSquare = null;
-//        }
-//    }
-
-
-
-    /**
-     * Get methods of Board class
-     */
-    public String getCurrScenerio(){
-        // if currSquare instanseOf
-
-        return currSquare.toString();
-    }
-
 
     /**
      * Calculates the new position of a player after a roll, considering that the player moves in a circle.

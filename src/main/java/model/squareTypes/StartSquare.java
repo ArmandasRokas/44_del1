@@ -8,7 +8,7 @@ public class StartSquare extends Square {
         super(scenario);
     }
 
-
+    //FixMe KNA: This only happens when you pass.. is there even control for that at the moment?
     @Override
     public void landedOn(Player p) {
         p.addToCash(2);

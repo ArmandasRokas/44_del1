@@ -18,9 +18,6 @@ public class CCMoneyInfluence extends ChanceCard {
     @Override
     public void actOnCard(Player currPlayer) {
         if(actOnOtherPlayers) {
-//            Game game; //FixMe Needs a way to get the playerList from Game
-//            Player playerList[] = game.getPlayerList();
-
             int moneyCollected = 0;
 
             for(int index = 0; index < players.length ; index++) {

@@ -15,7 +15,8 @@ class ChanceSquareTest {
     @BeforeEach
     void BeforeEach() {
         this.game = new Game(4);
-        this.board = new Board(24, game.getPlayers());
+//        this.board = new Board(24, game.getPlayers());
+        this.board = game.getBoard();
     }
 
     /**
