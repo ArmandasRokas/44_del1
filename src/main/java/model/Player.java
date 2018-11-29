@@ -71,7 +71,8 @@ public class Player {
     public void takeTurn() {
         int latestPosition = currPosition;
         cup.roll();
-        movePlayer(cup.getCurrentRollScore());
+        int currentRollScore = cup.getCurrentRollScore()
+        movePlayer(currentRollScore);
 
         if(latestPosition>currPosition){  // checks if player completed one round
             this.addToCash(2);
