@@ -9,26 +9,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PropertySquareTest {
 
-    //TODO ARM: skal kommenteres og navnet skal ændres til landOnTestProperty
+    /**Test case: TC5
+     *
+     * Tests if the property is bought when a player lands on it
+     *
+     */
     @Test
-    void landedOnTest() {
-
+    void landedOnPropertyBuyTest() {
         // Arrange
         Board b = new Board(24, true);
         Cup c = new Cup();
         Player p1 = new Player("1", b, c);
-        Square propertySquare = new PropertySquare("test", 10, 5, "blue" );
+        PropertySquare propertySquare = new PropertySquare("test", 10, 5, "blue" );
         int expectedCashAfterLandedOnProperty = p1.getTotalCash() - 10;
         int expectedSquaresOwned = 1;
 
         // Act
         propertySquare.landedOn(p1);
-        int actualCashAfterLandendOnProperty = p1.getTotalCash();
+        int actualCashAfterLandedOnProperty = p1.getTotalCash();
+        int actualSquaresOwned = p1.getTotalSquareOwned();
+        Player owner = propertySquare.getOwner();
 
         // Assert
-
-        assertEquals(expectedCashAfterLandedOnProperty, actualCashAfterLandendOnProperty);
-        assertEquals(expectedSquaresOwned, p1.getTotalSquareOwned());
-
+        assertEquals(expectedCashAfterLandedOnProperty, actualCashAfterLandedOnProperty);
+        assertEquals(expectedSquaresOwned, actualSquaresOwned);
+        assertEquals(p1, owner);
     }
 }

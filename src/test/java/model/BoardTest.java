@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**Test case: TC5
+/**Test case: TC1
  *
  * Tests if a new position is not extending the number of squares.
  * In other words, the method starts counting position from

@@ -15,29 +15,17 @@ class ChanceSquareTest {
     @BeforeEach
     void BeforeEach() {
         this.game = new Game(4);
-//        this.board = new Board(24, game.getPlayers());
         this.board = game.getBoard();
     }
 
-    /**
-     * Tests if it's possible to draw a card from the deck.
-     */
-    @Test
-    void drawCard() {
-
-        ChanceSquare cs = new ChanceSquare("Chance", game.getPlayers(), board);
-
-        ChanceCard card = cs.drawCard();
-
-        assertNotNull(card);
-    }
-
-    /**
+    /**Test case: TC3
+     *
      * Tests if the cards gets shuffled at a pseudo random level.
-     * This test should fail at moments if truly random and even at a pseudo random level.
+     * !This test should fail at moments if truly random and even at a pseudo random level!
+     *
      */
     @Test
-    void shuffleCards() {
+    void shuffleCardsTest() {
         ChanceSquare cs = new ChanceSquare("Chance", game.getPlayers(), board);
         ChanceCard[] chanceCards = cs.getDeck();
 
@@ -45,5 +33,19 @@ class ChanceSquareTest {
         ChanceCard[] shuffledCards = cs.getDeck();
 
         assertNotEquals(chanceCards, shuffledCards);
+    }
+
+    /**Test case: TC4
+     *
+     * Tests if it's possible to draw a card from the deck.
+     */
+    @Test
+    void drawCardTest() {
+
+        ChanceSquare cs = new ChanceSquare("Chance", game.getPlayers(), board);
+
+        ChanceCard card = cs.drawCard();
+
+        assertNotNull(card);
     }
 }
