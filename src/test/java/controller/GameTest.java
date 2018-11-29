@@ -160,7 +160,8 @@ class GameTest {
      * In addition it tests if the total eyes is added to player´s current standing position,
      * so that the player moves continuously.
      */
-    @Test
+
+    //  @Test   //TODO skal slettes
     void movePlayerTest(){
 
         // Arrange
