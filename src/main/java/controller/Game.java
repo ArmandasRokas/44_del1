@@ -31,9 +31,10 @@ public class Game {
     public Game() {
         ui = new TUI();
 
-        int numberOfPlayers = ui.askForNumberOfPlayers();
-
-        while( numberOfPlayers == -1){
+        int numberOfPlayers;
+        do {
+            numberOfPlayers = ui.askForNumberOfPlayers();
+        } while( numberOfPlayers == -1){
             numberOfPlayers = ui.askForNumberOfPlayers();
         }
 
