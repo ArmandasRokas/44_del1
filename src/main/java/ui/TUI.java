@@ -26,7 +26,7 @@ public class TUI extends Abstract_UI {
             case "4":
                 return 4;
             default:
-                System.out.println("Forkert input");
+                System.out.println("Invalid input");
                 return -1; //FixMe KNA: "Crashes" the program and text is on danish
         }
     }
@@ -45,12 +45,12 @@ public class TUI extends Abstract_UI {
     @Override
     public boolean askToTakeTurn() {
         System.out.println(game.getCurrPlayerName() + " has a turn.");
-        System.out.println("Press 1 for roll dies: ");
+        System.out.println("Press 1 for roll dice: ");
         String input = scan.nextLine();
         if(input.equals("1")){
             return true;
         } else {
-            System.out.println("Forkert input");
+            System.out.println("Invalid input");
             askToTakeTurn();
             return false;
         }
