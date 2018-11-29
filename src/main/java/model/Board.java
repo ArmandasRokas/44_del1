@@ -59,7 +59,7 @@ public class Board {
         squareList[3] = new ChanceSquare("Chance", game.getPlayers(), this);
         squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
         squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
-        squareList[6] = new PrisonSquare("Prison");
+        squareList[6] = new JailSquare("Prison");
         squareList[7] = new PropertySquare("Museum",2,2,"Purple");
         squareList[8] = new PropertySquare("Libary",2,2,"Purple");
 //        squareList[9] = new ChanceSquare("Chance", players, this);
@@ -73,7 +73,7 @@ public class Board {
         squareList[15] = squareList[3];
         squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
         squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
-        squareList[18] = new ToPrisonSquare("To Prison", this);
+        squareList[18] = new ToJailSquare("To Prison", this);
         squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
         squareList[20] = new PropertySquare("Zoo",4,4,"Green");
 //        squareList[21] = new ChanceSquare("Chance", players, this);
