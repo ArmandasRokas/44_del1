@@ -32,6 +32,11 @@ public class Game {
         ui = new TUI();
 
         int numberOfPlayers = ui.askForNumberOfPlayers();
+
+        while( numberOfPlayers == -1){
+            numberOfPlayers = ui.askForNumberOfPlayers();
+        }
+
         players = new Player[numberOfPlayers];
 
 //        this.board = new Board(24, players);

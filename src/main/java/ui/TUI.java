@@ -16,7 +16,7 @@ public class TUI extends Abstract_UI {
 
     @Override
     public int askForNumberOfPlayers() {
-        System.out.println("Write number of players: ");
+        System.out.println("Choose 2-4 number of players: ");
         String input = scan.nextLine();
         switch (input.toLowerCase()){
             case "2":
