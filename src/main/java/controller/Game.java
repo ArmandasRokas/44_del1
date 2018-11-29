@@ -34,9 +34,7 @@ public class Game {
         int numberOfPlayers;
         do {
             numberOfPlayers = ui.askForNumberOfPlayers();
-        } while( numberOfPlayers == -1){
-            numberOfPlayers = ui.askForNumberOfPlayers();
-        }
+        } while(numberOfPlayers == -1);
 
         players = new Player[numberOfPlayers];
 
