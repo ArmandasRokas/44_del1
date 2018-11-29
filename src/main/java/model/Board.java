@@ -73,7 +73,7 @@ public class Board {
         squareList[15] = squareList[3];
         squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
         squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
-        squareList[18] = new ToPrisonSquare("To Prison");
+        squareList[18] = new ToPrisonSquare("To Prison", this);
         squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
         squareList[20] = new PropertySquare("Zoo",4,4,"Green");
 //        squareList[21] = new ChanceSquare("Chance", players, this);
