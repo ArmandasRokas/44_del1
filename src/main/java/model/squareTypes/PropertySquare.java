@@ -56,6 +56,7 @@ public class PropertySquare extends Square{
     private void buyProperty(Player p){
         p.addToCash(-price);
         this.owner = p;
+        this.isOwned = true;
         p.addOwnedSquare(this);
         playerAction = p.getName() + " bought a " + super.toString() + " for " + price + "M";
     }
