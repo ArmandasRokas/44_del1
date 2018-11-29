@@ -9,7 +9,7 @@ import util.GameTool;
  * Class to represent a single die to be used throughout the game
  */
 public class Die {
-    private int eyes;   //Eyes of the dice
+    private int eyes;               //Eyes of the dice
     private int minEyes, maxEyes;   //Range of eyes on the die
 
     /**

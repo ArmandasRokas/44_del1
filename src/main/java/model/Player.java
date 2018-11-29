@@ -1,5 +1,10 @@
 package model;
 
+import model.squareTypes.PropertySquare;
+import model.squareTypes.Square;
+
+import java.util.ArrayList;
+
 /**@author Hold 44
  * @version 08/11-2018
  *
@@ -7,17 +12,27 @@ package model;
  * Class to represent a single player throughout the game
  */
 public class Player {
-    private String number;  //Number of player
+    private String name;
     private Account account;
+    private int currPosition;
+    private ArrayList<PropertySquare> squaresOwned;
+    private Board board;
+    private Cup cup;
+    private int outOfJailCard;
 
     /**
      * Constructor for Player
      *
      * @param number    Player number
      */
-    public Player(String number){
+    public Player(String number, Board board, Cup cup){
+        this.cup = cup;
+        this.board = board;
         this.account = new Account();
-        this.number = number;
+        this.name = number;
+        currPosition = 0;
+        outOfJailCard = 0;
+        squaresOwned = new ArrayList<>();
     }
 
     /**
@@ -35,7 +50,62 @@ public class Player {
     public int getTotalCash() {
         return account.getTotalCash();
     }
-    public String getNumber(){
-        return number;
+
+    public String getName(){
+        return name;
+    }
+
+    public int getCurrPosition() {
+        return currPosition;
+    }
+
+    public void updateCurrPosition(int position) {
+        this.currPosition = position;
+    }
+
+    public void addOwnedSquare(PropertySquare square){
+        squaresOwned.add(square);
+    }
+
+
+    public void takeTurn() {
+        int latestPosition = currPosition;
+        cup.roll();
+        int currentRollScore = cup.getCurrentRollScore();
+        movePlayer(currentRollScore);
+
+        int cashStartIncome = 2;
+        if(latestPosition>currPosition){  // checks if player completed one round
+            this.addToCash(cashStartIncome);
+        }
+
+        Square square = board.getSquare(this.currPosition);
+        square.landedOn(this);
+    }
+
+    public void movePlayer(int squaresNumberToMove){
+
+        int newPosition = board.getNewPosition(currPosition,squaresNumberToMove);
+        this.updateCurrPosition(newPosition);
+    }
+
+    public void moveToSquare(int squareNumber){
+
+        this.updateCurrPosition(squareNumber);
+        Square square = board.getSquare(this.currPosition);
+        square.landedOn(this);
+    }
+
+    public int getTotalSquareOwned(){
+        return squaresOwned.size();
+    }
+
+    public void giveOutOfJailCard() {
+        this.outOfJailCard++;
+    }
+
+    public String toString(){
+        int position = currPosition + 1;
+        return "" + name + " is on " + position + " of " + "24 has: " + getTotalCash() + "M";
     }
 }

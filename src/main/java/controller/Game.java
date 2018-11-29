@@ -1,8 +1,14 @@
 package controller;
 
 import model.Board;
+import model.Cup;
 import model.Die;
 import model.Player;
+import model.squareTypes.Square;
+import ui.Abstract_UI;
+import ui.TUI;
+
+import java.util.ArrayList;
 
 /**@author Hold 44
  * @version 08/11-2018
@@ -12,89 +18,75 @@ import model.Player;
  * according to this logic
  */
 public class Game {
-    private Player p1, p2, currPlayer;      //Instances of Player
-    private Die d1, d2;                     //Instances of Die
+    private Player currPlayer;      //Instances of Player
+    private Player[] players;
     private Board board;
-    private int winCondition;
+    private Cup cup;
+    private Abstract_UI ui;
+    private boolean isOn;
 
     /**
      * Constructor of Game class
      */
     public Game() {
-        this.p1 = new Player("Spiller 1");
-        this.p2 = new Player("Spiller 2");
-        this.d1 = new Die(1,6);
-        this.d2 = new Die(1,6);
-        this.currPlayer = p1;
-        this.board = new Board(11);
-        this.winCondition = 3000;
+        ui = new TUI();
+
+        int numberOfPlayers;
+        do {
+            numberOfPlayers = ui.askForNumberOfPlayers();
+        } while(numberOfPlayers == -1);
+
+        players = new Player[numberOfPlayers];
+
+//        this.board = new Board(24, players);
+        this.board = new Board(24, this);
+        this.cup = new Cup();
+
+        ArrayList<String> names = ui.askForNames(players.length);
+
+        for(int i=0; i<players.length; i++){
+            players[i] = new Player(names.get(i),board, cup);
+        }
+
+        currPlayer = players[0];
+
+        isOn = true;
+    }
+
+    public void run(){
+        ui.setGame(this);
+
+        while(isOn){
+            for (Player player: players) { //TODO KNA: Either fix this to standard for-loop or be ready to defend it since it doesn't hold up to "inititiate-condition-afterthought"/"index-condition-increment"
+                currPlayer = player;
+
+                if(ui.askToTakeTurn()){
+                    player.takeTurn();
+                    ui.showCurrentDiesResult();
+                    ui.showScenario();
+                }
+                ui.updateBoardView();
+                if(loserFound()){
+                    isOn = false;
+                    break;
+                }
+            }
+        }
+        ui.showFinalResult();
     }
 
     /**
-     * This constructor is just for testing purposes!
-     */
-    public Game(Player p1){
-        this.p1 = p1;
-        this.currPlayer = p1;
-        this.winCondition = 3000;
-    }
-
-    /**
-     * Plays the essentials of a players turn. Rolls the dices, checks on what effect it has
-     * on the player and acts on it
-     */
-    public void playRound() {  // Måske ændre navn til newRound() ?
-        d1.rollDie();
-        d2.rollDie();
-
-        int totalEye = getCurrentRollScore();
-        board.updateCurrSquare(totalEye);
-
-        int currCashInfluence = this.getCurrCashInfluence();
-        this.currPlayer.addToCash(currCashInfluence);
-    }
-
-    /**
-     * Method to control if a winner has been found
+     * Method to control if a loser has been found
      *
-     * @return  boolean which is true if a winner has been found
+     * @return  boolean which is true if a loser has been found
      */
-    //TODO skal overvejes til at flytte metodens logik til Player class
-    public boolean winnerFound() {
+    //TODO skal overvejes til at flytte metodens logik til Player class og laves om til taber fundet
+    public boolean loserFound() {
         boolean res = false;
-        if(currPlayer.getTotalCash() >= winCondition) {
+        if(currPlayer.getTotalCash() <= 0) {
             res = true;
         }
         return res;
-    }
-
-    /**
-     * Sets up round for next player if to be changed, else it does nothing
-     */
-    public void endRound() {
-        if(!board.checkExtraTurn()) {
-            this.changePlayer();
-        }
-    }
-
-    /**
-     * Changes current player
-     */
-    private void changePlayer() {
-        if(currPlayer.equals(p1)) {
-            this.currPlayer = p2;
-        } else if(currPlayer.equals(p2)) {
-            this.currPlayer = p1;
-        }
-    }
-
-    /**
-     * Addd the eyes of the two dices
-     *
-     * @return  Sum of the two dices
-     */
-    public int getCurrentRollScore() {
-        return d1.getEyes() + d2.getEyes();
     }
 
     /**
@@ -102,48 +94,59 @@ public class Game {
      *
      * @return  Instance of Player
      */
-    public String getCurrPlayerNumber(){
-        return currPlayer.getNumber();
+    public String getCurrPlayerName(){
+        return currPlayer.getName();
     }
 
-    /**
-     * Gets the total amount of cash currently stashed by a given player
-     *
-     * @param playerNumber  The number of which player is to be checked
-     * @return              Amount of cash stashed
-     */
-    public int getPlayerTotalCash(int playerNumber){
-        if (playerNumber == 1){
-            return p1.getTotalCash();
-        } else{
-            return p2.getTotalCash();
+    public Square getCurrSquare(){
+        return board.getSquare(currPlayer.getCurrPosition());
+    }
+
+    //TODO skal implementeres, hvis der to vinder
+    public String getWinnerName(){
+        Player tempWinner = players[0];
+
+        for(int i = 1; i<players.length ; i++){
+            if (tempWinner.getTotalCash() < players[i].getTotalCash()){
+                tempWinner = players[i];
+            }
         }
+        return tempWinner.getName();
+    }
+
+    //-------------METHODS FOR TESTS BENEATH-----------------
+
+    /**
+     * Test constructor, only used for tests!
+     * Used by: ChanceSquareTest
+     */
+    public Game(int numberOfPlayers) {
+        ui = new TUI();
+        players = new Player[numberOfPlayers];
+//        this.board = new Board(24, players);
+        this.board = new Board(24, this);
+        this.cup = new Cup();
+
+        for(int i=0; i<players.length; i++){
+            players[i] = new Player("",board, cup);
+        }
+        currPlayer = players[0];
+        isOn = true;
     }
 
     /**
-     * Gets what scenario the current square is
-     *
-     * @return  String of what the scenario says
+     * Test method, might be able to be fixed by new constructor
+     * @return
      */
-    public String getCurrScenario() {
-        return board.getCurrScenerio();
+    public Player[] getPlayers(){
+        return players;
     }
 
-    /**
-     * Gets what effect of the current square has on the players account
-     *
-     * @return  An integer of what effect it will have on the players account
-     */
-    public int getCurrCashInfluence() {
-        return board.getCurrCashInfluence();
+    public Board getBoard() {
+        return board;
     }
 
-    /**
-     * Controls if the Square is meant to give the player an extra turn
-     *
-     * @return  Boolean which is true if the player is to get an extra turn, else it is false
-     */
-    public boolean checkExtraTurn(){
-        return board.checkExtraTurn();
+    public int getCurrentDiesTotal(){
+        return cup.getCurrentRollScore();
     }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
+      <x>666</x>
       <y>270</y>
-      <w>130</w>
-      <h>90</h>
+      <w>117</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Terning
 -
@@ -17,10 +17,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
+      <x>198</x>
       <y>270</y>
-      <w>130</w>
-      <h>90</h>
+      <w>117</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Spiller
 -
@@ -31,10 +31,10 @@ nummer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
+      <x>450</x>
       <y>270</y>
-      <w>130</w>
-      <h>90</h>
+      <w>117</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Spil
 -
@@ -44,24 +44,24 @@ nummer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>580</x>
-      <y>450</y>
-      <w>150</w>
-      <h>90</h>
+      <x>657</x>
+      <y>432</y>
+      <w>135</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Felt
 -
-scenarioBeskrivelse
-pengeIndflydelse</panel_attributes>
+scenarieBeskrivelse
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>450</y>
-      <w>130</w>
-      <h>90</h>
+      <x>441</x>
+      <y>432</y>
+      <w>117</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Bræt
 -
@@ -71,13 +71,13 @@ pengeIndflydelse</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>300</y>
-      <w>180</w>
-      <h>50</h>
+      <x>306</x>
+      <y>297</y>
+      <w>162</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=2
+m1=2..4
 m2=1
 spiller
 </panel_attributes>
@@ -86,10 +86,10 @@ spiller
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>300</y>
-      <w>140</w>
-      <h>50</h>
+      <x>558</x>
+      <y>297</y>
+      <w>126</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -101,10 +101,10 @@ spilles med
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>350</y>
-      <w>90</w>
-      <h>120</h>
+      <x>495</x>
+      <y>342</y>
+      <w>81</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -116,14 +116,14 @@ spilles på
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>490</y>
-      <w>140</w>
-      <h>50</h>
+      <x>549</x>
+      <y>468</y>
+      <w>126</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
-m2=11
+m2=24
 lavet af 
 </panel_attributes>
     <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
@@ -131,10 +131,10 @@ lavet af
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>450</y>
-      <w>130</w>
-      <h>90</h>
+      <x>198</x>
+      <y>432</y>
+      <w>117</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Konto
 -
@@ -144,10 +144,10 @@ saldo</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>110</x>
-      <y>350</y>
-      <w>50</w>
-      <h>120</h>
+      <x>234</x>
+      <y>342</y>
+      <w>45</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -155,5 +155,252 @@ m2=1
 ejer
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>99</y>
+      <w>117</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>ChanceKort
+-
+scenarie</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>171</y>
+      <w>63</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=18
+m2=1
+tilhører
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>189</x>
+      <y>99</y>
+      <w>117</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>Brik
+-
+scenarie</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>171</y>
+      <w>63</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+tilhører 
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>45</y>
+      <w>612</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=2..4
+m2=1
+står på
+</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;20.0;660.0;20.0;660.0;490.0;630.0;490.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>414</x>
+      <y>594</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Start
+-
+pengeIndflydelse
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>594</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>TilFængsel
+-
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>594</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Grund
+-
+købePris
+legePris
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>594</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Fængsel
+-
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>594</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Chance
+-
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>765</x>
+      <y>594</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Parkering
+-
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>504</y>
+      <w>522</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>560.0;10.0;560.0;60.0;10.0;60.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>297</y>
+      <w>90</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..16
+ejer
+</panel_attributes>
+    <additional_attributes>80.0;10.0;30.0;10.0;30.0;370.0;60.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>549</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>549</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>549</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>549</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>540</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0;100.0;60.0</additional_attributes>
   </element>
 </diagram>

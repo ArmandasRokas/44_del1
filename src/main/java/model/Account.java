@@ -13,7 +13,7 @@ public class Account {
      * Constructor of Account class
      */
     public Account() {
-        this.totalCash = 1000;
+        this.totalCash = 20; //TODO skal omskrives til 20 for 2 spillere, 18 for 3 spillere, 16 for 4 spillere.
     }
 
     /**
@@ -24,10 +24,7 @@ public class Account {
      */
     public void addToCash(int cashInfluence) {
         this.totalCash = this.totalCash + cashInfluence;
-        if(this.totalCash < 0) {
-            this.totalCash = 0;
         }
-    }
 
     /**
      * Get method of totalCash
