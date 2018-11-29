@@ -96,7 +96,7 @@ public class Board {
                         PropertySquare ps2 = (PropertySquare)squareList[i];
 
                         if(ps2.getColor().equals(color)) {
-                            ps2.setSiblingSquare(squareList[i]);
+                            ps2.setSiblingSquare(ps);
                         }
                     }
                 }
