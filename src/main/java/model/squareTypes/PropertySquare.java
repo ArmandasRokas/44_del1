@@ -55,5 +55,3 @@ public class PropertySquare extends Square{
         return owner;
     }
 }
-
-
