@@ -3,10 +3,10 @@ package model.squareTypes;
 import model.Board;
 import model.Player;
 
-public class ToPrisonSquare extends Square {
+public class ToJailSquare extends Square {
     int squareNumber;
 
-    public ToPrisonSquare(String scenario, Board board){
+    public ToJailSquare(String scenario, Board board){
         super(scenario);
         this.squareNumber = findSquare(board);
     }
