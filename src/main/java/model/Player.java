@@ -69,11 +69,11 @@ public class Player {
 
 
     public void takeTurn() {
-        int tempCurrPosition = currPosition;
+        int latestPosition = currPosition;
         cup.roll();
         movePlayer(cup.getCurrentRollScore());
 
-        if(tempCurrPosition>currPosition){  // checks if player completed one round
+        if(latestPosition>currPosition){  // checks if player completed one round
             this.addToCash(2);
         }
 
