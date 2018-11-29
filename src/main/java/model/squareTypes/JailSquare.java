@@ -16,5 +16,8 @@ public class JailSquare extends Square {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "You are visiting " + super.toString();
+    }
 }

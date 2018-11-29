@@ -76,4 +76,12 @@ public class TUI extends Abstract_UI {
         updateBoardView();
         return true;
     }
+
+    @Override
+    public boolean showCurrentDiesResult() {
+
+        System.out.println(game.getCurrPlayerName() + " rolled " + game.getCurrentDiesTotal());
+
+        return false;
+    }
 }

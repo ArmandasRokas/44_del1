@@ -26,4 +26,6 @@ public abstract class Abstract_UI {
 
     public abstract boolean showFinalResult();
 
+    public abstract boolean showCurrentDiesResult();
+
 }
