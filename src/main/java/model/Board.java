@@ -130,9 +130,12 @@ public class Board {
 
     public int findSquareByName(String name) {
         int res = 0;
-        for(int i = 0 ; i < squareList.length ; i++) {
+        boolean found = false;
+
+        for(int i = 0 ; i < squareList.length && !found ; i++) {
             if(squareList[i].getScenario().equals(name)) {
                 res = i;
+                found = true;
             }
         }
         return res;
