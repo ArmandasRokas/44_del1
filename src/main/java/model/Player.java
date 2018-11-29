@@ -103,6 +103,7 @@ public class Player {
     }
 
     public String toString(){
-        return "" + name + " is on " + currPosition+1 + "of " + "24 has: " + getTotalCash();
+        int position = currPosition + 1;
+        return "" + name + " is on " + position + " of " + "24 has: " + getTotalCash() + "M";
     }
 }
