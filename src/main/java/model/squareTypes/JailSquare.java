@@ -2,10 +2,10 @@ package model.squareTypes;
 
 import model.Player;
 
-public class PrisonSquare extends Square {
+public class JailSquare extends Square {
 
 
-    public PrisonSquare(String scenario){
+    public JailSquare(String scenario){
         super(scenario);
     }
 
