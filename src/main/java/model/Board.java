@@ -80,6 +80,28 @@ public class Board {
         squareList[21] = squareList[3];
         squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
         squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
+
+        setPropertySquareSiblings();
+    }
+
+    private void setPropertySquareSiblings() {
+        for(int i = 0 ; i < squareList.length ; i++) {
+
+            if(squareList[i] instanceof PropertySquare) {
+                PropertySquare ps = (PropertySquare)squareList[i];
+                String color = ps.getColor();
+
+                for(Square square : squareList) {
+                    if(square instanceof PropertySquare) {
+                        PropertySquare ps2 = (PropertySquare)squareList[i];
+
+                        if(ps2.getColor().equals(color)) {
+                            ps2.setSiblingSquare(ps);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /**
