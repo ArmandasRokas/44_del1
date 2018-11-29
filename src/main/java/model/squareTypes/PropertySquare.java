@@ -26,12 +26,9 @@ public class PropertySquare extends Square{
     public void landedOn(Player p) {
         if(isOwned && !p.equals(owner)){
             //TODO KNA: Proper method for rent, must control if player owns a set.
-            p.addToCash(-rentPrice);
-            owner.addToCash(rentPrice);
+            payRent(p);
         } else if(!isOwned){
-            p.addToCash(-price);
-            this.owner = p;
-            p.addOwnedSquare(this);
+            buyProperty(p);
         }
     }
 
@@ -44,13 +41,22 @@ public class PropertySquare extends Square{
         return res;
     }
 
-    private void buyProperty(Player p){
-        p.addToCash(-rentPrice);
-        owner.addToCash(rentPrice);
-        playerAction = p.getName() + " bought a " + super.toString() + " for " + price + "M";
+    private void payRent(Player p){
+        int toBePayed = rentPrice;
+        if(isPropertySetOwned()) {
+            toBePayed = toBePayed * 2;
+        }
+
+        p.addToCash(-toBePayed);
+        owner.addToCash(toBePayed);
+        playerAction = p.getName() + " is on " + super.toString() + " which is owned by " + owner.getName() +
+                " You paid " + toBePayed + "M to" + owner.getName();
     }
 
-    private void payRent(Player p){
+    private void buyProperty(Player p){
+        p.addToCash(-price);
+        this.owner = p;
+        p.addOwnedSquare(this);
         playerAction = p.getName() + " bought a " + super.toString() + " for " + price + "M";
     }
 
@@ -58,7 +64,7 @@ public class PropertySquare extends Square{
     public String toString() {
         return playerAction;
     }
-}
+
 
     public String getColor() {
         return color;
