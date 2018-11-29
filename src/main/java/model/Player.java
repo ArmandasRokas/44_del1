@@ -74,8 +74,9 @@ public class Player {
         int currentRollScore = cup.getCurrentRollScore();
         movePlayer(currentRollScore);
 
+        int cashStartIncome = 2;
         if(latestPosition>currPosition){  // checks if player completed one round
-            this.addToCash(2);
+            this.addToCash(cashStartIncome);
         }
 
         Square square = board.getSquare(this.currPosition);
