@@ -58,6 +58,7 @@ public class Game {
 
                 if(ui.askToTakeTurn()){
                     player.takeTurn();
+                    ui.showCurrentDiesResult();
                     ui.showScenario();
                 }
                 ui.updateBoardView();
@@ -139,5 +140,9 @@ public class Game {
 
     public Board getBoard() {
         return board;
+    }
+
+    public int getCurrentDiesTotal(){
+        return cup.getCurrentRollScore();
     }
 }
