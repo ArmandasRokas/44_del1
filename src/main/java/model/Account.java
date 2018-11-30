@@ -7,7 +7,7 @@ package model;
  * Class to represent and act on the account of a player throughout the gameController
  */
 public class Account {
-    private int totalCash;
+    private int totalCash;  //Total balance of player
 
     /**
      * Constructor of Account class
