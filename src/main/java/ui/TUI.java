@@ -5,15 +5,28 @@ import model.Player;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**@author Hold 44
+ * @version 30/11-2018
+ *
+ * Defines the TUI class and all of its fields and methods
+ * Class to retrieve and show information to the players playing the game
+ */
 public class TUI extends Abstract_UI {
+    Scanner scan = new Scanner(System.in);  //Scanner to retrieve inputs from players
 
-    Scanner scan = new Scanner(System.in);
-
+    /**
+     * Prints greeting to players
+     */
     @Override
     public void sayWelcome() {
 
     }
 
+    /**
+     * Asks the players for number of players, accepts between 2-4 players
+     *
+     * @return  Amount of players
+     */
     @Override
     public int askForNumberOfPlayers() {
         System.out.println("Choose 2-4 number of players: ");
@@ -31,6 +44,12 @@ public class TUI extends Abstract_UI {
         }
     }
 
+    /**
+     * Ask the players to choose an individual name to use throughout the game
+     *
+     * @param numberOfPlayers   Number of players currently playing
+     * @return                  List of the names of players
+     */
     public ArrayList<String> askForNames(int numberOfPlayers){
         ArrayList<String> names = new ArrayList<>();
 
@@ -42,6 +61,11 @@ public class TUI extends Abstract_UI {
         return names;
     }
 
+    /**
+     * Awaits players to take their turn, by putting '1' into the prompt and click [Enter] on their keyboard
+     *
+     * @return  Boolean that is true if correct input
+     */
     @Override
     public boolean askToTakeTurn() {
         System.out.println(gameController.getCurrPlayerName() + " has a turn.");
@@ -56,12 +80,22 @@ public class TUI extends Abstract_UI {
         }
     }
 
+    /**
+     * Writes out the scenario to players
+     *
+     * @return  [Usage to be implemented]
+     */
     @Override
     public boolean showScenario() {
         System.out.println(gameController.getCurrSquare().toString());
         return false;
     }
 
+    /**
+     * Prints the text on scoreboard
+     *
+     * @return  [Usage to be implemented]
+     */
     @Override
     public boolean updateBoardView() {
         for (Player p: gameController.getPlayers()) {
@@ -70,6 +104,11 @@ public class TUI extends Abstract_UI {
         return true;
     }
 
+    /**
+     * Prints the final scoreboard
+     *
+     * @return  [Usage to be implemented]
+     */
     @Override
     public boolean showFinalResult() {
         System.out.println("The winner is: " + gameController.getWinnerName());
@@ -77,6 +116,11 @@ public class TUI extends Abstract_UI {
         return true;
     }
 
+    /**
+     * Prints or updates the current roll
+     *
+     * @return [Usage to be implemented]
+     */
     @Override
     public boolean showCurrentDiesResult() {
 
