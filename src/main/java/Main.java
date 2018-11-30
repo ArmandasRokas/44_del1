@@ -1,10 +1,14 @@
-import controller.Game;
-import ui.UI;
+import controller.GameController;
 
 public class Main {
 
+    /**
+     * Runs the program
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        Game game = new Game();
-        game.run();
+        GameController gameController = new GameController();
+        gameController.run();
     }
 }

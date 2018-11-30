@@ -13,18 +13,18 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  */
 
-class BoardTest {
+class GameControllerBoardTest {
     @Test
     void getNewPositionTest(){
         //Arrange
         int boardLength = 12;
-        Board board = new Board(boardLength,true);
+        GameBoard gameBoard = new GameBoard(boardLength,true);
         int startPosition = 0;
         int expAfterMovingToLastSquare = boardLength - 1;
 
         //Act
-        int newPosition_Last_Square = board.getNewPosition(startPosition, boardLength-1);
-        int newPosition_Completing_One_Round = board.getNewPosition(startPosition, boardLength);
+        int newPosition_Last_Square = gameBoard.getNewPosition(startPosition, boardLength-1);
+        int newPosition_Completing_One_Round = gameBoard.getNewPosition(startPosition, boardLength);
 
         //Assert
         assertEquals(expAfterMovingToLastSquare, newPosition_Last_Square );

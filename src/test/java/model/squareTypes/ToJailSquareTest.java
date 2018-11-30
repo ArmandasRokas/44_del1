@@ -1,7 +1,7 @@
 package model.squareTypes;
 
-import controller.Game;
-import model.Board;
+import controller.GameController;
+import model.GameBoard;
 import model.Cup;
 import model.Player;
 import org.junit.jupiter.api.Test;
@@ -18,18 +18,18 @@ class ToJailSquareTest {
     @Test
     void toJailLandedOnTest() {
         //Arrange
-        Game game = new Game(2);
-        Board board = new Board(24,game);
+        GameController gameController = new GameController(2);
+        GameBoard gameBoard = new GameBoard(24, gameController);
         Cup cup = new Cup();
 
-        Player[] players = game.getPlayers();
+        Player[] players = gameController.getPlayers();
         Player p = players[1];
 
-        int expectedPos = board.findSquareByName("Prison"); //Index for Jail
+        int expectedPos = gameBoard.findSquareByName("Prison"); //Index for Jail
 
         //Act
-        Player p1 = new Player("1",board,cup);
-        Square toJailSquare = board.getSquare(18);
+        Player p1 = new Player("1", gameBoard,cup);
+        Square toJailSquare = gameBoard.getSquare(18);
         toJailSquare.landedOn(p);
 
         int actualPos = p.getCurrPosition();
