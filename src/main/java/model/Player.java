@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * Class to represent a single player throughout the gameController
  */
 public class Player {
-    private String name;
-    private Account account;
-    private int currPosition;
-    private ArrayList<PropertySquare> squaresOwned;
-    private GameBoard gameBoard;
-    private Cup cup;
+    private String name;                            //Name of Player
+    private Account account;                        //Reference to instance of Account
+    private int currPosition;                       //Current position on the board of player
+    private ArrayList<PropertySquare> squaresOwned; //Reference to list of properties player owns
+    private GameBoard gameBoard;                    //Reference to instance of GameBoard
+    private Cup cup;                                //Reference to instance of Cup
     private int outOfJailCard; //TODO Implement as part of "ToJailSquare"-use
 
     /**
