@@ -7,7 +7,7 @@ package model;
  * Class to keep the dices that the player has to roll with to move
  */
 public class Cup {
-    private Die d1, d2;
+    private Die d1, d2; //Instances of dices
 
     /**
      * Constructor of Cup
