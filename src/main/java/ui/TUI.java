@@ -27,7 +27,7 @@ public class TUI extends Abstract_UI {
                 return 4;
             default:
                 System.out.println("Invalid input");
-                return -1; //FixMe KNA: "Crashes" the program and text is on danish
+                return -1;
         }
     }
 
