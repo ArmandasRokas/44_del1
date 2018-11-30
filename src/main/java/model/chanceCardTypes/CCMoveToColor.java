@@ -15,7 +15,7 @@ public class CCMoveToColor extends ChanceCard {
     /**
      * Constructor of CCMoveToColor
      *
-     * @param scenario  Scenario of the card
+     * @param scenario  Scenario description of the card
      * @param color     Color group of the square player can choose from to move to
      */
     public CCMoveToColor(String scenario, String color) {
