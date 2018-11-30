@@ -25,7 +25,7 @@ public class ToJailSquare extends Square {
     }
 
     /**
-     * Acts on the squares scenario with the player who landed on it
+     * Acts out the square's scenario with the player who landed on it
      *
      * @param p Instance of player who have landed on the square
      */
