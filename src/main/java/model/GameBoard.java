@@ -12,8 +12,7 @@ import java.util.ArrayList;
  * Class to represent the playing board and to contain and arrange the squares players can land on
  */
 public class GameBoard {
-    private Square squareList[];
-    private ArrayList<String> scenerioStrings;
+    private Square squareList[];                //List of squares
 
     /**
      * Constructor for GameBoard
@@ -133,7 +132,6 @@ public class GameBoard {
     public Square getSquare(int index){
         return squareList[index];
     }
-
 
 
     //----------------------Methods for tests!------------------------
