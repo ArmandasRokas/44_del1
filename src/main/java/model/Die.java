@@ -1,6 +1,6 @@
 package model;
 
-import util.GameTool;
+import java.util.Random;
 
 /**@author Hold 44
  * @version 08/11-2018
@@ -22,10 +22,13 @@ public class Die {
     }
 
     /**
-     * Sets the eyes on the die through a pseudorandom method in GameTool class
+     * Sets the eyes on the die through a pseudorandom method with the use of the class "Random"
      */
     public void rollDie() {
-        this.eyes = GameTool.randomIntValue(minEyes,maxEyes);
+        Random r = new Random();
+
+        int randomNum = r.nextInt(maxEyes - minEyes + 1);
+        this.eyes = randomNum + minEyes;
     }
 
     /**

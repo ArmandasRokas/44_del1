@@ -17,12 +17,12 @@ import java.util.ArrayList;
  * according to this logic
  */
 public class GameController {
-    private Player currPlayer;  //Instances of Player
-    private Player[] players;   //Array of players
-    private GameBoard gameBoard;        //Instance of GameBoard
-    private Cup cup;
-    private Abstract_UI ui;
-    private boolean isOn;
+    private Player currPlayer;      //Instances of Player
+    private Player[] players;       //Array of players
+    private GameBoard gameBoard;    //Instance of GameBoard
+    private Cup cup;                //Instance of Cup
+    private Abstract_UI ui;         //Instant of abstract class UI
+    private boolean isOn;           //Boolean that determines if the game is active
 
     /**
      * Constructor of GameController class
@@ -34,7 +34,6 @@ public class GameController {
         do {
             numberOfPlayers = ui.askForNumberOfPlayers();
         } while(numberOfPlayers == -1);
-
         players = new Player[numberOfPlayers];
 
 //        this.gameBoard = new GameBoard(24, players);
@@ -101,7 +100,12 @@ public class GameController {
         return gameBoard.getSquare(currPlayer.getCurrPosition());
     }
 
-    //TODO skal implementeres, hvis der to vinder
+    /**
+     * Looks through the players for the one with the highest balance on and returns them as the winner
+     *
+     * @return  Instance of Player
+     */
+    //TODO skal implementeres ved uafgjort spil -> tæl ejendomsværdien op
     public String getWinnerName(){
         Player tempWinner = players[0];
 
