@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>464</x>
-      <y>0</y>
+      <x>280</x>
+      <y>104</y>
       <w>32</w>
       <h>64</h>
     </coordinates>
@@ -20,12 +20,12 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>104</y>
+      <x>400</x>
+      <y>328</y>
       <w>232</w>
       <h>208</h>
     </coordinates>
-    <panel_attributes>Game
+    <panel_attributes>GameController
 --
 - currPlayer: Player
 --
@@ -47,25 +47,26 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>56</y>
-      <w>24</w>
-      <h>64</h>
+      <x>448</x>
+      <y>256</y>
+      <w>40</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
+m2=1
 
 </panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;20.0;30.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>400</y>
+      <x>416</x>
+      <y>592</y>
       <w>224</w>
       <h>176</h>
     </coordinates>
-    <panel_attributes>Board
+    <panel_attributes>GameBoard
 --
 - currSquare: Square
 - scenerioStrings: ArrayList&lt;String&gt;
@@ -85,53 +86,52 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>304</y>
+      <x>512</x>
+      <y>528</y>
       <w>32</w>
-      <h>112</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>352</y>
-      <w>288</w>
+      <x>512</x>
+      <y>544</y>
+      <w>352</w>
       <h>64</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-m2=2</panel_attributes>
-    <additional_attributes>10.0;10.0;330.0;10.0;330.0;60.0</additional_attributes>
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;410.0;10.0;410.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>664</x>
-      <y>400</y>
-      <w>168</w>
-      <h>112</h>
+      <x>768</x>
+      <y>592</y>
+      <w>152</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>Die
+    <panel_attributes>Cup
 --
-- eyes: int
-- minEyes: int
-- maxEyes: int
+- d1: Die
+- d2: Die
 --
-+ Die(int minEyes, int maxEyes)
-+ getEyes(): int
-+ rollDie(): void
++ Cup ()
++ roll(): void
++ getCurrentRollScore(): int
 style=autoresize</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>96</x>
-      <y>400</y>
+      <x>128</x>
+      <y>592</y>
       <w>224</w>
       <h>208</h>
     </coordinates>
@@ -157,8 +157,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>96</x>
-      <y>640</y>
+      <x>128</x>
+      <y>832</y>
       <w>200</w>
       <h>88</h>
     </coordinates>
@@ -175,8 +175,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>168</x>
-      <y>640</y>
+      <x>200</x>
+      <y>832</y>
       <w>48</w>
       <h>24</h>
     </coordinates>
@@ -188,8 +188,8 @@ m2=account</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>184</x>
-      <y>352</y>
+      <x>216</x>
+      <y>544</y>
       <w>320</w>
       <h>64</h>
     </coordinates>
@@ -200,8 +200,8 @@ m2=2..4</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>576</y>
+      <x>504</x>
+      <y>768</y>
       <w>32</w>
       <h>80</h>
     </coordinates>
@@ -213,8 +213,8 @@ m2=24
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>640</y>
+      <x>440</x>
+      <y>832</y>
       <w>136</w>
       <h>104</h>
     </coordinates>
@@ -232,8 +232,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>464</x>
-      <y>736</y>
+      <x>496</x>
+      <y>928</y>
       <w>24</w>
       <h>96</h>
     </coordinates>
@@ -243,20 +243,20 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>464</x>
-      <y>800</y>
-      <w>400</w>
+      <x>496</x>
+      <y>992</y>
+      <w>448</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;20.0;480.0;20.0;480.0;100.0</additional_attributes>
+    <additional_attributes>10.0;20.0;540.0;20.0;540.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>104</x>
-      <y>808</y>
+      <x>136</x>
+      <y>1000</y>
       <w>384</w>
       <h>88</h>
     </coordinates>
@@ -266,8 +266,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>808</y>
+      <x>760</x>
+      <y>1000</y>
       <w>24</w>
       <h>88</h>
     </coordinates>
@@ -277,8 +277,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>464</x>
-      <y>808</y>
+      <x>496</x>
+      <y>1000</y>
       <w>24</w>
       <h>88</h>
     </coordinates>
@@ -288,8 +288,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>584</x>
-      <y>808</y>
+      <x>632</x>
+      <y>1000</y>
       <w>24</w>
       <h>88</h>
     </coordinates>
@@ -299,8 +299,8 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>808</y>
+      <x>352</x>
+      <y>1000</y>
       <w>24</w>
       <h>88</h>
     </coordinates>
@@ -311,15 +311,16 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
-      <y>880</y>
-      <w>120</w>
-      <h>64</h>
+      <x>432</x>
+      <y>1072</y>
+      <w>136</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>ParkingSquare
 --
 
 --
++ ParkingSquare(String)
 + landedOn(p: Player)
 style=autoresize</panel_attributes>
     <additional_attributes/>
@@ -327,32 +328,41 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>880</y>
-      <w>120</w>
-      <h>80</h>
+      <x>872</x>
+      <y>1072</y>
+      <w>216</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>Chance
 --
-...
+- dectSize: int
+- cardsDraw: int
+- currCard: ChanceCard
 --
-+ draw(): Chancecard
-+ shuffle(): void
++ ChanceSquare(String, Player[], Board)
+- initChanceCards(Player[], Board)
++ landedOn(Player)
++ drawCard(): Chancecard
++ shuffleCards()
++ getDeck(): ChanceCard[]
++ toString(): String
+
 style=autoresize</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>880</y>
+      <x>576</x>
+      <y>1072</y>
       <w>120</w>
-      <h>64</h>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>PrisonSquare
+    <panel_attributes>JailSquare
 --
 
 --
++ JailSquare(String)
 + landedOn(p: Player)
 style=autoresize</panel_attributes>
     <additional_attributes/>
@@ -360,15 +370,16 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>264</x>
-      <y>880</y>
+      <x>296</x>
+      <y>1072</y>
       <w>120</w>
-      <h>64</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>StartSquare
 --
 
 --
++ JailSquare(String)
 + landedOn(p: Player)
 style=autoresize</panel_attributes>
     <additional_attributes/>
@@ -376,15 +387,16 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>664</x>
-      <y>880</y>
-      <w>120</w>
-      <h>64</h>
+      <x>704</x>
+      <y>1072</y>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>ToPrisonSquare
 --
 
 --
++ ToJailSquare(String, Board)
 + landedOn(p: Player)
 style=autoresize</panel_attributes>
     <additional_attributes/>
@@ -392,10 +404,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>48</x>
-      <y>880</y>
+      <x>80</x>
+      <y>1072</y>
       <w>208</w>
-      <h>128</h>
+      <h>192</h>
     </coordinates>
     <panel_attributes>PropertySquare
 --
@@ -407,83 +419,62 @@ style=autoresize</panel_attributes>
 --
 + PropertySquare(String, int, int, String)
 + landedOn(p: Player)
++ isPorpertySetOwned(): boolean
+- payRent(Player)
+- buyProperty(Player)
++ toString(): String
++ getColor(): String
 style=autoresize</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>808</x>
-      <y>1024</y>
-      <w>72</w>
-      <h>64</h>
+      <x>456</x>
+      <y>1248</y>
+      <w>168</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>ChanceCard
+    <panel_attributes>/ChanceCard/
 --
-
+- scenario: String
 --
-...
++ ChanceCard(scenario: String)
+/+ actOnCard(p: Player)/
++ getScenario(): String
 style=autoresize</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>952</y>
-      <w>32</w>
-      <h>88</h>
+      <x>544</x>
+      <y>1168</y>
+      <w>416</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=24</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>500.0;100.0;500.0;160.0;270.0;160.0;270.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>0</x>
-      <y>440</y>
+      <x>32</x>
+      <y>728</y>
       <w>112</w>
-      <h>520</h>
+      <h>424</h>
     </coordinates>
-    <panel_attributes>lt=-
+    <panel_attributes>lt=&lt;-&gt;
 r1=1
 r2=0..16</panel_attributes>
-    <additional_attributes>120.0;20.0;30.0;20.0;30.0;630.0;60.0;630.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>688</x>
-      <y>536</y>
-      <w>384</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>GameTool
---
-...
---
-_+randomIntValue(int min, int max): int_
-_+readFromFile(String fileName): ArrayList&lt;String&gt; {exception IOException}_
-style=autoresize</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>120.0;20.0;30.0;20.0;30.0;510.0;60.0;510.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>824</x>
-      <y>440</y>
-      <w>72</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>70.0;120.0;70.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>184</x>
-      <y>600</y>
+      <x>216</x>
+      <y>792</y>
       <w>32</w>
       <h>56</h>
     </coordinates>
@@ -494,30 +485,289 @@ r2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>176</y>
+      <x>24</x>
+      <y>1424</y>
+      <w>240</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>CCMoneyIndfluence
+--
+- moneyInfluence: int
+- actOnOtherPlayers: boolean
+--
++ CCMoneyInfluence(String, boolean, Player[]
++ ancOnCard (p: Player)
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>1424</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>CCMoveSquares
+--
+- squaresToMove: int
+--
++ CCMoveSquares(String, int)
++ ancOnCard (p: Player)
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>1424</y>
+      <w>184</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>CCMoveToColour
+--
+- colour: String
+--
++ CCMoveToColour(String, String)
++ ancOnCard (p: Player)
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>1424</y>
       <w>136</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>GameLogic
+    <panel_attributes>CCOutOfJail
 --
-- winCondition: int
+
 --
-+ winnerFound(): boolean
++ ancOnCard (p: Player)
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>1424</y>
+      <w>224</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>CCMoveToSquare
+--
+- squaresName: String
+--
++ CCMoveToSquare(String, String, Board)
+- findSquare(String, Board): int
++ ancOnCard (p: Player)
 style=autoresize</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>192</y>
+      <x>536</x>
+      <y>1328</y>
+      <w>24</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>1360</y>
+      <w>488</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;25.0;590.0;20.0;590.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>1360</y>
+      <w>384</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>460.0;25.0;10.0;20.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>1368</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>1368</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>696</y>
+      <w>144</w>
+      <h>784</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=2..4
+r2=</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0;10.0;960.0;30.0;960.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>688</y>
+      <w>640</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=1</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0;10.0;360.0;780.0;360.0;780.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>712</y>
+      <w>64</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=2..4</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>128</x>
+      <y>696</y>
+      <w>64</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=2..4</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>760</y>
       <w>104</w>
-      <h>40</h>
+      <h>680</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;800.0;110.0;800.0;110.0;830.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>1032</y>
+      <w>344</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m1=</panel_attributes>
+    <additional_attributes>10.0;10.0;410.0;10.0;410.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>744</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Die
+--
+- eyes: int
+- minEyes: int
+- maxEyes: int
+--
++ Die(int minEyes, int maxEyes)
++ getEyes(): int
++ rollDie(): void
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>688</y>
+      <w>32</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-
+m2=2
 </panel_attributes>
-    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>424</x>
+      <y>104</y>
+      <w>200</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Abstract_UI
+--
+
+--
++ setGameController(GameController)
++ sayWelcome()
+askForNumberOfPlayers
+askForNames
+askToTakeTurn
+showScenario
+updateBoardView
+showFinalResult
+showCurrentDiesResult
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>424</x>
+      <y>264</y>
+      <w>40</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;10.0</additional_attributes>
   </element>
 </diagram>
