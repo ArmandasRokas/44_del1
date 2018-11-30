@@ -32,7 +32,7 @@ public abstract class Square {
     /**
      * Abstract method, to act on the squares scenario
      *
-     * @param p Reference of player who have landed on the square
+     * @param p Instance of player who have landed on the square
      */
     public abstract void landedOn(Player p);
 

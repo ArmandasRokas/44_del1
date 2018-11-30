@@ -1,7 +1,7 @@
 package model;
 
 /**@author Hold 44
- * @version 08/11-2018
+ * @version 30/11-2018
  *
  * Defines the Account class and its field and methods
  * Class to represent and act on the account of a player throughout the gameController
