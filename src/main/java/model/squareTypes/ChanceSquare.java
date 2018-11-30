@@ -1,10 +1,8 @@
 package model.squareTypes;
 
-import model.Board;
+import model.GameBoard;
 import model.Player;
 import model.chanceCardTypes.*;
-
-import java.util.ArrayList;
 
 public class ChanceSquare extends Square {
     private ChanceCard[] chanceCards;
@@ -12,13 +10,13 @@ public class ChanceSquare extends Square {
     private int cardsDrawn = 0;
     private ChanceCard currCard;
 
-    public ChanceSquare(String scenario, Player[] players, Board board){
+    public ChanceSquare(String scenario, Player[] players, GameBoard gameBoard){
         super(scenario);
-        initChanceCards(players, board);
+        initChanceCards(players, gameBoard);
     }
 
     //Todo skal implementeres
-    private void initChanceCards(Player[] players, Board board){
+    private void initChanceCards(Player[] players, GameBoard gameBoard){
         deckSize = 7; //Amount of cards
 
         chanceCards = new ChanceCard[deckSize]; //FixMe Remove hardcoding, for now let it have this excess amount
@@ -31,8 +29,8 @@ public class ChanceSquare extends Square {
 
         chanceCards[4] = new CCMoveSquares("Move 5 space forward", 5);
 
-        chanceCards[5] = new CCMoveToSquare("Move to Strandpromenaden", "TheBeach", board); //FixMe Correct here and in Board setup.. Mby make a setup up class?
-        chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark", board);
+        chanceCards[5] = new CCMoveToSquare("Move to Strandpromenaden", "TheBeach", gameBoard); //FixMe Correct here and in GameBoard setup.. Mby make a setup up class?
+        chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark", gameBoard);
 
 //        chanceCards[] = new CCMoveToColour();
         shuffleCards();

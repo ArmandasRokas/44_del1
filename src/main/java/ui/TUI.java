@@ -44,7 +44,7 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean askToTakeTurn() {
-        System.out.println(game.getCurrPlayerName() + " has a turn.");
+        System.out.println(gameController.getCurrPlayerName() + " has a turn.");
         System.out.println("Press 1 for roll dice: ");
         String input = scan.nextLine();
         if(input.equals("1")){
@@ -58,13 +58,13 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean showScenario() {
-        System.out.println(game.getCurrSquare().toString());
+        System.out.println(gameController.getCurrSquare().toString());
         return false;
     }
 
     @Override
     public boolean updateBoardView() {
-        for (Player p: game.getPlayers()) {
+        for (Player p: gameController.getPlayers()) {
             System.out.println(p.toString());
         }
         return true;
@@ -72,7 +72,7 @@ public class TUI extends Abstract_UI {
 
     @Override
     public boolean showFinalResult() {
-        System.out.println("The winner is: " + game.getWinnerName());
+        System.out.println("The winner is: " + gameController.getWinnerName());
         updateBoardView();
         return true;
     }
@@ -80,7 +80,7 @@ public class TUI extends Abstract_UI {
     @Override
     public boolean showCurrentDiesResult() {
 
-        System.out.println(game.getCurrPlayerName() + " rolled " + game.getCurrentDiesTotal());
+        System.out.println(gameController.getCurrPlayerName() + " rolled " + gameController.getCurrentDiesTotal());
 
         return false;
     }

@@ -1,8 +1,7 @@
 package controller;
 
-import model.Board;
+import model.GameBoard;
 import model.Cup;
-import model.Die;
 import model.Player;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
@@ -13,22 +12,22 @@ import java.util.ArrayList;
 /**@author Hold 44
  * @version 08/11-2018
  *
- * Defines Game and all its fields and methods
- * Represents the logic of the game throughout it. Is to act between the inputs from the ui layer and the domain layer
+ * Defines GameController and all its fields and methods
+ * Represents the logic of the gameController throughout it. Is to act between the inputs from the ui layer and the domain layer
  * according to this logic
  */
-public class Game {
-    private Player currPlayer;      //Instances of Player
-    private Player[] players;
-    private Board board;
+public class GameController {
+    private Player currPlayer;  //Instances of Player
+    private Player[] players;   //Array of players
+    private GameBoard gameBoard;        //Instance of GameBoard
     private Cup cup;
     private Abstract_UI ui;
     private boolean isOn;
 
     /**
-     * Constructor of Game class
+     * Constructor of GameController class
      */
-    public Game() {
+    public GameController() {
         ui = new TUI();
 
         int numberOfPlayers;
@@ -38,14 +37,14 @@ public class Game {
 
         players = new Player[numberOfPlayers];
 
-//        this.board = new Board(24, players);
-        this.board = new Board(24, this);
+//        this.gameBoard = new GameBoard(24, players);
+        this.gameBoard = new GameBoard(24, this);
         this.cup = new Cup();
 
         ArrayList<String> names = ui.askForNames(players.length);
 
         for(int i=0; i<players.length; i++){
-            players[i] = new Player(names.get(i),board, cup);
+            players[i] = new Player(names.get(i), gameBoard, cup);
         }
 
         currPlayer = players[0];
@@ -54,7 +53,7 @@ public class Game {
     }
 
     public void run(){
-        ui.setGame(this);
+        ui.setGameController(this);
 
         while(isOn){
             for (Player player: players) { //TODO KNA: Either fix this to standard for-loop or be ready to defend it since it doesn't hold up to "inititiate-condition-afterthought"/"index-condition-increment"
@@ -99,7 +98,7 @@ public class Game {
     }
 
     public Square getCurrSquare(){
-        return board.getSquare(currPlayer.getCurrPosition());
+        return gameBoard.getSquare(currPlayer.getCurrPosition());
     }
 
     //TODO skal implementeres, hvis der to vinder
@@ -120,15 +119,15 @@ public class Game {
      * Test constructor, only used for tests!
      * Used by: ChanceSquareTest
      */
-    public Game(int numberOfPlayers) {
+    public GameController(int numberOfPlayers) {
         ui = new TUI();
         players = new Player[numberOfPlayers];
-//        this.board = new Board(24, players);
-        this.board = new Board(24, this);
+//        this.gameBoard = new GameBoard(24, players);
+        this.gameBoard = new GameBoard(24, this);
         this.cup = new Cup();
 
         for(int i=0; i<players.length; i++){
-            players[i] = new Player("",board, cup);
+            players[i] = new Player("", gameBoard, cup);
         }
         currPlayer = players[0];
         isOn = true;
@@ -142,8 +141,8 @@ public class Game {
         return players;
     }
 
-    public Board getBoard() {
-        return board;
+    public GameBoard getGameBoard() {
+        return gameBoard;
     }
 
     public int getCurrentDiesTotal(){

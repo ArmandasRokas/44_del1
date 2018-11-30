@@ -1,15 +1,15 @@
 package ui;
 
-import controller.Game;
+import controller.GameController;
 
 import java.util.ArrayList;
 
 public abstract class Abstract_UI {
 
-    protected Game game;
+    protected GameController gameController;
 
-    public void setGame(Game game){
-        this.game = game;
+    public void setGameController(GameController gameController){
+        this.gameController = gameController;
     }
 
     public abstract void sayWelcome();

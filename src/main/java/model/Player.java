@@ -9,14 +9,14 @@ import java.util.ArrayList;
  * @version 08/11-2018
  *
  * Defines Player class and all if its fields and methods
- * Class to represent a single player throughout the game
+ * Class to represent a single player throughout the gameController
  */
 public class Player {
     private String name;
     private Account account;
     private int currPosition;
     private ArrayList<PropertySquare> squaresOwned;
-    private Board board;
+    private GameBoard gameBoard;
     private Cup cup;
     private int outOfJailCard;
 
@@ -25,9 +25,9 @@ public class Player {
      *
      * @param number    Player number
      */
-    public Player(String number, Board board, Cup cup){
+    public Player(String number, GameBoard gameBoard, Cup cup){
         this.cup = cup;
-        this.board = board;
+        this.gameBoard = gameBoard;
         this.account = new Account();
         this.name = number;
         currPosition = 0;
@@ -79,20 +79,20 @@ public class Player {
             this.addToCash(cashStartIncome);
         }
 
-        Square square = board.getSquare(this.currPosition);
+        Square square = gameBoard.getSquare(this.currPosition);
         square.landedOn(this);
     }
 
     public void movePlayer(int squaresNumberToMove){
 
-        int newPosition = board.getNewPosition(currPosition,squaresNumberToMove);
+        int newPosition = gameBoard.getNewPosition(currPosition,squaresNumberToMove);
         this.updateCurrPosition(newPosition);
     }
 
     public void moveToSquare(int squareNumber){
 
         this.updateCurrPosition(squareNumber);
-        Square square = board.getSquare(this.currPosition);
+        Square square = gameBoard.getSquare(this.currPosition);
         square.landedOn(this);
     }
 

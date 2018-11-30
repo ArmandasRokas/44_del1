@@ -1,6 +1,6 @@
 package model.squareTypes;
 
-import model.Board;
+import model.GameBoard;
 import model.Cup;
 import model.Player;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ class PropertySquareTest {
     @Test
     void landedOnPropertyBuyTest() {
         // Arrange
-        Board b = new Board(24, true);
+        GameBoard b = new GameBoard(24, true);
         Cup c = new Cup();
         Player p1 = new Player("1", b, c);
         PropertySquare propertySquare = new PropertySquare("test", 10, 5, "blue" );

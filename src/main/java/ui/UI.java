@@ -1,12 +1,5 @@
 package ui;
 
-import controller.Game;
-import util.GameTool;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**@author Hold 44
  * @version 08/11-2018
  *
@@ -16,20 +9,20 @@ import java.util.Scanner;
 //TODO skal forsvinde
 
 public class UI {
-//    private Game game;
+//    private GameController gameController;
 //    private ArrayList<String> content;
 //
 //
 //    /**
-//     * Constructor of UI and initializes a game and loads the ui and scenarios for it
+//     * Constructor of UI and initializes a gameController and loads the ui and scenarios for it
 //     */
 //    private UI() {
-//        game = new Game();
+//        gameController = new GameController();
 //        loadContent();
 //    }
 //
 //    /**
-//     *  Starts the dice game
+//     *  Starts the dice gameController
 //     */
 //    private void startDicegame(){
 //        boolean activeGame = true;
@@ -37,17 +30,17 @@ public class UI {
 //        Scanner scan = new Scanner(System.in);
 //
 //        while (activeGame){
-//            System.out.println(content.get(2) + game.getCurrPlayerNumber() + content.get(3));
+//            System.out.println(content.get(2) + gameController.getCurrPlayerNumber() + content.get(3));
 //            System.out.println(content.get(4));
 //            String input = scan.nextLine();
 //
 //            switch (input.toLowerCase()){
 //                case "1":
-//                    game.playRound();
-//     //               System.out.println(game.getCurrPlayerNumber() + content.get(5)  + game.getCurrentRollScore());
-//                    System.out.println(content.get(6) + " " + game.getCurrScenario() + content.get(7) + " " + game.getCurrCashInfluence());
+//                    gameController.playRound();
+//     //               System.out.println(gameController.getCurrPlayerNumber() + content.get(5)  + gameController.getCurrentRollScore());
+//                    System.out.println(content.get(6) + " " + gameController.getCurrScenario() + content.get(7) + " " + gameController.getCurrCashInfluence());
 //
-//                    if(game.checkExtraTurn()) {
+//                    if(gameController.checkExtraTurn()) {
 //                        System.out.println(content.get(8));
 //                        System.out.println();
 //                    } else {
@@ -55,11 +48,11 @@ public class UI {
 //                        printCurrScores();
 //                        System.out.println();
 //                    }
-//                    if (game.winnerFound()){
+//                    if (gameController.winnerFound()){
 //                        activeGame = false;
-//                        System.out.println(content.get(9) + " " + game.getCurrPlayerNumber() + content.get(10));
+//                        System.out.println(content.get(9) + " " + gameController.getCurrPlayerNumber() + content.get(10));
 //                    }
-//                    game.endRound();
+//                    gameController.endRound();
 //                    break;
 //
 //                case "stop":
@@ -81,8 +74,8 @@ public class UI {
 //     * Prints the current scores of the players
 //     */
 //    private void printCurrScores() {
-//        System.out.println(content.get(14) + game.getPlayerTotalCash(1) + "$");
-//        System.out.println(content.get(15) + game.getPlayerTotalCash(2) + "$");
+//        System.out.println(content.get(14) + gameController.getPlayerTotalCash(1) + "$");
+//        System.out.println(content.get(15) + gameController.getPlayerTotalCash(2) + "$");
 //    }
 //
 //    //#TODO Consideration for next time: Create new class "UI_Content" in domain model, because now it has directly association with technical service

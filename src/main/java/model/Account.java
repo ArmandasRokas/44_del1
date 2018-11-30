@@ -4,7 +4,7 @@ package model;
  * @version 08/11-2018
  *
  * Defines the Account class and its field and methods
- * Class to represent and act on the account of a player throughout the game
+ * Class to represent and act on the account of a player throughout the gameController
  */
 public class Account {
     private int totalCash;

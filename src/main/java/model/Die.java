@@ -6,7 +6,7 @@ import util.GameTool;
  * @version 08/11-2018
  *
  * Defines the Die class and all of its fields and methods
- * Class to represent a single die to be used throughout the game
+ * Class to represent a single die to be used throughout the gameController
  */
 public class Die {
     private int eyes;               //Eyes of the dice

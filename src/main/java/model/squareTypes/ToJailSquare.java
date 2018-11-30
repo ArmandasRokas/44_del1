@@ -1,27 +1,27 @@
 package model.squareTypes;
 
-import model.Board;
+import model.GameBoard;
 import model.Player;
 
 public class ToJailSquare extends Square {
     int squareNumber;
-    Board board;
+    GameBoard gameBoard;
 
-    public ToJailSquare(String scenario, Board board){
+    public ToJailSquare(String scenario, GameBoard gameBoard){
         super(scenario);
-        this.board = board;
+        this.gameBoard = gameBoard;
 
     }
 
     //TODO skal implementeres
     @Override
     public void landedOn(Player p) {
-        this.squareNumber = findSquare(board);
+        this.squareNumber = findSquare(gameBoard);
         p.moveToSquare(squareNumber);
     }
 
-    private int findSquare(Board board) {
-        int index = board.findSquareByName("Prison");
+    private int findSquare(GameBoard gameBoard) {
+        int index = gameBoard.findSquareByName("Prison");
         return index;
     }
 

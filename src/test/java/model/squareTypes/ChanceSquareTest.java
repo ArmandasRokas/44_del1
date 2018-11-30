@@ -1,7 +1,7 @@
 package model.squareTypes;
 
-import controller.Game;
-import model.Board;
+import controller.GameController;
+import model.GameBoard;
 import model.chanceCardTypes.ChanceCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,13 +9,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ChanceSquareTest {
-    Game game;
-    Board board;
+    GameController gameController;
+    GameBoard gameBoard;
 
     @BeforeEach
     void BeforeEach() {
-        this.game = new Game(4);
-        this.board = game.getBoard();
+        this.gameController = new GameController(4);
+        this.gameBoard = gameController.getGameBoard();
     }
 
     /**Test case: TC3
@@ -26,7 +26,7 @@ class ChanceSquareTest {
      */
     @Test
     void shuffleCardsTest() {
-        ChanceSquare cs = new ChanceSquare("Chance", game.getPlayers(), board);
+        ChanceSquare cs = new ChanceSquare("Chance", gameController.getPlayers(), gameBoard);
         ChanceCard[] chanceCards = cs.getDeck();
 
         cs.shuffleCards();
@@ -42,7 +42,7 @@ class ChanceSquareTest {
     @Test
     void drawCardTest() {
 
-        ChanceSquare cs = new ChanceSquare("Chance", game.getPlayers(), board);
+        ChanceSquare cs = new ChanceSquare("Chance", gameController.getPlayers(), gameBoard);
 
         ChanceCard card = cs.drawCard();
 

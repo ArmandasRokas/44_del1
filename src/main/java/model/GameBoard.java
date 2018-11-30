@@ -1,6 +1,6 @@
 package model;
 
-import controller.Game;
+import controller.GameController;
 import model.squareTypes.*;
 import util.GameTool;
 
@@ -10,29 +10,29 @@ import java.util.ArrayList;
 /**@author Hold 44
  * @version 08/11-2018
  *
- * Defines the Board class and all of its fields and methods
+ * Defines the GameBoard class and all of its fields and methods
  * Class to represent the playing board and to contain and arrange the squares players can land on
  */
-public class Board {
+public class GameBoard {
     private Square squareList[];
     private ArrayList<String> scenerioStrings;
 
     /**
-     * Constructor for Board
+     * Constructor for GameBoard
      *
-     * @param squareAmount  Amounts of square needed to fill the board for a specific game
+     * @param squareAmount  Amounts of square needed to fill the board for a specific gameController
      */
-//    public Board(int squareAmount, Player[] players) {
-    public Board(int squareAmount, Game game) {
+//    public GameBoard(int squareAmount, Player[] players) {
+    public GameBoard(int squareAmount, GameController gameController) {
         squareList = new Square[squareAmount];
 //        loadContent();
-        this.setBoard(game);
+        this.setBoard(gameController);
     }
 
     /**
      * This constructor is for testing purposes!
      */
-    public Board(int squareAmount, boolean isTest){
+    public GameBoard(int squareAmount, boolean isTest){
         squareList = new Square[squareAmount];
     }
 
@@ -49,14 +49,14 @@ public class Board {
     }
 
     /**
-     * Creates instances of Square to fill the game board and puts them into a list for containment
+     * Creates instances of Square to fill the gameController board and puts them into a list for containment
      */
 //    private void setBoard(Player[] players) {
-    private void setBoard(Game game) {
+    private void setBoard(GameController gameController) {
         squareList[0] = new StartSquare("Start");
         squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
         squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
-        squareList[3] = new ChanceSquare("Chance", game.getPlayers(), this);
+        squareList[3] = new ChanceSquare("Chance", gameController.getPlayers(), this);
         squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
         squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
         squareList[6] = new JailSquare("Prison");

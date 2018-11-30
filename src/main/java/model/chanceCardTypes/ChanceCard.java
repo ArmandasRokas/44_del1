@@ -1,6 +1,5 @@
 package model.chanceCardTypes;
 
-import model.Board;
 import model.Player;
 
 public abstract class ChanceCard {

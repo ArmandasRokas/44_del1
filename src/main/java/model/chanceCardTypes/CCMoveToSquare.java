@@ -1,27 +1,27 @@
 package model.chanceCardTypes;
 
-import model.Board;
+import model.GameBoard;
 import model.Player;
 
 public class CCMoveToSquare extends ChanceCard {
     private String squareName; //fixme Kun relevant med toString?
 //    private int squareNmb;
-    private Board board;
+    private GameBoard gameBoard;
 
-    public CCMoveToSquare(String scenario, String squareName, Board board) {
+    public CCMoveToSquare(String scenario, String squareName, GameBoard gameBoard) {
         super(scenario);
         this.squareName = squareName;
-        this.board = board;
-//        this.squareNmb = findSquare(squareName, board);
+        this.gameBoard = gameBoard;
+//        this.squareNmb = findSquare(squareName, gameBoard);
     }
 
     @Override
     public void actOnCard(Player p) {
-        p.moveToSquare(findSquare(squareName, board));
+        p.moveToSquare(findSquare(squareName, gameBoard));
     }
 
-    private int findSquare(String squareName, Board board) {
-        int index = board.findSquareByName(squareName);
+    private int findSquare(String squareName, GameBoard gameBoard) {
+        int index = gameBoard.findSquareByName(squareName);
         return index;
     }
 }
