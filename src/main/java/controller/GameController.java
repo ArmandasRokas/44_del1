@@ -21,7 +21,7 @@ public class GameController {
     private Player[] players;       //Array of players
     private GameBoard gameBoard;    //Instance of GameBoard
     private Cup cup;                //Instance of Cup
-    private Abstract_UI ui;         //Instant of abstract class UI
+    private Abstract_UI ui;         //Instant of abstract class Abstract_UI
     private boolean isOn;           //Boolean that determines if the game is active
 
     /**
