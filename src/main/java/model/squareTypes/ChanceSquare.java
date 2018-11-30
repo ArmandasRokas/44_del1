@@ -52,7 +52,7 @@ public class ChanceSquare extends Square {
         chanceCards[5] = new CCMoveToSquare("Move to Strandpromenaden", "TheBeach", gameBoard); //FixMe Correct here and in GameBoard setup.. Mby make a setup up class?
         chanceCards[6] = new CCMoveToSquare("Move to The Skate Park", "Skaterpark", gameBoard);
 
-//        chanceCards[] = new CCMoveToColour();
+//        chanceCards[] = new CCMoveToColor();
         shuffleCards();
     }
 
