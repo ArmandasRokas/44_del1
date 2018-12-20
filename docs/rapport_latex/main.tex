@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{margin=0.5in}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, danish]{babel}
+\usepackage{natbib}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tgbonum}
+\usepackage{subfiles}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand{\mysubparagraph}[1]{\subparagraph{#1}\mbox{}\\}
+\usepackage{xcolor}
+\usepackage{ulem}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+\title{Final CDIO}
+\author{}
+\date{Januar 2018}
+\begin{document}
+{\fontfamily{phv}\selectfont
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\clearpage
+\setcounter{page}{1}
+
+\section{Introduktion}
+\subfile{sections/introduction}
+
+
+}
+\end{document}
