@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{geometry}
 \geometry{margin=0.5in}
+\usepackage[subpreambles=true]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, danish]{babel}
@@ -10,7 +11,7 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{tgbonum}
-\usepackage{subfiles}
+\usepackage{import}
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 \newcommand{\mysubparagraph}[1]{\subparagraph{#1}\mbox{}\\}
 \usepackage{xcolor}
@@ -32,9 +33,12 @@
 \setcounter{page}{1}
 
 \section{Introduktion}
-\subfile{sections/introduction}
+\import{sections/}{introduction}
 
 \section{Klassediagram}
-\subfile{sections/DKD}
+\import{sections/}{DKD}
+
+\section{Konklution}
+\import{sections/}{konklusion}
 }
 \end{document}
