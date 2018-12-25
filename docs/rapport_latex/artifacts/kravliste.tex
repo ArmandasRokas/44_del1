@@ -5,24 +5,76 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, danish]{babel}
 \usepackage[shortlabels]{enumitem}
+% Initializing the counters and define a custom label
+\newcommand{\reqinit}{
+% Create a new counter for keeping track of the last number
+\newcounter{reqcountbackup}
+% Create a new counter for the custom label
+\newcounter{reqcount}
+% Redefine the command for the last counter so when it is called
+% it prints the number like this in a bold font: R<number>
+\renewcommand{\thereqcount}{\textbf{K\arabic{reqcount}}}
+}
+
+% Used to define the start of the requirements
+\newcommand{\reqstart}{
+% Indicate the start of a new list and tell it to use the redefined
+% command and corresponding counter for every item
+\begin{list}{\thereqcount}{\usecounter{reqcount}}
+% Important part: set the value of the used counter to the
+% same value of the backup counter.
+\setcounter{reqcount}{\value{reqcountbackup}}
+}
+
+% Used to define the end of the requirements
+\newcommand{\reqend}{
+% Important part: take the value of the used counter (after
+% being incremented by the requirement items) and store it
+% in the backup counter.
+\setcounter{reqcountbackup}{\value{reqcount}}
+% Mark the end of the list environment
+\end{list}
+}
+
+
+
 
 
 \begin{document}
+\reqinit
+\paragraph{Prioriteret funktional-krav liste}
+\subparagraph{Høj prioritet}
+\reqstart
+\item Requirement description;
+\item Requirement description;
+\item Requirement description.
+\reqend
+\subparagraph{Mellem prioritet}
+\reqstart
+\item Requirement description;
+\item Requirement description;
+\item Requirement description.
+\reqend
+\subparagraph{Lav prioritet}
+\reqstart
+\item Requirement description;
+\item Requirement description;
+\item Requirement description.
+\reqend
 
 
-    \paragraph{Funktional}
-    \begin{enumerate}[label=\textbf{K\arabic*}]
+\paragraph{Non-funktional-krav liste}
 
-        \item one
-        \item two
+\subparagraph{Supportability}
+\reqstart
+\item Kan ændres til andre sprog (Lav prioritet)
+\reqend
 
-        \setlength{\parindent}{-2.3em}
-        \subparagraph{Non funktional}" "
-        \item three
+\subparagraph{Development constrains}
+\reqstart
+\item Skal overholdes GRASP (Højt prioritet)
+\reqend
 
-        \setlength{\parindent}{-1em}
-        \subparagraph{Supportability}" "
-        \item four
 
-    \end{enumerate}
+
 \end{document}
