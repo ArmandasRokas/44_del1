@@ -1,0 +1,16 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, danish]{babel}
+\usepackage{graphicx,wrapfig,lipsum}
+
+\begin{document}
+    På figur~\ref{fig:DKD} kan man se domænemodel.
+    \begin{figure}[H]
+        \centeringdom
+        \includegraphics[scale = 0.2]{diagrams_png/domain_model.png}
+        \caption{Domænemodellen over systemet}\label{fig:domain_model}
+    \end{figure}
+\end{document}
