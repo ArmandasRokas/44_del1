@@ -1,11 +1,10 @@
 \documentclass{article}
 \usepackage{geometry}
-\geometry{margin=0.5in}
+\geometry{margin=0.8in}
 \usepackage[subpreambles=true]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, danish]{babel}
-\usepackage{natbib}
 \usepackage{graphicx,wrapfig,lipsum}
 \usepackage{float}
 \usepackage{hyperref}
@@ -16,6 +15,11 @@
 \newcommand{\mysubparagraph}[1]{\subparagraph{#1}\mbox{}\\}
 \usepackage{xcolor}
 \usepackage{ulem}
+\usepackage{comment}
+\usepackage{cite}
+\usepackage[backend=bibtex, style=numeric]{biblatex}
+\addbibresource{references.bib}
+
 \newcommand\myworries[1]{\textcolor{red}{#1}}
 
 \title{Final CDIO}
@@ -41,6 +45,8 @@
 \subsection{Interessent- og aktøranalyse}
 
 \subsection{Kravspecifikation}
+
+\cite{spilleregler}
 \import{artifacts/}{kravliste}
 
 \subsection{Use case diagram}
@@ -70,5 +76,7 @@
 
 \section{Konklution}
 \import{sections/}{konklusion}
+\printbibliography
 }
+
 \end{document}
