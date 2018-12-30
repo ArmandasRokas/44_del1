@@ -42,44 +42,65 @@
 
 
             \textbf{Basic Flow} & \begin{tabenum}
-                                  \item Spiller indtaster antal spillere
-                                  \item Spiller indtaster navn
-                                      \savespace
-                                        \begin{compactitem}
-                                            \item \textit{Spiller gentager trin 2                                                             indtil alle har et navn}
-                                  \end{compactitem}
-                                      \item Spiller kaster terningerne
-                                      \item Systemet viser resultat af kastet, rykker spilleren og viser scenariet for feltet man er lander på.
-                                      \item Spiller agerer på scenarie
-                                      \item Systemet udfører scenarie og checker for om der en spiller der gået fallit.
-                                  \savespace
-                                  \begin{compactitem}
-                                      \item \textit{Gentager trin 3-6 indtil der er én spiller tilbage i spillet}
-                                  \end{compactitem}
-                                      \item Afsluttet spil og udskriver resultat.
-                                   \end{tabenum}   \\ \hline
+                          \item Spiller indtaster antal spillere
+                          \item Spiller indtaster navn
+                              \savespace
+                                \begin{compactitem}
+                                    \item \textit{Spiller gentager trin 2                                                             indtil alle har et navn}
+                          \end{compactitem}
+                              \item Spiller kaster terningerne
+                              \item Systemet viser resultat af kastet, rykker spilleren og viser scenariet for feltet man er lander på.
+                              \item Spiller agerer på scenarie
+                              \item Systemet udfører scenarie og checker for om der en spiller der gået fallit.
+                          \savespace
+                          \begin{compactitem}
+                              \item \textit{Gentager trin 3-6 indtil der er én spiller tilbage i spillet}
+                          \end{compactitem}
+                              \item Afsluttet spil og udskriver resultat.
+                           \end{tabenum}   \\ \hline
 
 
 
 
-            \textbf{Alternate Flow}   & \textbf{4.a.} Spiller passere start.
-                                        \begin{enumerate} \begin{tabenum}
-                                                \item Spiller får 4000kr
-                                            \end{tabenum} \end{enumerate}
-                                         \\
-                                      & \textbf{5.a.a.} Spiller lander på feltet
-                                        "Grund", som ejes af en anden spiller.
-                                        \begin{enumerate} \begin{tabenum}
-                                          \item Spiller betaler leje til ejeren
-                                                jf. skøderne i Bilag \#.
-                                        \end{tabenum} \end{enumerate}
-                                        \\
-                                    & \textbf{5.a.b.} Spiller lander på feltet
-                                        "Grund", som ikke ejes af nogen.
-                                    \begin{enumerate} \begin{tabenum}
-                                                          \item Jf. UC2: Køb grund.
+    \textbf{Alternate Flow}   & \textbf{4.a.} Spiller passere start.
+                                \begin{enumerate} \begin{tabenum}
+                                        \item Spiller får 4000kr
+                                        \item Udføres trin 4-6 som sædvanlig
                                     \end{tabenum} \end{enumerate}
-                                    \\
+                                 \\
+                              & \textbf{4.b.} Spiller kaster 2 af samme slags.
+            \begin{enumerate} \begin{tabenum}
+                                  \item Udføres trin 4-6 som sædvanlig
+                                  \item Spiller kaster terningerne
+                                  \item Udføres trin 4-6 som sædvanlig
+            \end{tabenum} \end{enumerate}
+            \\
+
+
+
+
+                              & \textbf{5.a.a.} Spiller lander på feltet
+                                'Grund', som ejes af en anden spiller.
+                                \begin{enumerate} \begin{tabenum}
+                                  \item Spiller betaler leje til ejeren
+                                        jf. skøderne i Bilag \#.
+                                  \item Udføres trin 6 færdigt
+                                \end{tabenum} \end{enumerate}
+                                \\
+                            & \textbf{5.a.b.} Spiller lander på feltet
+                                'Grund', som ikke ejes af nogen.
+                            \begin{enumerate} \begin{tabenum}
+                                  \item Jf. UC2: Køb grund.
+                                  \item Udføres trin 6 færdigt
+                            \end{tabenum} \end{enumerate}
+                            \\
+                            & \textbf{5.b.} Spiller lander på feltet
+                            'Indkomstskatten'.
+                            \begin{enumerate} \begin{tabenum}
+                              \item Spiller vælger betalingsmåde(10proc af sine værdierne eller 4000kr).
+                              \item Udføres trin 6 færdigt
+                            \end{tabenum} \end{enumerate}
+                            \\
 
 
                                         \\
