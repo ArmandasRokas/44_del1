@@ -26,42 +26,28 @@
     \begin{document}
 
         \begin{table}[H]
+            \caption{Use case. UC2: Køb grund}
             \begin{tabularx}{\textwidth}{|l|X|}
                 \hline
                 & \textbf{[UC2]: Køb grund}   \\ \hline
-                \textbf{Preconditions}       & Spillet er startet \\ \hline
-                \textbf{Postconditions}      & Kun én spiller tilbage i spillet,
-                som udpeges som en vinder\\ \hline
+                \textbf{Preconditions}       & Spiller er landet på feltet 'Grund'\\ \hline
+                \textbf{Postconditions}      & Grundet er solgt til en spiller.\\ \hline
 
 
                 \textbf{Basic Flow} & \begin{tabenum}
-                                          \item a
-                                          \item b
+                                          \item Spiller siger 'ja tak' til at købe en grund
+                                          \item Systemet tilføjer skødet til spilleren.
                 \end{tabenum}   \\ \hline
 
 
 
 
-                \textbf{Alternate Flow}   & \textbf{4.a.} Spiller passere start.
+                \textbf{Alternate Flow}   & \textbf{1.a.} Spiller siger 'nej tak' til at købe en grund.
                 \begin{enumerate} \begin{tabenum}
-                                      \item Spiller får 4000kr
+                                      \item Systemet afholder en auktion
+                                      \item Spillerne giver deres bud
+                                      \item Systemet tilføjer skødet til den højestbydende
                 \end{tabenum} \end{enumerate}
-                \\
-                & \textbf{5.a.a.} Spiller lander på feltet
-                "Grund", som ejes af en anden spiller.
-                \begin{enumerate} \begin{tabenum}
-                                      \item Spiller betaler leje til ejeren
-                                      jf. skøderne i Bilag \#.
-                \end{tabenum} \end{enumerate}
-                \\
-                & \textbf{5.a.b.} Spiller lander på feltet
-                "Grund", som ikke ejes af nogen.
-                \begin{enumerate} \begin{tabenum}
-                                      \item Jf. UC2: Køb grund.
-                \end{tabenum} \end{enumerate}
-                \\
-
-
                 \\
 
 
@@ -69,7 +55,7 @@
                 \hline
 
             \end{tabularx}
-            \caption{Use case. UC2: Køb grund}
+
 
         \end{table}
 
