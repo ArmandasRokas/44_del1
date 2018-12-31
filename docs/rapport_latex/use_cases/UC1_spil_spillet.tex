@@ -31,7 +31,7 @@
                                          & \textbf{[UC1]: Spil Spillet}   \\ \hline
             \textbf{Scope}               & Matador Applikation\\ \hline
             \textbf{Level}               & User goal     \\ \hline
-            \textbf{Primær aktør}        & Spiller 3-6   \\ \hline
+            \textbf{Primær aktør}        & 3-6 spillere  \\ \hline
             \textbf{Interessenter}       & IOOuterActive\\ \hline
             \textbf{Preconditions}       & Spillet er startet \\ \hline
             \textbf{Postconditions}      & Kun én spiller tilbage i spillet,
@@ -50,11 +50,11 @@
                           \end{compactitem}
                               \item Spiller kaster terningerne
                               \item Systemet viser resultat af kastet, rykker spilleren og viser scenariet for feltet man er lander på.
-                              \item Spiller agerer på scenarie
-                              \item Systemet udfører scenarie og checker for om der en spiller der gået fallit.
+                              \item Spiller agerer på scenariet
+                              \item Systemet udfører scenariet, checker for om, der en spiller, der gået fallit og giver turen til næste spiller, hvis vinderen ikke er fundet endnu.
                           \savespace
                           \begin{compactitem}
-                              \item \textit{Gentager trin 3-6 indtil der er én spiller tilbage i spillet}
+                              \item \textit{Gentages trin 3-6, indtil der er én spiller tilbage i spillet}
                           \end{compactitem}
                               \item Afsluttet spil og udskriver resultat.
                            \end{tabenum}   \\ \hline
@@ -62,9 +62,17 @@
 
 
 
-    \textbf{Alternate Flow}   & \textbf{4.a.} Spiller passere start.
+    \textbf{Alternate Flow}   & \textbf{3.a.} Spiller står på feltet 'Fængsel' efter spilleren havde landet på feltet 'Til fængsel'.
+    \begin{enumerate} \begin{tabenum}
+                          \item Jf. UC3: Kom ud af fængsel
+    \end{tabenum} \end{enumerate}
+    \\
+
+
+
+                              & \textbf{4.a.} Spiller passere start.
                                 \begin{enumerate} \begin{tabenum}
-                                        \item Spiller får 4000kr
+                                        \item Systemet tilføjer 4000kr til spilleren's konto.
                                         \item Udføres trin 4-6 som sædvanlig
                                     \end{tabenum} \end{enumerate}
                                  \\
@@ -103,7 +111,31 @@
                             \\
 
 
-                                        \\
+                            & \textbf{5.c.} Spiller lander på feltet 'Parkering'
+                            \begin{enumerate} \begin{tabenum}
+                                                  \item Systemet giver direkte tur til næste spiller.
+                            \end{tabenum} \end{enumerate}
+                            \\
+
+                            & \textbf{5.d.} Spiller lander på feltet 'Fængsel'
+                            \begin{enumerate} \begin{tabenum}
+                                                  \item Systemet giver direkte tur til næste spiller.
+                            \end{tabenum} \end{enumerate}
+                            \\
+
+
+                            & \textbf{5.e.} Spiller lander på feltet 'Til Fængsel'
+                            \begin{enumerate} \begin{tabenum}
+                                                  \item Systemet rykker spiller til feltet 'Fængsel' uden at tilføje 4000kr til spilleren's konto.
+                            \end{tabenum} \end{enumerate}
+                            \\
+
+
+
+
+
+
+
 
 
 
