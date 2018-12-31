@@ -1,0 +1,66 @@
+
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, danish]{babel}
+\usepackage{tgbonum}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\newlist{tabenum}{enumerate}{1}
+\setlist[tabenum]{label=\arabic*. ,wide=0pt, leftmargin=*, nosep, itemsep=2pt, font = \bfseries, after=\vspace{-\baselineskip}, before=\compress}
+\usepackage{array, booktabs}
+\makeatletter
+\newcommand*{\compress}{\@minipagetrue}
+\makeatother
+\usepackage{paralist}
+\makeatletter
+\let\savespace\@minipagetrue
+\makeatother
+
+
+
+% Document
+\begin{document}
+
+    \begin{table}[H]
+        \caption{Use case. UC4: Prøv lykken}
+        \begin{tabularx}{\textwidth}{|l|X|}
+            \hline
+            & \textbf{[UC4]: Prøv lykken}   \\ \hline
+            \textbf{Preconditions}       & Spiller er landet på feltet 'Prøv lykken'\\ \hline
+            \textbf{Postconditions}      & Scenariet for et lykkekort er udført på spilleren\\ \hline
+
+
+            \textbf{Basic Flow} & \begin{tabenum}
+                                      \item Spiller trækker et tilfældigt lykkekort
+                                      \item Systemet viser scenariet for lykkekortet.
+                                      \item Spiller agere på scenariet.
+            \end{tabenum}   \\ \hline
+
+
+
+
+            \textbf{Alternate Flow}   & \textbf{3.a.} Spiller har trukket lykkekortet ' ' .
+            \begin{enumerate} \begin{tabenum}
+                                  \item a
+            \end{tabenum} \end{enumerate}
+            \\
+
+
+
+            \hline
+
+        \end{tabularx}
+
+
+    \end{table}
+
+\end{document}
+
+
+
+
+\end{document}
