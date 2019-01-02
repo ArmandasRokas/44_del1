@@ -5,6 +5,7 @@ import controller.GameController;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+import model.Player;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class GUI_Boundary extends Abstract_UI {
     public boolean setPlayers(String[] names, int numberOfPlayers) {
 
         for(int i = 0; i < numberOfPlayers; i++){
-            gui_players[i] = new GUI_Player(names[i]);
+            gui_players[i] = new GUI_Player(names[i],30000);
             gui.addPlayer(gui_players[i]);
             fields[0].setCar(gui_players[i], true);
         }
@@ -71,7 +72,24 @@ public class GUI_Boundary extends Abstract_UI {
 
     @Override
     public boolean updateBoardView() {
-        return false;
+
+        Player[] players = gameController.getPlayers();
+
+        for(GUI_Field gui_field: fields){
+            gui_field.removeAllCars();
+        }
+
+        for(int i = 0; i < players.length; i++){
+            int playerBalance = players[i].getTotalCash();
+            gui_players[i].setBalance(playerBalance);
+
+            int currentPosition = players[i].getCurrPosition();
+            fields[currentPosition].setCar(gui_players[i], true);
+
+        }
+        return true;
+
+
     }
 
     @Override

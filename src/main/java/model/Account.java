@@ -13,7 +13,7 @@ public class Account {
      * Constructor of Account class
      */
     public Account() {
-        this.totalCash = 20; //TODO skal omskrives til 20 for 2 spillere, 18 for 3 spillere, 16 for 4 spillere.
+        this.totalCash = 30000; //TODO skal omskrives til 20 for 2 spillere, 18 for 3 spillere, 16 for 4 spillere.
     }
 
     /**

@@ -61,9 +61,9 @@ public class PropertySquare extends Square{
     public boolean isPropertySetOwned() {
         boolean res = false;
 
-        if(owner.equals(siblingSquare.getOwner())) {
-            res = true;
-        }
+   //     if(owner.equals(siblingSquare.getOwner())) {
+   //         res = true;
+   //     }
         return res;
     }
 
