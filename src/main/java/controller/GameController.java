@@ -118,6 +118,13 @@ public class GameController {
         }
         return tempWinner.getName();
     }
+    public int[] getCurrentDiesValues(){
+
+        int[] diesValues = new int[2];
+        diesValues[0] = cup.getDie1Value();
+        diesValues[1] = cup.getDie2Value();
+        return diesValues;
+    }
 
     //-------------METHODS FOR TESTS BENEATH-----------------
 
@@ -151,7 +158,5 @@ public class GameController {
         return gameBoard;
     }
 
-    public int getCurrentDiesTotal(){
-        return cup.getCurrentRollScore();
-    }
+
 }

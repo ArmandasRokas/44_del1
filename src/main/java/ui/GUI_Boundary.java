@@ -58,7 +58,10 @@ public class GUI_Boundary extends Abstract_UI {
 
     @Override
     public boolean askToTakeTurn() {
-        return false;
+
+        gui.getUserButtonPressed("Kast terninger", "ok");
+
+        return true;
     }
 
     @Override
@@ -73,11 +76,17 @@ public class GUI_Boundary extends Abstract_UI {
 
     @Override
     public boolean showFinalResult() {
+
+
+
         return false;
     }
 
     @Override
     public boolean showCurrentDiesResult() {
-        return false;
+
+        gui.setDice(gameController.getCurrentDiesValues()[0],gameController.getCurrentDiesValues()[1]);
+
+        return true;
     }
 }
