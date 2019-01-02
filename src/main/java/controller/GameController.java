@@ -5,6 +5,7 @@ import model.Cup;
 import model.Player;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
+import ui.GUI_Boundary;
 import ui.TUI;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class GameController {
      * Constructor of GameController class
      */
     public GameController() {
-        ui = new TUI();
+        ui = new GUI_Boundary();
 
         int numberOfPlayers;
         do {
