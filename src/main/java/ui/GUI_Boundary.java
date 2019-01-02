@@ -19,9 +19,9 @@ public class GUI_Boundary extends Abstract_UI {
     @Override
     public int askForNumberOfPlayers() {
 
-        gui.getUserInteger("Indtast ")
+        int numberOfPlayers = gui.getUserInteger("Indtast antallet af spillere");
 
-        return 0;
+        return numberOfPlayers;
     }
 
     @Override

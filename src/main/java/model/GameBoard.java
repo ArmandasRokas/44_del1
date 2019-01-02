@@ -2,6 +2,8 @@ package model;
 
 import controller.GameController;
 import model.squareTypes.*;
+import ui.Abstract_UI;
+import ui.GUI_Boundary;
 
 import java.util.ArrayList;
 
@@ -20,9 +22,9 @@ public class GameBoard {
      * @param squareAmount      Amounts of square needed to fill the board for a specific gameController
      * @param gameController    Reference to gameController
      */
-    public GameBoard(int squareAmount, GameController gameController) {
-        squareList = new Square[squareAmount];
-        this.setBoard(gameController);
+    public GameBoard(GameController gameController, Abstract_UI gui_boundary) {
+        squareList = new Square[40];
+        this.setBoard(gameController, gui_boundary);
     }
 
     /**
@@ -30,60 +32,76 @@ public class GameBoard {
      *
      * @param gameController    Reference to current used GameController
      */
-    private void setBoard(GameController gameController) {
+    private void setBoard(GameController gameController, Abstract_UI gui_boundary ) {
         ChanceSquare CSReference = new ChanceSquare("Chance", gameController.getPlayers(), this);
 
-        squareList[0] = new StartSquare("Start");
-        squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
-        squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
-        squareList[3] = CSReference;
-        squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
-        squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
-        squareList[6] = new JailSquare("Prison");
-        squareList[7] = new PropertySquare("Museum",2,2,"Purple");
-        squareList[8] = new PropertySquare("Libary",2,2,"Purple");
-        squareList[9] = CSReference;
-        squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
-        squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
-        squareList[12] = new ParkingSquare("Free Parking");
-        squareList[13] = new PropertySquare("GameHall",3,3,"Red");
-        squareList[14] = new PropertySquare("Cinema",3,3,"Red");
-        squareList[15] = CSReference;
-        squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
-        squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
-        squareList[18] = new ToJailSquare("To Prison", this);
-        squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
-        squareList[20] = new PropertySquare("Zoo",4,4,"Green");
-        squareList[21] = CSReference;
-        squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
-        squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
+  //      squareList [0] = new StartSquare("Start", 4000, gui_boundary);
+        squareList [1] = new PropertySquare("Rødovrevej", new int[]{50, 250, 750, 2250, 4000, 6000}, 1200, 0, gui_boundary);
+  //      squareList [2] = new ChanceSquare("Prøv lykken", 0, gui_boundary);
+        squareList [3] = new PropertySquare("Hvidovrevej", new int []{50, 250, 750, 2250, 4000, 6000}, 1200, 0, gui_boundary);
+  //      squareList [4] = new Tax("Indkomstskat", 4000, 10, gui_boundary);
+  //      squareList [5] = new Fleet("Helsingør/Helsingborg",  new int []{500, 1000, 2000, 4000},4000, gui_boundary);
+        squareList [6] = new PropertySquare("Roskildevej", new int []{100, 600, 1800, 5400, 8000, 11000}, 2000, 1, gui_boundary);
+  //      squareList [7] = new ChanceSquare("Prøv lykken", 1, gui_boundary);
+        squareList [8] = new PropertySquare("Valby Langgade", new int []{100, 600, 1800, 5400, 8000, 11000}, 2000, 1, gui_boundary);
+        squareList [9] = new PropertySquare("Allégade", new int []{150, 800, 2000, 6000, 9000, 12000}, 2400, 1, gui_boundary);
+ //       squareList [10] = new Parking("'I fængslet'", gui_boundary);
+        squareList [11] = new PropertySquare("Frederiksberg Allé", new int []{200, 1000, 3000, 9000, 12500, 15000}, 2800, 2, gui_boundary);
+ //      squareList [12] = new Brewery("Tuborg Squash", 3000, gui_boundary);
+        squareList [13] = new PropertySquare("Bülowsvej", new int []{200, 1000, 3000, 9000, 12500, 15000}, 2800, 2, gui_boundary);
+        squareList [14] = new PropertySquare("Gl. Kongevej", new int []{250, 1250, 3750, 10000, 14000, 18000}, 3200, 2, gui_boundary);
+  //      squareList [15] = new Fleet("Mols-linien", new int []{500, 1000, 2000, 4000},4000, gui_boundary);
+        squareList [16] = new PropertySquare("Bernstoffsvej", new int []{300, 1400, 4000, 11000, 15000, 19000}, 3600, 3, gui_boundary);
+ //       squareList [17] = new ChanceSquare("Prøv lykken", 2, gui_boundary);
+        squareList [18] = new PropertySquare("Hellerupvej", new int []{300, 1400, 4000, 11000, 15000, 19000}, 3600, 3, gui_boundary);
+        squareList [19] = new PropertySquare("Strandvejen", new int []{350, 1600, 4400, 12000, 16000, 20000}, 4000, 3, gui_boundary);
+  //      squareList [20] = new Parking("'Parkering'", gui_boundary);
+        squareList [21] = new PropertySquare("Trianglen", new int []{350, 1800, 5000, 14000, 17500, 21000}, 4400, 4, gui_boundary);
+  //      squareList [22] = new ChanceSquare("Prøv lykken", 3, gui_boundary);
+        squareList [23] = new PropertySquare("Østerbrogade", new int []{350, 1800, 5000, 14000, 17500, 21000}, 4400, 4, gui_boundary);
+        squareList [24] = new PropertySquare("Grønningen", new int []{400, 2000, 6000, 15000, 18500, 22000}, 4800, 4, gui_boundary);
+  //      squareList [25] = new Fleet("Gedser/Rostock", new int []{500, 1000, 2000, 4000},4000, gui_boundary);
+        squareList [26] = new PropertySquare("Bredgade", new int []{450, 2200, 6600, 16000, 19500, 23000}, 5200, 5, gui_boundary);
+        squareList [27] = new PropertySquare("Kgs. Nytorv", new int []{450, 2200, 6600, 16000, 19500, 23000}, 5200, 5, gui_boundary);
+  //      squareList [28] = new Brewery("Coca Cola", 3000, gui_boundary);
+        squareList [29] = new PropertySquare("Østergade", new int []{500, 2400, 7200, 17000, 20500, 24000}, 5600, 5, gui_boundary);
+  //      squareList [30] = new Jail("De fængsles", gui_boundary);
+        squareList [31] = new PropertySquare("Amagertorv", new int []{550, 2600, 7800, 18000, 22000, 25000}, 6000, 6, gui_boundary);
+        squareList [32] = new PropertySquare("Vimmelskaftet", new int []{550, 2600, 7800, 18000, 22000, 25000}, 6000, 6, gui_boundary);
+  //      squareList [33] = new ChanceSquare("Prøv lykken", 4, gui_boundary);
+        squareList [34] = new PropertySquare("Nygade", new int []{600, 3000, 9000, 20000, 24000, 28000}, 6400, 6, gui_boundary);
+ //       squareList [35] = new Fleet("Rødby/Puttgarten", new int []{500, 1000, 2000, 4000},4000, gui_boundary);
+ //       squareList [36] = new ChanceSquare("Prøv lykken", 5, gui_boundary);
+        squareList [37] = new PropertySquare("Frederiksberggade", new int []{700, 3500, 10000, 22000, 26000 ,30000}, 7000, 7, gui_boundary);
+   //     squareList [38] = new Tax("Statsskat", 2000, 0, gui_boundary);
+        squareList [39] = new PropertySquare("Rådhuspladsen", new int[]{1000, 4000, 12000, 28000, 34000, 40000}, 8000, 7, gui_boundary);
 
-        setPropertySquareSiblings();
+//        setPropertySquareSiblings();
     }
 
     /**
      * Part of the setup of Board. Links the PropertySquares with their partners by comparings their colors
      */
     //TODO: Optimize, a property can only have one square atm and might only have to check for +2 and -2 of current index instead of whole list
-    private void setPropertySquareSiblings() {
-        for(int i = 0 ; i < squareList.length ; i++) {
-
-            if(squareList[i] instanceof PropertySquare) {
-                PropertySquare ps = (PropertySquare)squareList[i];
-                String color = ps.getColor();
-
-                for(Square square : squareList) {
-                    if(square instanceof PropertySquare) {
-                        PropertySquare ps2 = (PropertySquare)squareList[i];
-
-                        if(ps2.getColor().equals(color)) {
-                            ps2.setSiblingSquare(ps);
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    private void setPropertySquareSiblings() {
+//        for(int i = 0 ; i < squareList.length ; i++) {
+//
+//            if(squareList[i] instanceof PropertySquare) {
+//                PropertySquare ps = (PropertySquare)squareList[i];
+//                String color = ps.getColor();
+//
+//                for(Square square : squareList) {
+//                    if(square instanceof PropertySquare) {
+//                        PropertySquare ps2 = (PropertySquare)squareList[i];
+//
+//                        if(ps2.getColor().equals(color)) {
+//                            ps2.setSiblingSquare(ps);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     /**
      * Finds the wanted square with a reference of its name

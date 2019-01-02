@@ -1,6 +1,8 @@
 package model.squareTypes;
 
 import model.Player;
+import ui.Abstract_UI;
+import ui.GUI_Boundary;
 
 /**@author Hold 44
  * @version 30/11-2018
@@ -11,13 +13,14 @@ import model.Player;
 public class PropertySquare extends Square{
 
     private int price;                      //Price of the property
-    private int rentPrice;                  //Price of landing on the property
+    private int[] rentPrice;                  //Price of landing on the property
     //Todo color: enum list? https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
-    private final String color;             //Color group of the property
+    private final int ID;             //Color group of the property
     private Player owner;                   //Reference to the player that owns the property
     private boolean isOwned;                //Boolean to determine if the property is owned
     private PropertySquare siblingSquare;   //Reference to the other property of same color
     private String playerAction;            //String to print what happened on the property
+    private GUI_Boundary gui_boundary;
 
     /**
      * Constructor of PropertySquare
@@ -27,11 +30,11 @@ public class PropertySquare extends Square{
      * @param rentPrice Price of landing on the property
      * @param color     Color group of the property
      */
-    public PropertySquare(String scenario, int price, int rentPrice, String color){
+    public PropertySquare(String scenario, int[] rentPrice, int price, int ID, Abstract_UI gui_boundary){
         super(scenario);
         this.price = price;
         this.rentPrice = rentPrice;
-        this.color = color;
+        this.ID = ID;
         this.owner = null;
         isOwned = false;
     }
@@ -69,8 +72,9 @@ public class PropertySquare extends Square{
      *
      * @param p Player who have landed on the property
      */
+
     private void payRent(Player p){
-        int toBePayed = rentPrice;
+        int toBePayed = rentPrice[0]; //TODO checks how many houses are on field and change rent price
         //TODO Create test for this if-statement
         if(isPropertySetOwned()) {
             toBePayed = toBePayed * 2;
@@ -109,8 +113,8 @@ public class PropertySquare extends Square{
      *
      * @return  Color of the property
      */
-    public String getColor() {
-        return color;
+    public int getID() {
+        return ID;
     }
 
     /**

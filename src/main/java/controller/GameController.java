@@ -38,7 +38,7 @@ public class GameController {
         players = new Player[numberOfPlayers];
 
 //        this.gameBoard = new GameBoard(24, players);
-        this.gameBoard = new GameBoard(24, this);
+        this.gameBoard = new GameBoard(this, ui);
         this.cup = new Cup();
 
         ArrayList<String> names = ui.askForNames(players.length);
@@ -123,20 +123,20 @@ public class GameController {
     /**
      * Test constructor, only used for tests!
      * Used by: ChanceSquareTest
-     */
-    public GameController(int numberOfPlayers) {
-        ui = new TUI();
-        players = new Player[numberOfPlayers];
-//        this.gameBoard = new GameBoard(24, players);
-        this.gameBoard = new GameBoard(24, this);
-        this.cup = new Cup();
-
-        for(int i=0; i<players.length; i++){
-            players[i] = new Player("", gameBoard, cup);
-        }
-        currPlayer = players[0];
-        isOn = true;
-    }
+//     */
+//    public GameController(int numberOfPlayers) {
+//        ui = new TUI();
+//        players = new Player[numberOfPlayers];
+////        this.gameBoard = new GameBoard(24, players);
+//        this.gameBoard = new GameBoard(24, this);
+//        this.cup = new Cup();
+//
+//        for(int i=0; i<players.length; i++){
+//            players[i] = new Player("", gameBoard, cup);
+//        }
+//        currPlayer = players[0];
+//        isOn = true;
+//    }
 
     /**
      * Test method, might be able to be fixed by new constructor

@@ -13,10 +13,10 @@ class ChanceSquareTest {
     GameBoard gameBoard;
 
     @BeforeEach
-    void BeforeEach() {
-        this.gameController = new GameController(4);
-        this.gameBoard = gameController.getGameBoard();
-    }
+//    void BeforeEach() {
+//        this.gameController = new GameController(4);
+//        this.gameBoard = gameController.getGameBoard();
+//    }
 
     /**Test case: TC3
      *
