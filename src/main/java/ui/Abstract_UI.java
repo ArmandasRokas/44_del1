@@ -40,7 +40,7 @@ public abstract class Abstract_UI {
      * @param numberOfPlayers   Number of players currently playing
      * @return                  List of player names
      */
-    public abstract ArrayList<String> askForNames(int numberOfPlayers);
+    public abstract String[] askForNames(int numberOfPlayers);
 
     /**
      * Awaits players to take their turn
@@ -76,4 +76,7 @@ public abstract class Abstract_UI {
      * @return [Usage to be implemented]
      */
     public abstract boolean showCurrentDiesResult();
+
+
+    public abstract boolean setPlayers(String[] names, int numberOfPlayers);
 }

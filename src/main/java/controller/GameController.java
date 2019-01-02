@@ -6,7 +6,7 @@ import model.Player;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
 import ui.GUI_Boundary;
-import ui.TUI;
+//import ui.TUI;
 
 import java.util.ArrayList;
 
@@ -41,11 +41,12 @@ public class GameController {
         this.gameBoard = new GameBoard(this, ui);
         this.cup = new Cup();
 
-        ArrayList<String> names = ui.askForNames(players.length);
+        String[] names = ui.askForNames(players.length);
 
         for(int i=0; i<players.length; i++){
-            players[i] = new Player(names.get(i), gameBoard, cup);
+            players[i] = new Player(names[i], gameBoard, cup);
         }
+        ui.setPlayers(names, numberOfPlayers);
 
         currPlayer = players[0];
 
