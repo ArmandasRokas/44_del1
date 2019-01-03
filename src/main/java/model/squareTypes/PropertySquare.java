@@ -19,7 +19,6 @@ public class PropertySquare extends Square{
     private Player owner;                   //Reference to the player that owns the property
     private boolean isOwned;                //Boolean to determine if the property is owned
     private PropertySquare siblingSquare;   //Reference to the other property of same color
-    private String playerAction;            //String to print what happened on the property
     private Abstract_UI gui_boundary;
 
     /**
@@ -86,8 +85,8 @@ public class PropertySquare extends Square{
         }
         p.addToCash(-toBePayed);
         owner.addToCash(toBePayed);
-        playerAction = p.getName() + " is on " + super.toString() + " which is owned by " + owner.getName() +
-                " You paid " + toBePayed + "M to" + owner.getName();
+        super.playerAction = p.getName() + " står på " + super.toString() + ", som ejes af " + owner.getName() +
+                ". Du har betalt " + toBePayed + "DKK til " + owner.getName();
     }
 
     /**
@@ -100,7 +99,7 @@ public class PropertySquare extends Square{
         this.owner = p;
         this.isOwned = true;
         p.addOwnedSquare(this);
-        playerAction = p.getName() + " bought a " + super.toString() + " for " + price + "M";
+        super.playerAction = p.getName() + " købt " + toString();
     }
 
     /**
@@ -139,4 +138,5 @@ public class PropertySquare extends Square{
     public Player getOwner() {
         return owner;
     }
+
 }

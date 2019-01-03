@@ -3,9 +3,6 @@ package model;
 import controller.GameController;
 import model.squareTypes.*;
 import ui.Abstract_UI;
-import ui.GUI_Boundary;
-
-import java.util.ArrayList;
 
 /**@author Hold 44
  * @version 08/11-2018
@@ -114,7 +111,7 @@ public class GameBoard {
         boolean found = false;
 
         for(int i = 0 ; i < squareList.length && !found ; i++) {
-            if(squareList[i].getScenario().equals(name)) {
+            if(squareList[i].getPlayerAction().equals(name)) {
                 res = i;
                 found = true;
             }

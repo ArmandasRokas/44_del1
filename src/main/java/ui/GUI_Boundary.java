@@ -1,13 +1,10 @@
 package ui;
 
 
-import controller.GameController;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 import model.Player;
-
-import java.util.ArrayList;
 
 public class GUI_Boundary extends Abstract_UI {
 
@@ -60,13 +57,18 @@ public class GUI_Boundary extends Abstract_UI {
     @Override
     public boolean askToTakeTurn() {
 
-        gui.getUserButtonPressed("Kast terninger", "ok");
+        gui.getUserButtonPressed(gameController.getCurrPlayerName() +
+                " har turen."
+                , "Kast");
 
         return true;
     }
 
     @Override
     public boolean showScenario() {
+
+        gui.getUserButtonPressed(gameController.getCurrSquare().getPlayerAction(), "OK");
+
         return false;
     }
 

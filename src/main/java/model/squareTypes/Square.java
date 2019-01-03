@@ -10,6 +10,7 @@ import model.Player;
  */
 public abstract class Square {
     protected String scenario;  //Name of square, used to describe the scenario of the turn
+    protected String playerAction;
 
     /**
      *  Super-constructor of Square's subclasses
@@ -25,8 +26,8 @@ public abstract class Square {
      *
      * @return  Name of square
      */
-    public String getScenario(){
-        return this.scenario;
+    public String getPlayerAction(){
+        return this.playerAction;
     }
 
     /**

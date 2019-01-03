@@ -68,6 +68,7 @@ public class GameController {
                     player.actOnSquare();
                 }
                 ui.updateBoardView();
+                ui.showScenario();
                 if(loserFound()){
                     isOn = false;
                     break;
