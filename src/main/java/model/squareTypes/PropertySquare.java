@@ -19,6 +19,7 @@ public class PropertySquare extends Square{
     private boolean isOwned;                //Boolean to determine if the property is owned
     private PropertySquare siblingSquare;   //Reference to the other property of same color
     private Abstract_UI gui_boundary;
+    private int index;
 
     /**
      * Constructor of PropertySquare
@@ -28,7 +29,7 @@ public class PropertySquare extends Square{
      * @param rentPrice Price of landing on the property
      * @param color     Color group of the property
      */
-    public PropertySquare(String scenario, int[] rentPrice, int price, int ID, Abstract_UI gui_boundary){
+    public PropertySquare(String scenario, int[] rentPrice, int price, int ID, int index, Abstract_UI gui_boundary){
         super(scenario);
         this.price = price;
         this.rentPrice = rentPrice;
@@ -36,6 +37,7 @@ public class PropertySquare extends Square{
         this.owner = null;
         isOwned = false;
         this.gui_boundary = gui_boundary;
+        this.index = index;
     }
 
     /**
@@ -102,6 +104,7 @@ public class PropertySquare extends Square{
         this.isOwned = true;
         p.addOwnedSquare(this);
         super.playerAction = p.getName() + " købt " + toString();
+        gui_boundary.setOwnerOnSquare(p.getName(), this.index);
     }
 
     /**

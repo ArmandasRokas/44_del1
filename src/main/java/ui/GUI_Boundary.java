@@ -120,4 +120,12 @@ public class GUI_Boundary extends Abstract_UI {
 
         return answer;
     }
+
+    @Override
+    public boolean setOwnerOnSquare(String name, int index){
+
+        fields[index].setSubText(name);
+
+        return true;
+    }
 }

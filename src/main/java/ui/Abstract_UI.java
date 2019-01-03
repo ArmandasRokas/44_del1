@@ -81,4 +81,6 @@ public abstract class Abstract_UI {
     public abstract boolean setPlayers(String[] names, int numberOfPlayers);
 
     public abstract boolean askToBuyProperty();
+
+    public abstract boolean setOwnerOnSquare(String name, int index);
 }
