@@ -2,7 +2,6 @@ package model.squareTypes;
 
 import model.Player;
 import ui.Abstract_UI;
-import ui.GUI_Boundary;
 
 /**@author Hold 44
  * @version 30/11-2018
@@ -15,7 +14,7 @@ public class PropertySquare extends Square{
     private int price;                      //Price of the property
     private int[] rentPrice;                  //Price of landing on the property
     //Todo color: enum list? https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
-    private final int ID;             //Color group of the property
+    private final int ID;
     private Player owner;                   //Reference to the player that owns the property
     private boolean isOwned;                //Boolean to determine if the property is owned
     private PropertySquare siblingSquare;   //Reference to the other property of same color
@@ -48,6 +47,9 @@ public class PropertySquare extends Square{
     public void landedOn(Player p) {
         if(isOwned && !p.equals(owner)){
             payRent(p);
+        } else if (isOwned && p.equals(owner)){
+          super.playerAction = p.getName() + " står på " + super.toString() +
+                  " som " + p.getName() + " ejer selv.";
         } else if(!isOwned){
 
             boolean userAnswer = gui_boundary.askToBuyProperty();

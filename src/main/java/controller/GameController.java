@@ -8,7 +8,6 @@ import ui.Abstract_UI;
 import ui.GUI_Boundary;
 //import ui.TUI;
 
-import java.util.ArrayList;
 
 /**@author Hold 44
  * @version 08/11-2018
@@ -68,7 +67,7 @@ public class GameController {
                     player.actOnSquare();
                 }
                 ui.updateBoardView();
-                ui.showScenario();
+                ui.showPlayerAction();
                 if(loserFound()){
                     isOn = false;
                     break;

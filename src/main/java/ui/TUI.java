@@ -86,7 +86,7 @@
 //     * @return  [Usage to be implemented]
 //     */
 //    @Override
-//    public boolean showScenario() {
+//    public boolean showPlayerAction() {
 //        System.out.println(gameController.getCurrSquare().toString());
 //        return false;
 //    }

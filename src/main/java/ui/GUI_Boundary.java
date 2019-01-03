@@ -65,7 +65,7 @@ public class GUI_Boundary extends Abstract_UI {
     }
 
     @Override
-    public boolean showScenario() {
+    public boolean showPlayerAction() {
 
         gui.getUserButtonPressed(gameController.getCurrSquare().getPlayerAction(), "OK");
 

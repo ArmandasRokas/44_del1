@@ -26,6 +26,9 @@ public class StartSquare extends Square {
      */
     @Override
     public void landedOn(Player p) {
+
+        super.playerAction = p.getName() + ", du fik 200dkk";
+
     }
 
 }

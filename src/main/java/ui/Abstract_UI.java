@@ -54,7 +54,7 @@ public abstract class Abstract_UI {
      *
      * @return  [Usage to be implemented]
      */
-    public abstract boolean showScenario();
+    public abstract boolean showPlayerAction();
 
     /**
      * Prints or updates the text on scoreboard
