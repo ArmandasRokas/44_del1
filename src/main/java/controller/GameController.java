@@ -60,10 +60,12 @@ public class GameController {
             for (Player player: players) { //TODO KNA: Either fix this to standard for-loop or be ready to defend it since it doesn't hold up to "inititiate-condition-afterthought"/"index-condition-increment"
                 currPlayer = player;
 
+                // if ui.askActionToPerfom().equals("Kast")
                 if(ui.askToTakeTurn()){
                     player.takeTurn();
                     ui.showCurrentDiesResult();
-                    ui.showScenario();
+                    ui.updateBoardView();
+                    player.actOnSquare();
                 }
                 ui.updateBoardView();
                 if(loserFound()){

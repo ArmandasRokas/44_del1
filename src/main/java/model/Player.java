@@ -19,6 +19,7 @@ public class Player {
     private GameBoard gameBoard;                    //Reference to instance of GameBoard
     private Cup cup;                                //Reference to instance of Cup
     private int outOfJailCard; //TODO Implement as part of "ToJailSquare"-use
+    private Square currSquare;
 
     /**
      * Constructor of Player
@@ -35,6 +36,7 @@ public class Player {
         currPosition = 0;
         outOfJailCard = 0;
         squaresOwned = new ArrayList<>();
+
     }
 
 
@@ -51,8 +53,12 @@ public class Player {
         if(latestPosition>currPosition){  // checks if player completed one round
             this.addToCash(cashStartIncome);
         }
-        Square square = gameBoard.getSquare(this.currPosition);
-        square.landedOn(this);
+        currSquare = gameBoard.getSquare(this.currPosition);
+
+    }
+
+    public void actOnSquare(){
+        currSquare.landedOn(this);
     }
 
     /**

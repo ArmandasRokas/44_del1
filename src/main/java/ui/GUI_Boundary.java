@@ -107,4 +107,15 @@ public class GUI_Boundary extends Abstract_UI {
 
         return true;
     }
+
+    @Override
+    public boolean askToBuyProperty(){
+
+        boolean answer = gui.getUserLeftButtonPressed(
+                gameController.getCurrPlayerName() + ", du har mulighed at købe " +
+                gameController.getCurrSquare().toString() + ". Vil du det?",
+                "ja", "nej");
+
+        return answer;
+    }
 }
