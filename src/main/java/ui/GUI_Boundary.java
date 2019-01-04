@@ -55,18 +55,28 @@ public class GUI_Boundary extends Abstract_UI {
     }
 
     @Override
-    public boolean askToTakeTurn() {
+    public int askToChooseAction() {
 
-        gui.getUserButtonPressed(gameController.getCurrPlayerName() +
+        String action = gui.getUserButtonPressed(gameController.getCurrPlayerName() +
                 " har turen."
-                , "Kast");
-
-        return true;
+                , "Kast", "Koeb hus", "Koeb hotel", "Saelg hus");
+        switch (action){
+            case "Kast":
+                return 1;
+            case "Koeb hus":
+                return 2;
+            case "Køb hotel":
+                return 3;
+            case "Sælg hus":
+                return 4;
+        }
+        return 0;
     }
 
     @Override
     public boolean showPlayerAction() {
 
+        //TODO switch statment show player action, when player do something else than buy or rent property.
         gui.getUserButtonPressed(gameController.getCurrSquare().getPlayerAction(), "OK");
 
         return false;

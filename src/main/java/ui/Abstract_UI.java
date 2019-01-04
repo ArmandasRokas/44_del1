@@ -2,8 +2,6 @@ package ui;
 
 import controller.GameController;
 
-import java.util.ArrayList;
-
 /**@author Hold 44
  * @version 30/11-2018
  *
@@ -47,7 +45,7 @@ public abstract class Abstract_UI {
      *
      * @return  Boolean if input is accepted
      */
-    public abstract boolean askToTakeTurn();
+    public abstract int askToChooseAction();
 
     /**
      * Writes out the scenario to players

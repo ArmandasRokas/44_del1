@@ -60,12 +60,15 @@ public class GameController {
                 currPlayer = player;
 
                 // if ui.askActionToPerfom().equals("Kast")
-                if(ui.askToTakeTurn()){
+                int chosenAction = ui.askToChooseAction();
+                if(chosenAction == 1 ){
                     player.takeTurn();
                     ui.showCurrentDiesResult();
                     ui.updateBoardView();
                     player.actOnSquare();
                 }
+
+
                 ui.updateBoardView();
                 ui.showPlayerAction();
                 if(loserFound()){
