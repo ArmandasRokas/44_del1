@@ -3,6 +3,8 @@ package model.squareTypes;
 import model.Player;
 import ui.Abstract_UI;
 
+import java.util.ArrayList;
+
 /**@author Hold 44
  * @version 30/11-2018
  *
@@ -14,10 +16,10 @@ public class PropertySquare extends Square{
     private int price;                      //Price of the property
     private int[] rentPrice;                  //Price of landing on the property
     //Todo color: enum list? https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
-    private final int ID;
+    private final int groupID;
     private Player owner;                   //Reference to the player that owns the property
     private boolean isOwned;                //Boolean to determine if the property is owned
-    private PropertySquare siblingSquare;   //Reference to the other property of same color
+    private ArrayList<PropertySquare> siblingSquares;   //Reference to the other property of same color
     private Abstract_UI gui_boundary;
     private int index;
 
@@ -29,15 +31,16 @@ public class PropertySquare extends Square{
      * @param rentPrice Price of landing on the property
      * @param color     Color group of the property
      */
-    public PropertySquare(String scenario, int[] rentPrice, int price, int ID, int index, Abstract_UI gui_boundary){
+    public PropertySquare(String scenario, int[] rentPrice, int price, int groupID, int index, Abstract_UI gui_boundary){
         super(scenario);
         this.price = price;
         this.rentPrice = rentPrice;
-        this.ID = ID;
+        this.groupID = groupID;
         this.owner = null;
         isOwned = false;
         this.gui_boundary = gui_boundary;
         this.index = index;
+        siblingSquares = new ArrayList<>();
     }
 
     /**
@@ -122,8 +125,8 @@ public class PropertySquare extends Square{
      *
      * @return  Color of the property
      */
-    public int getID() {
-        return ID;
+    public int getGroupID() {
+        return groupID;
     }
 
     /**
@@ -132,7 +135,7 @@ public class PropertySquare extends Square{
      * @param ps    Property it is to have a reference to
      */
     public void setSiblingSquare(PropertySquare ps) {
-        this.siblingSquare = ps;
+        siblingSquares.add(ps);
     }
 
     /**

@@ -156,4 +156,16 @@ public class Player {
     public int getTotalSquareOwned(){
         return squaresOwned.size();
     }
+
+    public int[] getHousesToBuildOnProperty(){
+
+        for (PropertySquare propertySquare: squaresOwned){
+            propertySquare.isPropertySetOwned();
+
+            //TODO checks number of houses on a property.
+            //TODO Adds to return list only properties that has less houses than others properties.
+        }
+
+        return new int[]{1,2} ;
+    }
 }

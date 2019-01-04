@@ -69,6 +69,9 @@ public class GameController {
                 }
 
 
+                // player.getPropertyiesBuyHouse : String[] names of properties
+                // ui.showPropertiesToBuyHouse
+
                 ui.updateBoardView();
                 ui.showPlayerAction();
                 if(loserFound()){

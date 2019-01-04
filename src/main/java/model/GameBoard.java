@@ -73,32 +73,33 @@ public class GameBoard {
    //     squareList [38] = new Tax("Statsskat", 2000, 0, gui_boundary);
         squareList [39] = new PropertySquare("Rådhuspladsen", new int[]{1000, 4000, 12000, 28000, 34000, 40000}, 8000, 7, 39, gui_boundary);
 
-//        setPropertySquareSiblings();
+        setPropertySquareSiblings();
     }
 
     /**
      * Part of the setup of Board. Links the PropertySquares with their partners by comparings their colors
      */
     //TODO: Optimize, a property can only have one square atm and might only have to check for +2 and -2 of current index instead of whole list
-//    private void setPropertySquareSiblings() {
-//        for(int i = 0 ; i < squareList.length ; i++) {
-//
-//            if(squareList[i] instanceof PropertySquare) {
-//                PropertySquare ps = (PropertySquare)squareList[i];
-//                String color = ps.getColor();
-//
-//                for(Square square : squareList) {
-//                    if(square instanceof PropertySquare) {
-//                        PropertySquare ps2 = (PropertySquare)squareList[i];
-//
-//                        if(ps2.getColor().equals(color)) {
-//                            ps2.setSiblingSquare(ps);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private void setPropertySquareSiblings() {
+        for(int i = 0 ; i < squareList.length ; i++) {
+
+            if(squareList[i] instanceof PropertySquare) {
+                PropertySquare ps = (PropertySquare) squareList[i];
+                int groupID = ps.getGroupID();
+
+                for(Square square : squareList) {
+                    if(square instanceof PropertySquare && !square.equals(ps)) {
+                        PropertySquare ps2 = (PropertySquare) square;
+
+                        if(ps2.getGroupID() == groupID) {
+                            ps2.setSiblingSquare(ps);
+                            ps.setSiblingSquare(ps2); //TODO should be tested if adds the same sibling square more than once
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     /**
      * Finds the wanted square with a reference of its name
