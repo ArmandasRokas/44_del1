@@ -1,5 +1,7 @@
 package controller;
 
+import gui_fields.GUI_Player;
+import gui_main.GUI;
 import model.GameBoard;
 import model.Cup;
 import model.Player;
@@ -21,29 +23,29 @@ public class GameController {
     private Player[] players;       //Array of players
     private GameBoard gameBoard;    //Instance of GameBoard
     private Cup cup;                //Instance of Cup
-    private Abstract_UI ui;         //Instant of abstract class Abstract_UI
     private boolean isOn;           //Boolean that determines if the game is active
+    private GameLogic logic = new GameLogic();
 
     /**
      * Constructor of GameController class
      */
     public GameController() {
-        ui = new TUI();
+        GUI gui = new GUI();
 
         int numberOfPlayers;
         do {
-            numberOfPlayers = ui.askForNumberOfPlayers();
-        } while(numberOfPlayers == -1);
+            numberOfPlayers = gui.getUserInteger("Vælg antal spillere (3-6)",3 ,6);
+        } while(!logic.controlPlayerCount(numberOfPlayers));
         players = new Player[numberOfPlayers];
 
 //        this.gameBoard = new GameBoard(24, players);
         this.gameBoard = new GameBoard(24, this);
         this.cup = new Cup();
 
-        ArrayList<String> names = ui.askForNames(players.length);
-
         for(int i=0; i<players.length; i++){
-            players[i] = new Player(names.get(i), gameBoard, cup);
+            String playerName = gui.getUserString("Skriv navn for spiller nr. " + (i+1));
+            players[i] = new Player(playerName, gameBoard, cup);
+            gui.addPlayer(new GUI_Player(players[i].getName(), players[i].getTotalCash()));
         }
 
         currPlayer = players[0];
@@ -51,27 +53,27 @@ public class GameController {
         isOn = true;
     }
 
-    public void run(){
-        ui.setGameController(this);
-
-        while(isOn){
-            for (Player player: players) { //TODO KNA: Either fix this to standard for-loop or be ready to defend it since it doesn't hold up to "inititiate-condition-afterthought"/"index-condition-increment"
-                currPlayer = player;
-
-                if(ui.askToTakeTurn()){
-                    player.takeTurn();
-                    ui.showCurrentDiesResult();
-                    ui.showScenario();
-                }
-                ui.updateBoardView();
-                if(loserFound()){
-                    isOn = false;
-                    break;
-                }
-            }
-        }
-        ui.showFinalResult();
-    }
+//    public void run(){
+//        ui.setGameController(this);
+//
+//        while(isOn){
+//            for (Player player: players) { //TODO KNA: Either fix this to standard for-loop or be ready to defend it since it doesn't hold up to "inititiate-condition-afterthought"/"index-condition-increment"
+//                currPlayer = player;
+//
+//                if(ui.askToTakeTurn()){
+//                    player.takeTurn();
+//                    ui.showCurrentDiesResult();
+//                    ui.showScenario();
+//                }
+//                ui.updateBoardView();
+//                if(loserFound()){
+//                    isOn = false;
+//                    break;
+//                }
+//            }
+//        }
+//        ui.showFinalResult();
+//    }
 
     /**
      * Method to control if a loser has been found
@@ -124,7 +126,7 @@ public class GameController {
      * Used by: ChanceSquareTest
      */
     public GameController(int numberOfPlayers) {
-        ui = new TUI();
+//        ui = new TUI();
         players = new Player[numberOfPlayers];
 //        this.gameBoard = new GameBoard(24, players);
         this.gameBoard = new GameBoard(24, this);
@@ -139,7 +141,6 @@ public class GameController {
 
     /**
      * Test method, might be able to be fixed by new constructor
-     * @return
      */
     public Player[] getPlayers(){
         return players;
