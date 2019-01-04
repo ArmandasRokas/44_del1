@@ -1,5 +1,6 @@
 package model;
 
+import gui_fields.GUI_Player;
 import model.squareTypes.PropertySquare;
 import model.squareTypes.Square;
 
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  * Class to represent a single player throughout the gameController
  */
 public class Player {
+    private GUI_Player piece;
     private String name;                            //Name of Player
     private Account account;                        //Reference to instance of Account
     private int currPosition;                       //Current position on the board of player
@@ -150,4 +152,10 @@ public class Player {
     public int getTotalSquareOwned(){
         return squaresOwned.size();
     }
+
+    public void setPiece(GUI_Player piece) {
+        this.piece = piece;
+    }
+
+    public GUI_Player getPiece() { return piece; }
 }

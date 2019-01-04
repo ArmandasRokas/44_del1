@@ -1,10 +1,12 @@
 package controller;
 
+import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 import model.GameBoard;
 import model.Cup;
 import model.Player;
+import model.squareTypes.PropertySquare;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
 import ui.TUI;
@@ -25,12 +27,21 @@ public class GameController {
     private Cup cup;                //Instance of Cup
     private boolean isOn;           //Boolean that determines if the game is active
     private GameLogic logic = new GameLogic();
+    private GUI gui;
 
     /**
      * Constructor of GameController class
      */
     public GameController() {
-        GUI gui = new GUI();
+        gui = new GUI();
+
+
+//        this.gameBoard = new GameBoard(24, players);
+        this.gameBoard = new GameBoard(24, this);
+        this.cup = new Cup();
+
+
+        setGUIBoard();
 
         int numberOfPlayers;
         do {
@@ -38,42 +49,71 @@ public class GameController {
         } while(!logic.controlPlayerCount(numberOfPlayers));
         players = new Player[numberOfPlayers];
 
-//        this.gameBoard = new GameBoard(24, players);
-        this.gameBoard = new GameBoard(24, this);
-        this.cup = new Cup();
 
         for(int i=0; i<players.length; i++){
-            String playerName = gui.getUserString("Skriv navn for spiller nr. " + (i+1));
+            String playerName = gui.getUserString("Skriv navn for spiller nr. " + (i+1)); //TODO Kontrol af at de ikke må have samme navn, da GUI ikke tager hensyn til det
             players[i] = new Player(playerName, gameBoard, cup);
-            gui.addPlayer(new GUI_Player(players[i].getName(), players[i].getTotalCash()));
+            GUI_Player guiPlayer = new GUI_Player(players[i].getName(), players[i].getTotalCash());
+            gui.addPlayer(guiPlayer);
+            players[i].setPiece(guiPlayer);
+            gui.getFields()[0].setCar(players[i].getPiece(), true);
         }
+
 
         currPlayer = players[0];
 
         isOn = true;
     }
 
-//    public void run(){
-//        ui.setGameController(this);
-//
-//        while(isOn){
-//            for (Player player: players) { //TODO KNA: Either fix this to standard for-loop or be ready to defend it since it doesn't hold up to "inititiate-condition-afterthought"/"index-condition-increment"
-//                currPlayer = player;
-//
-//                if(ui.askToTakeTurn()){
+    private void setGUIBoard() {
+        Square[] gameSquares = gameBoard.getSquareList();
+        GUI_Field[] guiSquares = gui.getFields();
+
+        //TODO Skal lige tage hensyn til de forskellige typer felter
+        for(int i = 0 ; i < gameSquares.length ; i++) {
+            if(gameSquares[i] instanceof PropertySquare) {
+                guiSquares[i].setTitle(gameSquares[i].getScenario());
+                guiSquares[i].setBackGroundColor(((PropertySquare)gameSquares[i]).getColor());
+                guiSquares[i].setSubText("Pris: " + Integer.toString(((PropertySquare)gameSquares[i]).getPrice()));
+
+            }
+        }
+    }
+
+    public void run(){
+//        gui.setGameController(this);
+
+        while(isOn){
+            for (Player player: players) {
+                currPlayer = player;
+
+                if(!loserFound()) {
+                    gui.getUserButtonPressed("Det er " + currPlayer.getName() + "'s tur. Tryk for at kaste med terningen", "Kast");
+                    int oldPos = currPlayer.getCurrPosition();
+                    currPlayer.takeTurn();
+                    gui.getFields()[oldPos].setCar(currPlayer.getPiece(), false);
+                    gui.getFields()[currPlayer.getCurrPosition()].setCar(currPlayer.getPiece(), true);
+                    gui.setDice(cup.getFirstDie(), cup.getSecondDie());
+
+//                    gui.showScenario();
+                }
+
+
+
+//                if(gui.askToTakeTurn()){
 //                    player.takeTurn();
-//                    ui.showCurrentDiesResult();
-//                    ui.showScenario();
+//                    gui.showCurrentDiesResult();
+//                    gui.showScenario();
 //                }
-//                ui.updateBoardView();
+//                gui.updateBoardView();
 //                if(loserFound()){
 //                    isOn = false;
 //                    break;
 //                }
-//            }
-//        }
-//        ui.showFinalResult();
-//    }
+            }
+        }
+//        gui.showFinalResult();
+    }
 
     /**
      * Method to control if a loser has been found

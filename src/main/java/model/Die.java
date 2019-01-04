@@ -24,11 +24,15 @@ public class Die {
     /**
      * Sets the eyes on the die through a pseudorandom method with the use of the class "Random"
      */
-    public void rollDie() {
-        Random r = new Random();
+//    public void rollDie() {
+//        Random r = new Random();
+//
+//        int randomNum = r.nextInt(maxEyes - minEyes + 1);
+//        this.eyes = randomNum + minEyes;
+//    }
 
-        int randomNum = r.nextInt(maxEyes - minEyes + 1);
-        this.eyes = randomNum + minEyes;
+    public void rollDie() {
+        this.eyes = 1;
     }
 
     /**

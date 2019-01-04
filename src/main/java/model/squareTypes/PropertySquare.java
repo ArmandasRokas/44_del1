@@ -2,6 +2,8 @@ package model.squareTypes;
 
 import model.Player;
 
+import java.awt.*;
+
 /**@author Hold 44
  * @version 30/11-2018
  *
@@ -13,7 +15,8 @@ public class PropertySquare extends Square{
     private int price;                      //Price of the property
     private int rentPrice;                  //Price of landing on the property
     //Todo color: enum list? https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
-    private final String color;             //Color group of the property
+//    private final String color;             //Color group of the property
+    private final Color color;             //Color group of the property
     private Player owner;                   //Reference to the player that owns the property
     private boolean isOwned;                //Boolean to determine if the property is owned
     private PropertySquare siblingSquare;   //Reference to the other property of same color
@@ -27,7 +30,15 @@ public class PropertySquare extends Square{
      * @param rentPrice Price of landing on the property
      * @param color     Color group of the property
      */
-    public PropertySquare(String scenario, int price, int rentPrice, String color){
+//    public PropertySquare(String scenario, int price, int rentPrice, String color){
+//        super(scenario);
+//        this.price = price;
+//        this.rentPrice = rentPrice;
+//        this.color = color;
+//        this.owner = null;
+//        isOwned = false;
+//    }
+    public PropertySquare(String scenario, int price, int rentPrice, Color color){
         super(scenario);
         this.price = price;
         this.rentPrice = rentPrice;
@@ -109,7 +120,10 @@ public class PropertySquare extends Square{
      *
      * @return  Color of the property
      */
-    public String getColor() {
+//    public String getColor() {
+//        return color;
+//    }
+    public Color getColor() {
         return color;
     }
 
@@ -130,4 +144,6 @@ public class PropertySquare extends Square{
     public Player getOwner() {
         return owner;
     }
+
+    public int getPrice() { return price; }
 }

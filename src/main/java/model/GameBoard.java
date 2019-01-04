@@ -1,6 +1,7 @@
 package model;
 
 import controller.GameController;
+import java.awt.Color;
 import model.squareTypes.*;
 
 import java.util.ArrayList;
@@ -33,30 +34,31 @@ public class GameBoard {
     private void setBoard(GameController gameController) {
         ChanceSquare CSReference = new ChanceSquare("Chance", gameController.getPlayers(), this);
 
+
         squareList[0] = new StartSquare("Start");
-        squareList[1] = new PropertySquare("BurgerBar",1,1,"Brown");
-        squareList[2] = new PropertySquare("PizzaHouse",1,1,"Brown");
+        squareList[1] = new PropertySquare("BurgerBar",1,1, new Color(102, 51, 0));
+        squareList[2] = new PropertySquare("PizzaHouse",1,1, new Color(102, 51, 0));
         squareList[3] = CSReference;
-        squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
-        squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
-        squareList[6] = new JailSquare("Prison");
-        squareList[7] = new PropertySquare("Museum",2,2,"Purple");
-        squareList[8] = new PropertySquare("Libary",2,2,"Purple");
-        squareList[9] = CSReference;
-        squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
-        squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
-        squareList[12] = new ParkingSquare("Free Parking");
-        squareList[13] = new PropertySquare("GameHall",3,3,"Red");
-        squareList[14] = new PropertySquare("Cinema",3,3,"Red");
-        squareList[15] = CSReference;
-        squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
-        squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
-        squareList[18] = new ToJailSquare("To Prison", this);
-        squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
-        squareList[20] = new PropertySquare("Zoo",4,4,"Green");
-        squareList[21] = CSReference;
-        squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
-        squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
+//        squareList[4] = new PropertySquare("CandyShop",1,1,"Teal");
+//        squareList[5] = new PropertySquare("IceCreamShop",1,1,"Teal");
+//        squareList[6] = new JailSquare("Prison");
+//        squareList[7] = new PropertySquare("Museum",2,2,"Purple");
+//        squareList[8] = new PropertySquare("Libary",2,2,"Purple");
+//        squareList[9] = CSReference;
+//        squareList[10] = new PropertySquare("SkaterPark",2,2,"White");
+//        squareList[11] = new PropertySquare("SwimmingPool",2,2,"White");
+//        squareList[12] = new ParkingSquare("Free Parking");
+//        squareList[13] = new PropertySquare("GameHall",3,3,"Red");
+//        squareList[14] = new PropertySquare("Cinema",3,3,"Red");
+//        squareList[15] = CSReference;
+//        squareList[16] = new PropertySquare("ToyShop",3,3,"Yellow");
+//        squareList[17] = new PropertySquare("PetShop",3,3,"Yellow");
+//        squareList[18] = new ToJailSquare("To Prison", this);
+//        squareList[19] = new PropertySquare("BowlingHall",4,4,"Green");
+//        squareList[20] = new PropertySquare("Zoo",4,4,"Green");
+//        squareList[21] = CSReference;
+//        squareList[22] = new PropertySquare("WaterPark",5,5,"Blue");
+//        squareList[23] = new PropertySquare("TheBeach",5,5,"Blue");
 
         setPropertySquareSiblings();
     }
@@ -70,7 +72,8 @@ public class GameBoard {
 
             if(squareList[i] instanceof PropertySquare) {
                 PropertySquare ps = (PropertySquare)squareList[i];
-                String color = ps.getColor();
+//                String color = ps.getColor();
+                Color color = ps.getColor();
 
                 for(Square square : squareList) {
                     if(square instanceof PropertySquare) {
@@ -141,5 +144,9 @@ public class GameBoard {
      */
     public GameBoard(int squareAmount, boolean isTest){
         squareList = new Square[squareAmount];
+    }
+
+    public Square[] getSquareList() {
+        return squareList;
     }
 }

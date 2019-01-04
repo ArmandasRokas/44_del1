@@ -33,4 +33,11 @@ public class Cup {
     public int getCurrentRollScore() {
         return d1.getEyes() + d2.getEyes();
     }
+
+    public int getFirstDie() {
+        return d1.getEyes();
+    }
+    public int getSecondDie() {
+        return d2.getEyes();
+    }
 }
