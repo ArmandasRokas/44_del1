@@ -54,7 +54,7 @@ public class Player {
             this.addToCash(cashStartIncome);
         }
         Square square = gameBoard.getSquare(this.currPosition);
-        square.landedOn(this);
+//        square.landedOn(this);
     }
 
     /**

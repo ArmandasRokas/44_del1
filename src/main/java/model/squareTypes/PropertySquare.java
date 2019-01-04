@@ -146,4 +146,6 @@ public class PropertySquare extends Square{
     }
 
     public int getPrice() { return price; }
+
+    public boolean getIsOwned() { return isOwned; }
 }

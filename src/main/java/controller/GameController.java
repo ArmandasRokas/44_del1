@@ -91,10 +91,19 @@ public class GameController {
                     gui.getUserButtonPressed("Det er " + currPlayer.getName() + "'s tur. Tryk for at kaste med terningen", "Kast");
                     int oldPos = currPlayer.getCurrPosition();
                     currPlayer.takeTurn();
-                    gui.getFields()[oldPos].setCar(currPlayer.getPiece(), false);
-                    gui.getFields()[currPlayer.getCurrPosition()].setCar(currPlayer.getPiece(), true);
-                    gui.setDice(cup.getFirstDie(), cup.getSecondDie());
+                    updatePlayerAndDices(oldPos);
 
+                    Square currSquare = gameBoard.getSquareList()[currPlayer.getCurrPosition()];
+                    if(currSquare instanceof PropertySquare) {
+                        if(!((PropertySquare) currSquare).getIsOwned()) {
+//                            boolean res = gui.getUserLeftButtonPressed("Vil du gerne købe " + currSquare.getScenario(), "Ja", "Nej");
+//                            gui.getUserSelection("Vil du gerne købe " + currSquare.getScenario(), "Ja", "Nej");
+                            gui.displayChanceCard("awdwad");
+//                            if(res) {
+//                                gui.showMessage("Du har købt " + currSquare.getScenario());
+//                            }
+                        }
+                    }
 //                    gui.showScenario();
                 }
 
@@ -113,6 +122,12 @@ public class GameController {
             }
         }
 //        gui.showFinalResult();
+    }
+
+    private void updatePlayerAndDices(int oldPos) {
+        gui.getFields()[oldPos].setCar(currPlayer.getPiece(), false);
+        gui.getFields()[currPlayer.getCurrPosition()].setCar(currPlayer.getPiece(), true);
+        gui.setDice(cup.getFirstDie(), cup.getSecondDie());
     }
 
     /**
