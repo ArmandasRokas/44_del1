@@ -169,7 +169,7 @@ public class Player {
         return new int[]{1,2} ;
     }
 
-    public ArrayList<PropertySquare> getCanBuildSquares(){
+    public String[] getCanBuildSquares(){
 
         ArrayList<PropertySquare> canBuildSquares = new ArrayList<>();
 
@@ -178,10 +178,16 @@ public class Player {
             if(square.canBuild(this)){
                canBuildSquares.add(square);
             }
-
         }
 
-        return canBuildSquares;
+        String[] canBuildSquaresNames = new String[canBuildSquares.size()];
+
+        for(int i = 0; i<canBuildSquares.size(); i++){
+            canBuildSquaresNames[i] = canBuildSquares.get(i).toString();
+        }
+
+
+        return canBuildSquaresNames;
 
     }
 

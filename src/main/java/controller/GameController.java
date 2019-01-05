@@ -3,12 +3,9 @@ package controller;
 import model.GameBoard;
 import model.Cup;
 import model.Player;
-import model.squareTypes.PropertySquare;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
 import ui.GUI_Boundary;
-
-import java.util.ArrayList;
 //import ui.TUI;
 
 
@@ -64,7 +61,7 @@ public class GameController {
 
                 // if ui.askActionToPerfom().equals("Kast")
 
-                getUserAction();
+                showUserMenuAndAct();
 
 
                 // player.getPropertyiesBuyHouse : String[] names of properties
@@ -82,7 +79,7 @@ public class GameController {
     }
 
 
-    public void getUserAction(){
+    public void showUserMenuAndAct(){
         int chosenAction = ui.askToChooseAction();
 
         switch(chosenAction){
@@ -93,12 +90,18 @@ public class GameController {
                 currPlayer.actOnSquare();
                 break;
             case 2:
+                //arraylist, når den er færdig convert to String[]
 
-                String[] properties = null;
+                String[] properties;
 
+                if (currPlayer.getCanBuildSquares().length>0){
+                    properties = currPlayer.getCanBuildSquares();
+                } else {
+                    properties = null;
+                }
                 ui.askToChoosePropertyToBuildHouse(properties);
 
-                getUserAction();
+                showUserMenuAndAct();
 
                 break;
             default:

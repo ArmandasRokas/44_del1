@@ -108,6 +108,7 @@ public class PropertySquare extends Square{
         p.addOwnedSquare(this);
         super.playerAction = p.getName() + " købt " + toString();
         gui_boundary.setOwnerOnSquare(p.getName(), this.index);
+
     }
 
     /**
@@ -117,7 +118,13 @@ public class PropertySquare extends Square{
      */
     @Override
     public String toString() {
-        return super.scenario + " for " + price + "dkk";
+
+        if(owner == null){
+            return super.scenario + " for " + price + "dkk";
+        } else {
+            return super.scenario;
+        }
+
     }
 
     /**
