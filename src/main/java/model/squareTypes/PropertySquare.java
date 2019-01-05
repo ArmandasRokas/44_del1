@@ -147,4 +147,14 @@ public class PropertySquare extends Square{
         return owner;
     }
 
+    public boolean canBuild(Player p){
+
+        for(PropertySquare propertySquare: siblingSquares){
+
+       //TODO implementere
+        }
+
+        return true;
+    }
+
 }

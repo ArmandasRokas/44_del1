@@ -3,9 +3,12 @@ package controller;
 import model.GameBoard;
 import model.Cup;
 import model.Player;
+import model.squareTypes.PropertySquare;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
 import ui.GUI_Boundary;
+
+import java.util.ArrayList;
 //import ui.TUI;
 
 
@@ -60,13 +63,8 @@ public class GameController {
                 currPlayer = player;
 
                 // if ui.askActionToPerfom().equals("Kast")
-                int chosenAction = ui.askToChooseAction();
-                if(chosenAction == 1 ){
-                    player.takeTurn();
-                    ui.showCurrentDiesResult();
-                    ui.updateBoardView();
-                    player.actOnSquare();
-                }
+
+                getUserAction();
 
 
                 // player.getPropertyiesBuyHouse : String[] names of properties
@@ -81,6 +79,32 @@ public class GameController {
             }
         }
         ui.showFinalResult();
+    }
+
+
+    public void getUserAction(){
+        int chosenAction = ui.askToChooseAction();
+
+        switch(chosenAction){
+            case 1:
+                currPlayer.takeTurn();
+                ui.showCurrentDiesResult();
+                ui.updateBoardView();
+                currPlayer.actOnSquare();
+                break;
+            case 2:
+
+                String[] properties = null;
+
+                ui.askToChoosePropertyToBuildHouse(properties);
+
+                getUserAction();
+
+                break;
+            default:
+                break;
+        }
+
     }
 
     /**

@@ -168,4 +168,21 @@ public class Player {
 
         return new int[]{1,2} ;
     }
+
+    public ArrayList<PropertySquare> getCanBuildSquares(){
+
+        ArrayList<PropertySquare> canBuildSquares = new ArrayList<>();
+
+        for(PropertySquare square: squaresOwned){
+
+            if(square.canBuild(this)){
+               canBuildSquares.add(square);
+            }
+
+        }
+
+        return canBuildSquares;
+
+    }
+
 }

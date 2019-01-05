@@ -6,6 +6,8 @@ import gui_fields.GUI_Player;
 import gui_main.GUI;
 import model.Player;
 
+import java.util.ArrayList;
+
 public class GUI_Boundary extends Abstract_UI {
 
     GUI gui = new GUI();
@@ -137,5 +139,20 @@ public class GUI_Boundary extends Abstract_UI {
         fields[index].setSubText(name);
 
         return true;
+    }
+
+    @Override
+    public String askToChoosePropertyToBuildHouse(String[] properties) {
+
+        String answer = null;
+
+        if(properties != null){
+            answer = gui.getUserButtonPressed("Vælg en grund til at bygge hus", properties);
+        }
+        else {
+            gui.getUserButtonPressed("Du har ingen grund til at bygge hus", "OK");
+        }
+
+        return answer;
     }
 }
