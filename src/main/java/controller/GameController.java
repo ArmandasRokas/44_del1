@@ -3,6 +3,7 @@ package controller;
 import model.GameBoard;
 import model.Cup;
 import model.Player;
+import model.squareTypes.PropertySquare;
 import model.squareTypes.Square;
 import ui.Abstract_UI;
 import ui.GUI_Boundary;
@@ -83,14 +84,13 @@ public class GameController {
         int chosenAction = ui.askToChooseAction();
 
         switch(chosenAction){
-            case 1:
+            case 1: // Roll dies
                 currPlayer.takeTurn();
                 ui.showCurrentDiesResult();
                 ui.updateBoardView();
                 currPlayer.actOnSquare();
                 break;
-            case 2:
-                //arraylist, når den er færdig convert to String[]
+            case 2: // Build house
 
                 String[] properties;
 
@@ -99,7 +99,15 @@ public class GameController {
                 } else {
                     properties = null;
                 }
-                ui.askToChoosePropertyToBuildHouse(properties);
+                String answer = ui.askToChoosePropertyToBuildHouse(properties);
+
+                int squareToBuildIndex = gameBoard.findSquareByName(answer);
+
+                ui.buildHouse(squareToBuildIndex);
+
+                PropertySquare propertySquare = (PropertySquare) gameBoard.getSquare(squareToBuildIndex);
+                propertySquare.buildHouse();
+
 
                 showUserMenuAndAct();
 

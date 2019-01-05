@@ -22,6 +22,7 @@ public class PropertySquare extends Square{
     private ArrayList<PropertySquare> siblingSquares;   //Reference to the other property of same color
     private Abstract_UI gui_boundary;
     private int index;
+    private int numberOfHouses;
 
     /**
      * Constructor of PropertySquare
@@ -41,6 +42,7 @@ public class PropertySquare extends Square{
         this.gui_boundary = gui_boundary;
         this.index = index;
         siblingSquares = new ArrayList<>();
+        this.numberOfHouses = 0;
     }
 
     /**
@@ -164,5 +166,7 @@ public class PropertySquare extends Square{
         return true;
     }
 
-
+    public void buildHouse(){
+        numberOfHouses++;
+    }
 }

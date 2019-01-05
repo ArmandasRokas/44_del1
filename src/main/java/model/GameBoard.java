@@ -112,7 +112,7 @@ public class GameBoard {
         boolean found = false;
 
         for(int i = 0 ; i < squareList.length && !found ; i++) {
-            if(squareList[i].getPlayerAction().equals(name)) {
+            if(squareList[i].toString().equals(name)) {
                 res = i;
                 found = true;
             }

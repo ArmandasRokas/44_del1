@@ -84,4 +84,6 @@ public abstract class Abstract_UI {
 
     public abstract String askToChoosePropertyToBuildHouse(String[] properties);
 
+    public abstract boolean buildHouse(int index);
+
 }

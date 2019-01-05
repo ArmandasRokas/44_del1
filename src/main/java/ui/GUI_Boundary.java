@@ -3,6 +3,7 @@ package ui;
 
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import gui_fields.GUI_Street;
 import gui_main.GUI;
 import model.Player;
 
@@ -154,5 +155,14 @@ public class GUI_Boundary extends Abstract_UI {
         }
 
         return answer;
+    }
+
+    @Override
+    public boolean buildHouse(int index) {
+
+        GUI_Street street = (GUI_Street)gui.getFields()[index];
+        street.setHouses(1);
+
+        return true;
     }
 }
