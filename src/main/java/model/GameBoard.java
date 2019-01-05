@@ -92,8 +92,7 @@ public class GameBoard {
                         PropertySquare ps2 = (PropertySquare) square;
 
                         if(ps2.getGroupID() == groupID) {
-                            ps2.setSiblingSquare(ps);
-                            ps.setSiblingSquare(ps2); //TODO should be tested if adds the same sibling square more than once
+                            ps.setSiblingSquare(ps2);
                         }
                     }
                 }
