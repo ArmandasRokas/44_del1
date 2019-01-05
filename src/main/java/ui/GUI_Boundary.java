@@ -61,11 +61,11 @@ public class GUI_Boundary extends Abstract_UI {
 
         String action = gui.getUserButtonPressed(gameController.getCurrPlayerName() +
                 " har turen."
-                , "Kast", "Koeb hus", "Koeb hotel", "Saelg hus");
+                , "Kast", "Køb hus");
         switch (action){
             case "Kast":
                 return 1;
-            case "Koeb hus":
+            case "Køb hus":
                 return 2;
             case "Køb hotel":
                 return 3;

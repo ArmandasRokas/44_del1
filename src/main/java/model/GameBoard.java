@@ -34,8 +34,9 @@ public class GameBoard {
 
         squareList [0] = new StartSquare("Start");
         squareList [1] = new PropertySquare("Rødovrevej", new int[]{50, 250, 750, 2250, 4000, 6000}, 1200, 0, 1, gui_boundary);
-  //      squareList [2] = new ChanceSquare("Prøv lykken", 0, gui_boundary);
-        squareList [3] = new PropertySquare("Hvidovrevej", new int []{50, 250, 750, 2250, 4000, 6000}, 1200, 0, 3, gui_boundary);
+   //     squareList [2] = new ChanceSquare("Prøv lykken", 0, gui_boundary);
+        squareList [2] = new PropertySquare("Hvidovrevej", new int []{50, 250, 750, 2250, 4000, 6000}, 1200, 0, 3, gui_boundary);
+  //      squareList [3] = new PropertySquare("Hvidovrevej", new int []{50, 250, 750, 2250, 4000, 6000}, 1200, 0, 3, gui_boundary);
   //      squareList [4] = new Tax("Indkomstskat", 4000, 10, gui_boundary);
   //      squareList [5] = new Fleet("Helsingør/Helsingborg",  new int []{500, 1000, 2000, 4000},4000, gui_boundary);
         squareList [6] = new PropertySquare("Roskildevej", new int []{100, 600, 1800, 5400, 8000, 11000}, 2000, 1, 6, gui_boundary);

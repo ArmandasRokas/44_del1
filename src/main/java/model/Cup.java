@@ -32,7 +32,7 @@ public class Cup {
      */
     public int getCurrentRollScore() {
 
-        return 8;
+        return 1;
 
        // return d1.getEyes() + d2.getEyes();
     }

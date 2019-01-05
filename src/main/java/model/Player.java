@@ -175,7 +175,7 @@ public class Player {
 
         for(PropertySquare square: squaresOwned){
 
-            if(square.canBuild(this)){
+            if(square.canBuild()){
                canBuildSquares.add(square);
             }
         }

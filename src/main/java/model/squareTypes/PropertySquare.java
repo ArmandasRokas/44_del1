@@ -154,14 +154,15 @@ public class PropertySquare extends Square{
         return owner;
     }
 
-    public boolean canBuild(Player p){
+    public boolean canBuild(){
 
         for(PropertySquare propertySquare: siblingSquares){
-
-       //TODO implementere
+            if(!propertySquare.getOwner().equals(owner)){
+                return false;
+            }
         }
-
         return true;
     }
+
 
 }
