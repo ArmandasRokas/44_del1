@@ -11,7 +11,7 @@ import ui.Abstract_UI;
  * Class to represent the playing board and to contain and arrange the squares players can land on
  */
 public class GameBoard {
-    private Square squareList[];                //List of squares
+    private Square[] squareList;                //List of squares
 
     /**
      * Constructor for GameBoard
@@ -22,7 +22,7 @@ public class GameBoard {
     public GameBoard(GameController gameController, Abstract_UI gui_boundary) {
         squareList = new Square[40];
         this.setBoard(gameController, gui_boundary);
-    }
+}
 
     /**
      * Creates instances of Square to fill the gameController board and puts them into a list for containment
@@ -157,5 +157,9 @@ public class GameBoard {
      */
     public GameBoard(int squareAmount, boolean isTest){
         squareList = new Square[squareAmount];
+    }
+
+    public Square[] getSquareList(){
+        return squareList;
     }
 }
