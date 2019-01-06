@@ -10,7 +10,7 @@ import model.Player;
 import java.util.ArrayList;
 
 public class GUI_Boundary extends Abstract_UI {
-
+    //TODO maybe delete Abstract_UI.
     GUI gui = new GUI();
     GUI_Field[] fields = gui.getFields();
     GUI_Player[] gui_players;
