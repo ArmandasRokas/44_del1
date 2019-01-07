@@ -169,4 +169,8 @@ public class PropertySquare extends Square{
     public void buildHouse(){
         numberOfHouses++;
     }
+
+
+
+
 }
