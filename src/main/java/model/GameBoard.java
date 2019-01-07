@@ -162,4 +162,10 @@ public class GameBoard {
     public Square[] getSquareList(){
         return squareList;
     }
+
+    public GameBoard(GameController gameController, Abstract_UI ui, boolean isTest){
+        squareList = new Square[40];
+        setBoard(gameController, ui);
+
+    }
 }

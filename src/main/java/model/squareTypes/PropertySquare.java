@@ -170,6 +170,18 @@ public class PropertySquare extends Square{
         numberOfHouses++;
     }
 
+    /**
+     * Method is used for test
+     *
+     * @return
+     */
+
+    public ArrayList<PropertySquare> getSiblingSquares(){
+
+        return siblingSquares;
+
+    }
+
 
 
 
