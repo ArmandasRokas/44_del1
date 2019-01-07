@@ -32,6 +32,7 @@ public class GameBoard {
     private void setBoard(GameController gameController, Abstract_UI gui_boundary ) {
         ChanceSquare CSReference = new ChanceSquare("Chance", gameController.getPlayers(), this);
 
+        //TODO fix prices
         squareList [0] = new StartSquare("Start");
         squareList [1] = new PropertySquare("Rødovrevej", new int[]{50, 250, 750, 2250, 4000, 6000}, 1200, 0, 1, gui_boundary);
    //     squareList [2] = new ChanceSquare("Prøv lykken", 0, gui_boundary);
