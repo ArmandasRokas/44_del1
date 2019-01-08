@@ -28,7 +28,7 @@
         \caption{Full-dressed use case. UC1: Spil spillet}
         \begin{tabularx}{\textwidth}{|l|X|}
             \hline
-                                         & \textbf{[UC1]: Spil Spillet}   \\ \hline
+                                         & \textbf{[UC1]: Spil spillet}   \\ \hline
             \textbf{Scope}               & Matador Applikation\\ \hline
             \textbf{Level}               & User goal     \\ \hline
             \textbf{Primær aktør}        & 3-6 spillere  \\ \hline
@@ -70,26 +70,41 @@
                     \\
 
 
-                                      & \textbf{3.b.} Spiller vælger at bygge bygning.
+                                      & \textbf{3.b.} Spiller vælger at bygge hus.
             \begin{enumerate} \begin{tabenum}
-                                  \item Jf. UC8: \underline{Byg bygning}
+                                  \item Jf. UC8: \underline{Byg hus}
             \end{tabenum} \end{enumerate}
             \\
 
-                                    & \textbf{3.c.} Spiller vælger at sælge bygning.
+                                    & \textbf{3.c.} Spiller vælger at bygge hotel.
+                                    \begin{enumerate} \begin{tabenum}
+                                                          \item Jf. UC9: \underline{Byg hotel}
+                                    \end{tabenum} \end{enumerate}
+                                    \\
+
+                                    & \textbf{3.d.} Spiller vælger at sælge bygning.
                                     \begin{enumerate} \begin{tabenum}
                                                           \item Jf. UC7: \underline{Sælge bygning}
                                     \end{tabenum} \end{enumerate}
                                     \\
 
-                            & \textbf{3.d.} Spiller vælger at sælge bygning.
+
+                            & \textbf{3.e.} Spiller vælger at pantsætte pantsætning.
                             \begin{enumerate} \begin{tabenum}
-                                                  \item Jf. UC7: \underline{Sælge bygning}
+                                                  \item Jf. UC5: \underline{Pantsæt grund}
                             \end{tabenum} \end{enumerate}
                             \\
 
 
-                              & \textbf{4.a.} Spiller har passeret start.
+                            & \textbf{3.f.} Spiller vælger at ophæve pantsættning.
+                            \begin{enumerate} \begin{tabenum}
+                                                  \item Jf. UC6: \underline{Ophæv pantsætning}
+                            \end{tabenum} \end{enumerate}
+                            \\
+
+
+
+            & \textbf{4.a.} Spiller har passeret start.
                                 \begin{enumerate} \begin{tabenum}
                                         \item Systemet tilføjer 200kr til spillerens konto.
                                         \item Udføres trin 4-7 som sædvanlig
@@ -123,42 +138,55 @@
                             \end{tabenum} \end{enumerate}
                             \\
 
-
                             & \textbf{5.b.} Spiller lander på feltet
                             'Indkomstskatten'.
                             \begin{enumerate} \begin{tabenum}
-                              \item Spiller vælger betalingsmåde(10\% af sine værdierne eller 200kr).
-                              \item Fortsættes fra trin 6.
+                                                  \item Spiller vælger betalingsmåde(10\% af sine værdierne eller 200kr).
+                                                  \item Fortsættes fra trin 6.
                             \end{tabenum} \end{enumerate}
                             \\
 
 
-                            & \textbf{5.c.} Spiller lander på feltet 'Parkering'/'Fængsel'/'Start'
-                            \begin{enumerate} \begin{tabenum}
-                                                  \item Fortsættes fra trin 7.
-                            \end{tabenum} \end{enumerate}
-                            \\
+            \hline
+        \end{tabularx}
 
 
-                            & \textbf{5.d.} Spiller lander på feltet 'Til Fængsel'
-                            \begin{enumerate} \begin{tabenum}
-                                                  \item Systemet rykker spiller til feltet 'Fængsel' uden at tilføje 200kr til spilleren's konto.
-                                                  \item Fortsættes fra trin 7.
-                            \end{tabenum} \end{enumerate}
-                            \\
+    \end{table}
 
 
-                            & \textbf{5.e.} Spiller lander på feltet 'Prøv lykken'
-                            \begin{enumerate} \begin{tabenum}
-                                                  \item Jf. UC4: \underline{Prøv lykken}
-                            \end{tabenum} \end{enumerate}
-                            \\
+    \begin{table}[H]
+        \begin{tabularx}{\textwidth}{|l|X|}
+            \hline
 
-                            & \textbf{6.a.} Spiller går fallit
-                            \begin{enumerate} \begin{tabenum}
-                                                  \item Jf. UC10: \underline{Gå fallit}
-                            \end{tabenum} \end{enumerate}
-                            \\
+
+
+
+            & \textbf{5.c.} Spiller lander på feltet 'Parkering'/'Fængsel'/'Start'
+            \begin{enumerate} \begin{tabenum}
+                                  \item Fortsættes fra trin 7.
+            \end{tabenum} \end{enumerate}
+            \\
+
+
+            & \textbf{5.d.} Spiller lander på feltet 'Til Fængsel'
+            \begin{enumerate} \begin{tabenum}
+                                  \item Systemet rykker spiller til feltet 'Fængsel' uden at tilføje 200kr til spilleren's konto.
+                                  \item Fortsættes fra trin 7.
+            \end{tabenum} \end{enumerate}
+            \\
+
+
+            & \textbf{5.e.} Spiller lander på feltet 'Prøv lykken'
+            \begin{enumerate} \begin{tabenum}
+                                  \item Jf. UC4: \underline{Prøv lykken}
+            \end{tabenum} \end{enumerate}
+            \\
+
+            & \textbf{6.a.} Spiller går fallit
+            \begin{enumerate} \begin{tabenum}
+                                  \item Jf. UC10: \underline{Gå fallit}
+            \end{tabenum} \end{enumerate}
+            \\
 
 
             \hline
