@@ -30,39 +30,45 @@
         \begin{tabularx}{\textwidth}{|l|X|}
             \hline
             & \textbf{[UC3]: Kom ud af fængsel}   \\ \hline
-            \textbf{Preconditions}       & Spiller står på feltet 'Fængsel' efter spilleren havde landet på feltet 'Til fængsel'. \\ \hline
-            \textbf{Postconditions}      & Spiller er ud af fængsel \\ \hline
+            \textbf{Preconditions}       & Spiller er 'i fængsel'. \\ \hline
+            \textbf{Postconditions}      & Spiller er ude af fængsel \\ \hline
 
 
             \textbf{Basic Flow} & \begin{tabenum}
-                                      \item Spiller betaler 1000kr
+                                      \item Spiller betaler 50kr
                                       \item Fortsættes videre fra Trin 3 i UC1
             \end{tabenum}   \\ \hline
 
 
             \textbf{Alternate Flow}  & \textbf{1.a.} Spiller benytter et løsladelseskort fra lykkekortene
                                     \begin{enumerate} \begin{tabenum}
-                                                          \item Forstsættes videre fra Trin 3 i UC1
+                                                          \item Fortsættes videre fra Trin 3 i UC1
                                     \end{tabenum} \end{enumerate}
                                     \\
 
 
-                                   & \textbf{1.b.a.} Spiller kaster 2 af samme slags. Dette er kun tiladt, hvis spiller har været i fængsel mindre end fire omgange. Dvs. spiller får lov til at kaste terninger tre gange i alt.
+                                   & \textbf{1.b.} Spiller kaster terninger og slår to ens. Dette er kun tilladt, hvis spiller har været i fængsel maks. i tre omgange.
             \begin{enumerate} \begin{tabenum}
                                   \item Fortsættes videre fra Trin 4 i UC1 med det antal af øjne, som spiller fik i det sidste kast.
             \end{tabenum} \end{enumerate}
             \\
 
-
-
-
-
-                                    & \textbf{1.b.b.} Spiller kaster ikke 2 af samme salgs i den trejde omgang.
+                                    & \textbf{1.c.} Spiller kaster ikke 2 af samme slags i 1. eller 2. omgang.
                                     \begin{enumerate} \begin{tabenum}
-                                      \item Spiller betaler 1000kr.
-                                      \item Forstsættes videre fra Trin 4 i UC1 med det antal af øjne, som spiller fik i det sidste kast.
+                                                          \item Turen går direkte til næste spiller.
                                     \end{tabenum} \end{enumerate}
                                     \\
+
+
+
+                                    & \textbf{1.d.} Spiller kaster ikke 2 af samme slags i den 3. omgang.
+                                    \begin{enumerate} \begin{tabenum}
+                                      \item Spiller betaler 50kr.
+                                      \item Fortsættes videre fra trin 4 i UC1 med det antal af øjne, som spiller fik i det sidste kast.
+                                    \end{tabenum} \end{enumerate}
+                                    \\
+
+
 
 
             \hline

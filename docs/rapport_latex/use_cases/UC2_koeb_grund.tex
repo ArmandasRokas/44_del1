@@ -31,12 +31,12 @@
                 \hline
                 & \textbf{[UC2]: Køb grund}   \\ \hline
                 \textbf{Preconditions}       & Spiller er landet på feltet 'Grund'\\ \hline
-                \textbf{Postconditions}      & Grunden er solgt til en spiller.\\ \hline
+                \textbf{Postconditions}      & Grunden kan ejes af en spiller.\\ \hline
 
 
                 \textbf{Basic Flow} & \begin{tabenum}
-                                          \item Spiller accepterer til at købe en grund
-                                          \item Systemet tilføjer skødet til den spiller, som står på feltet.
+                                          \item Spiller accepterer at købe en grund
+                                          \item Systemet tilføjer skødet til spilleren, som har købt grunden.
                 \end{tabenum}   \\ \hline
 
 
@@ -47,6 +47,15 @@
                                       \item Systemet afholder en auktion
                                       \item Spillere giver deres bud
                                       \item Systemet tilføjer skødet til den højestbydende
+                \end{tabenum} \end{enumerate}
+                \\
+
+
+                                            & \textbf{1.b.} Spiller afvise til at købe en grund.
+                \begin{enumerate} \begin{tabenum}
+                                      \item Systemet afholder en auktion
+                                      \item Ingen af spillerne byder
+                                      \item Fortsættes videre fra trin 7 i UC1.
                 \end{tabenum} \end{enumerate}
                 \\
 

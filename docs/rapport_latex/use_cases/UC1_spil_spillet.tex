@@ -51,7 +51,8 @@
                               \item Spiller kaster terningerne
                               \item Systemet viser resultat af kastet, rykker spilleren og viser scenariet for feltet man er lander på.
                               \item Spiller agerer på scenariet
-                              \item Systemet udfører scenariet, checker for om, der en spiller, der gået fallit og giver turen til næste spiller, hvis vinderen ikke er fundet endnu.
+                              \item Systemet udfører scenariet, kontrollerer for om, der en spiller, der gået fallit.
+                          \item Systemet giver turen til næste spiller, hvis spilleren ikke har slået to ens.
                           \savespace
                           \begin{compactitem}
                               \item \textit{Gentages trin 3-6, indtil der er én spiller tilbage i spillet}
@@ -64,42 +65,43 @@
 
     \textbf{Alternate Flow}   & \textbf{3.a.} Spiller er i 'Fængsel' \textit{(ikke på besøg)}.
     \begin{enumerate} \begin{tabenum}
-                          \item Jf. UC3: Kom ud af fængsel
+                          \item Jf. UC3: \underline{Kom ud af fængsel}
     \end{tabenum} \end{enumerate}
     \\
 
 
 
-                              & \textbf{4.a.} Spiller passere start.
+                              & \textbf{4.a.} Spiller har passeret start.
                                 \begin{enumerate} \begin{tabenum}
-                                        \item Systemet tilføjer 4000kr til spilleren's konto.
-                                        \item Udføres trin 4-6 som sædvanlig
+                                        \item Systemet tilføjer 200kr til spillerens konto.
+                                        \item Udføres trin 4-7 som sædvanlig
                                     \end{tabenum} \end{enumerate}
                                  \\
-                              & \textbf{4.b.} Spiller kaster 2 af samme slags.
-            \begin{enumerate} \begin{tabenum}
-                                  \item Udføres trin 4-6 som sædvanlig
-                                  \item Spiller kaster terningerne
-                                  \item Udføres trin 4-6 som sædvanlig
-            \end{tabenum} \end{enumerate}
-            \\
+
+
+                            & \textbf{4.b.} Spiller har kastet 2 af samme slags 3. gang i træk.
+                            \begin{enumerate} \begin{tabenum}
+
+                                                  \item Systemet rykker spilleren i fængsel og skifter tur til næste spiller, som fortsætter fra trin 3.
+                            \end{tabenum} \end{enumerate}
+                            \\
 
 
 
 
-                              & \textbf{5.a.a.} Spiller lander på feltet
+                              & \textbf{5.a.a.} Spiller er landet på feltet
                                 'Grund', som ejes af en anden spiller.
                                 \begin{enumerate} \begin{tabenum}
-                                  \item Spiller betaler leje til ejeren
+                                  \item Spiller betaler leje til kreditoren
                                         jf. skøderne i Bilag \#.
-                                  \item Udføres trin 6 færdigt
+                                  \item Fortsættes fra trin 6.
                                 \end{tabenum} \end{enumerate}
                                 \\
                             & \textbf{5.a.b.} Spiller lander på feltet
                                 'Grund', som ikke ejes af nogen.
                             \begin{enumerate} \begin{tabenum}
-                                  \item Jf. UC2: Køb grund.
-                                  \item Udføres trin 6 færdigt
+                                  \item Jf. UC2: \underline{Køb grund}.
+                                  \item Fortsættes fra trin 6
                             \end{tabenum} \end{enumerate}
                             \\
 
@@ -107,35 +109,36 @@
                             & \textbf{5.b.} Spiller lander på feltet
                             'Indkomstskatten'.
                             \begin{enumerate} \begin{tabenum}
-                              \item Spiller vælger betalingsmåde(10proc af sine værdierne eller 4000kr).
-                              \item Udføres trin 6 færdigt
+                              \item Spiller vælger betalingsmåde(10\% af sine værdierne eller 200kr).
+                              \item Fortsættes fra trin 6.
                             \end{tabenum} \end{enumerate}
                             \\
 
 
                             & \textbf{5.c.} Spiller lander på feltet 'Parkering'/'Fængsel'/'Start'
                             \begin{enumerate} \begin{tabenum}
-                                                  \item Systemet giver direkte tur til næste spiller.
+                                                  \item Fortsættes fra trin 7.
                             \end{tabenum} \end{enumerate}
                             \\
 
 
                             & \textbf{5.d.} Spiller lander på feltet 'Til Fængsel'
                             \begin{enumerate} \begin{tabenum}
-                                                  \item Systemet rykker spiller til feltet 'Fængsel' uden at tilføje 4000kr til spilleren's konto.
+                                                  \item Systemet rykker spiller til feltet 'Fængsel' uden at tilføje 200kr til spilleren's konto.
+                                                  \item Fortsættes fra trin 7.
                             \end{tabenum} \end{enumerate}
                             \\
 
 
                             & \textbf{5.e.} Spiller lander på feltet 'Prøv lykken'
                             \begin{enumerate} \begin{tabenum}
-                                                  \item Jf. UC4: Prøv lykken
+                                                  \item Jf. UC4: \underline{Prøv lykken}
                             \end{tabenum} \end{enumerate}
                             \\
 
                             & \textbf{6.a.} Spiller går fallit
                             \begin{enumerate} \begin{tabenum}
-                                                  \item Jf. UC10: Gå fallit
+                                                  \item Jf. UC10: \underline{Gå fallit}
                             \end{tabenum} \end{enumerate}
                             \\
 
