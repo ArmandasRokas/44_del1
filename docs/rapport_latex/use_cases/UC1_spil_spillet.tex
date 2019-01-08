@@ -55,7 +55,7 @@
                           \item Systemet giver turen til næste spiller, hvis spilleren ikke har slået to ens.
                           \savespace
                           \begin{compactitem}
-                              \item \textit{Gentages trin 3-6, indtil der er én spiller tilbage i spillet}
+                              \item \textit{Gentages trin 3-7, indtil der er én spiller tilbage i spillet}
                           \end{compactitem}
                               \item Afsluttet spil og udskriver resultat.
                            \end{tabenum}   \\ \hline
@@ -63,12 +63,30 @@
 
 
 
-    \textbf{Alternate Flow}   & \textbf{3.a.} Spiller er i 'Fængsel' \textit{(ikke på besøg)}.
-    \begin{enumerate} \begin{tabenum}
-                          \item Jf. UC3: \underline{Kom ud af fængsel}
-    \end{tabenum} \end{enumerate}
-    \\
+                    \textbf{Alternate Flow}   & \textbf{3.a.} Spiller er i 'Fængsel' \textit{(ikke på besøg)}.
+                    \begin{enumerate} \begin{tabenum}
+                                          \item Jf. UC3: \underline{Kom ud af fængsel}
+                    \end{tabenum} \end{enumerate}
+                    \\
 
+
+                                      & \textbf{3.b.} Spiller vælger at bygge bygning.
+            \begin{enumerate} \begin{tabenum}
+                                  \item Jf. UC8: \underline{Byg bygning}
+            \end{tabenum} \end{enumerate}
+            \\
+
+                                    & \textbf{3.c.} Spiller vælger at sælge bygning.
+                                    \begin{enumerate} \begin{tabenum}
+                                                          \item Jf. UC7: \underline{Sælge bygning}
+                                    \end{tabenum} \end{enumerate}
+                                    \\
+
+                            & \textbf{3.d.} Spiller vælger at sælge bygning.
+                            \begin{enumerate} \begin{tabenum}
+                                                  \item Jf. UC7: \underline{Sælge bygning}
+                            \end{tabenum} \end{enumerate}
+                            \\
 
 
                               & \textbf{4.a.} Spiller har passeret start.

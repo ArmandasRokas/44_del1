@@ -35,16 +35,23 @@
 
 
             \textbf{Basic Flow} & \begin{tabenum}
-                                      \item Hvis en spiller står på property square, som ejes af anden spiller.
-                                      \item Systemet sælger alle huse, som spiller ejer, og overfører alle ejendom og kontanter til kreditoren.
+                                      \item Systemet sælger alle huse, som spiller ejer, og overfører alle ejendomme og kontanter til kreditoren.
+                                      \item Fortsættes UC1 trin 3.
             \end{tabenum}   \\ \hline
 
 
 
 
-            \textbf{Alternate Flow}   & \textbf{1.a.} Hvis en spiller står på et felt, som banken er en kreditor for.
+            \textbf{Alternate Flow}   & \textbf{1.a.} Banken er kreditor.
             \begin{enumerate} \begin{tabenum}
                                   \item Systemet fjerner alle husene fra grundene, som spilleren ejede, og sætter alle spillerens grunde til auktion.
+            \end{tabenum} \end{enumerate}
+            \\
+
+
+                                    & \textbf{1.b.} Spiller er kreditor.
+            \begin{enumerate} \begin{tabenum}
+                                  \item Systemet sælger alle bygninger og overfører alle skøder og kontenter til spilleren, som er kreditor.
             \end{tabenum} \end{enumerate}
             \\
 
