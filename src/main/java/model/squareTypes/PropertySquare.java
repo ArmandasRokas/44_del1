@@ -1,6 +1,9 @@
 package model.squareTypes;
 
 import model.Player;
+import ui.Abstract_UI;
+
+import java.util.ArrayList;
 
 /**@author Hold 44
  * @version 30/11-2018
@@ -11,13 +14,15 @@ import model.Player;
 public class PropertySquare extends Square{
 
     private int price;                      //Price of the property
-    private int rentPrice;                  //Price of landing on the property
+    private int[] rentPrice;                  //Price of landing on the property
     //Todo color: enum list? https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
-    private final String color;             //Color group of the property
+    private final int groupID;
     private Player owner;                   //Reference to the player that owns the property
     private boolean isOwned;                //Boolean to determine if the property is owned
-    private PropertySquare siblingSquare;   //Reference to the other property of same color
-    private String playerAction;            //String to print what happened on the property
+    private ArrayList<PropertySquare> siblingSquares;   //Reference to the other property of same color
+    private Abstract_UI gui_boundary;
+    private int index;
+    private int numberOfHouses;
 
     /**
      * Constructor of PropertySquare
@@ -27,13 +32,17 @@ public class PropertySquare extends Square{
      * @param rentPrice Price of landing on the property
      * @param color     Color group of the property
      */
-    public PropertySquare(String scenario, int price, int rentPrice, String color){
+    public PropertySquare(String scenario, int[] rentPrice, int price, int groupID, int index, Abstract_UI gui_boundary){
         super(scenario);
         this.price = price;
         this.rentPrice = rentPrice;
-        this.color = color;
+        this.groupID = groupID;
         this.owner = null;
         isOwned = false;
+        this.gui_boundary = gui_boundary;
+        this.index = index;
+        siblingSquares = new ArrayList<>();
+        this.numberOfHouses = 0;
     }
 
     /**
@@ -45,8 +54,15 @@ public class PropertySquare extends Square{
     public void landedOn(Player p) {
         if(isOwned && !p.equals(owner)){
             payRent(p);
+        } else if (isOwned && p.equals(owner)){
+          super.playerAction = p.getName() + " står på " + super.toString() +
+                  " som " + p.getName() + " ejer selv.";
         } else if(!isOwned){
-            buyProperty(p);
+
+            boolean userAnswer = gui_boundary.askToBuyProperty();
+            if(userAnswer){
+                buyProperty(p);
+            }
         }
     }
 
@@ -58,9 +74,9 @@ public class PropertySquare extends Square{
     public boolean isPropertySetOwned() {
         boolean res = false;
 
-        if(owner.equals(siblingSquare.getOwner())) {
-            res = true;
-        }
+   //     if(owner.equals(siblingSquare.getOwner())) {
+   //         res = true;
+   //     }
         return res;
     }
 
@@ -69,16 +85,17 @@ public class PropertySquare extends Square{
      *
      * @param p Player who have landed on the property
      */
+
     private void payRent(Player p){
-        int toBePayed = rentPrice;
+        int toBePayed = rentPrice[0]; //TODO checks how many houses are on field and change rent price
         //TODO Create test for this if-statement
         if(isPropertySetOwned()) {
             toBePayed = toBePayed * 2;
         }
         p.addToCash(-toBePayed);
         owner.addToCash(toBePayed);
-        playerAction = p.getName() + " is on " + super.toString() + " which is owned by " + owner.getName() +
-                " You paid " + toBePayed + "M to" + owner.getName();
+        super.playerAction = p.getName() + " står på " + super.toString() + ", som ejes af " + owner.getName() +
+                ". Du har betalt " + toBePayed + "DKK til " + owner.getName();
     }
 
     /**
@@ -91,7 +108,8 @@ public class PropertySquare extends Square{
         this.owner = p;
         this.isOwned = true;
         p.addOwnedSquare(this);
-        playerAction = p.getName() + " bought a " + super.toString() + " for " + price + "M";
+        super.playerAction = p.getName() + " købt " + toString();
+        gui_boundary.setOwnerOnSquare(p.getName(), this.index);
     }
 
     /**
@@ -101,7 +119,13 @@ public class PropertySquare extends Square{
      */
     @Override
     public String toString() {
-        return playerAction;
+
+        if(owner == null){
+            return super.scenario + " for " + price + "dkk";
+        } else {
+            return super.scenario;
+        }
+
     }
 
     /**
@@ -109,8 +133,8 @@ public class PropertySquare extends Square{
      *
      * @return  Color of the property
      */
-    public String getColor() {
-        return color;
+    public int getGroupID() {
+        return groupID;
     }
 
     /**
@@ -119,7 +143,7 @@ public class PropertySquare extends Square{
      * @param ps    Property it is to have a reference to
      */
     public void setSiblingSquare(PropertySquare ps) {
-        this.siblingSquare = ps;
+        siblingSquares.add(ps);
     }
 
     /**
@@ -130,4 +154,34 @@ public class PropertySquare extends Square{
     public Player getOwner() {
         return owner;
     }
+
+    public boolean canBuild(){
+
+        for(PropertySquare propertySquare: siblingSquares){
+            if(!propertySquare.getOwner().equals(owner)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void buildHouse(){
+        numberOfHouses++;
+    }
+
+    /**
+     * Method is used for test
+     *
+     * @return
+     */
+
+    public ArrayList<PropertySquare> getSiblingSquares(){
+
+        return siblingSquares;
+
+    }
+
+
+
+
 }
