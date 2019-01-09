@@ -16,17 +16,19 @@
 \usepackage{xcolor}
 \usepackage{ulem}
 \usepackage{comment}
+\usepackage{pdfpages}
 \usepackage[backend=bibtex, style=numeric]{biblatex}
 \addbibresource{references.bib}
 
 \newcommand\myworries[1]{\textcolor{red}{#1}}
 
-\title{Final CDIO}
-\author{}
-\date{Januar 2018}
+%\title{Final CDIO}
+%\author{}
+%\date{Januar 2018}
 \begin{document}
 {\fontfamily{phv}\selectfont
-\maketitle
+%\maketitle
+\includepdf[page={1}]{sections/front_page}
 \thispagestyle{empty}
 \newpage
 \section*{Abstract}
