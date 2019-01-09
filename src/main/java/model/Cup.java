@@ -1,5 +1,4 @@
 package model;
-
 /**@author Hold 44
  * @version 08/11-2018
  *
