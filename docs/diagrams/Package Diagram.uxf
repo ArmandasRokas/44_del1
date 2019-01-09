@@ -35,204 +35,6 @@
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>390</x>
-      <y>220</y>
-      <w>100</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>PlayerCtrl</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>390</x>
-      <y>280</y>
-      <w>100</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>GameLogic</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>350</x>
-      <y>420</y>
-      <w>100</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Start</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>240</x>
-      <y>90</y>
-      <w>90</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>MatadorGui</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>240</x>
-      <y>420</y>
-      <w>100</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>To Prison</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>460</x>
-      <y>420</y>
-      <w>100</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Square</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>350</x>
-      <y>480</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Property</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>50</x>
-      <y>230</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Main</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>460</x>
-      <y>480</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Prison</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>240</x>
-      <y>480</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Chance</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>230</x>
-      <y>390</y>
-      <w>380</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>GameBoard</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>630</x>
-      <y>390</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Player</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>740</x>
-      <y>390</y>
-      <w>310</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>Cards</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>630</x>
-      <y>490</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Account</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>550</x>
-      <y>220</y>
-      <w>100</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>GameCtrl</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>700</x>
-      <y>220</y>
-      <w>90</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>CardCtrl</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>700</x>
-      <y>290</y>
-      <w>100</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>PropertyCtrl</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>380</x>
-      <y>100</y>
-      <w>100</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>GUIBoundary</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>480</x>
@@ -249,21 +51,21 @@
       <x>470</x>
       <y>130</y>
       <w>140</w>
-      <h>110</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0;120.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>600</x>
-      <y>280</y>
+      <y>270</y>
       <w>120</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>100.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>100.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -280,34 +82,34 @@
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>280</y>
+      <y>270</y>
       <w>130</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;40.0;110.0;40.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;110.0;50.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>110</x>
-      <y>210</y>
-      <w>500</w>
-      <h>60</h>
+      <x>600</x>
+      <y>220</y>
+      <w>420</w>
+      <h>50</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0;480.0;10.0</additional_attributes>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>400.0;30.0;400.0;10.0;10.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>280</y>
-      <w>250</w>
-      <h>140</h>
+      <x>560</x>
+      <y>270</y>
+      <w>60</w>
+      <h>290</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;120.0;230.0;120.0;230.0;10.0</additional_attributes>
+    <additional_attributes>10.0;270.0;40.0;270.0;40.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -315,10 +117,10 @@
       <x>480</x>
       <y>260</y>
       <w>190</w>
-      <h>150</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>170.0;130.0;10.0;10.0</additional_attributes>
+    <additional_attributes>170.0;160.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -334,13 +136,13 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
+      <x>790</x>
       <y>250</y>
-      <w>90</w>
-      <h>160</h>
+      <w>110</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>70.0;140.0;70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>90.0;150.0;90.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -356,18 +158,18 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
+      <x>560</x>
       <y>320</y>
-      <w>330</w>
-      <h>300</h>
+      <w>210</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;230.0;10.0;280.0;230.0;280.0;230.0;10.0;310.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;40.0;190.0;40.0;190.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
+      <x>910</x>
       <y>440</y>
       <w>130</w>
       <h>30</h>
@@ -378,7 +180,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
+      <x>780</x>
       <y>440</y>
       <w>120</w>
       <h>30</h>
@@ -389,7 +191,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
+      <x>780</x>
       <y>500</y>
       <w>120</w>
       <h>30</h>
@@ -400,12 +202,234 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
+      <x>910</x>
       <y>500</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>MoveToPrison</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>420</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Property</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>470</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Prison
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>390</y>
+      <w>340</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Squares</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>420</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Start</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>470</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ToPrison</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>420</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Chance</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>530</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Gameboard</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>510</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;120.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>300</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>PropertyCtrl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>250</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>CardCtrl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>250</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>GameCtrl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>240</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>PlayerCtrl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>310</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>GameLogic</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>420</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Player</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>490</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Account</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>400</y>
+      <w>280</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Cards</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>120</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>GUIBoundary</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>120</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>MatadorGui</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>250</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Main</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>470</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Helle
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
