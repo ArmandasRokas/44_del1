@@ -53,7 +53,7 @@ public class PropertySquare extends Square{
     @Override
     public void landedOn(Player p) {
         if(isOwned && !p.equals(owner)){
-            payRent(p);
+            playerCtr.payRent(this.owner, p);
         } else if (isOwned && p.equals(owner)){
           super.playerAction = p.getName() + " står på " + super.toString() +
                   " som " + p.getName() + " ejer selv.";

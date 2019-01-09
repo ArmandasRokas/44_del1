@@ -2,11 +2,13 @@ package ui;
 
 
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 import model.Player;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class GUI_Boundary extends Abstract_UI {
@@ -137,8 +139,9 @@ public class GUI_Boundary extends Abstract_UI {
     @Override
     public boolean setOwnerOnSquare(String name, int index){
 
+        ((GUI_Ownable)fields[index]).setOwnerName(name);
         fields[index].setSubText(name);
-
+        fields[index].setBackGroundColor(Color.RED);
         return true;
     }
 
