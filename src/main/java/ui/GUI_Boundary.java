@@ -7,6 +7,7 @@ import gui_fields.GUI_Street;
 import gui_main.GUI;
 import model.Player;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class GUI_Boundary extends Abstract_UI {
@@ -137,7 +138,10 @@ public class GUI_Boundary extends Abstract_UI {
     @Override
     public boolean setOwnerOnSquare(String name, int index){
 
-        fields[index].setSubText(name);
+        GUI_Street street = (GUI_Street) fields[index];
+        street.setOwnerName(name);
+        street.setSubText(name);
+        street.setBorder(Color.RED);
 
         return true;
     }
